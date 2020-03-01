@@ -13,6 +13,8 @@
 		428B3BC12407222B00C03769 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428B3BBF2407222B00C03769 /* Main.storyboard */; };
 		428B3BC32407222C00C03769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 428B3BC22407222C00C03769 /* Assets.xcassets */; };
 		428B3BC62407222C00C03769 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428B3BC42407222C00C03769 /* LaunchScreen.storyboard */; };
+		42CF966E240BCD3200276C23 /* timeburnerbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42CF966C240BCD3200276C23 /* timeburnerbold.ttf */; };
+		42CF966F240BCD3200276C23 /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42CF966D240BCD3200276C23 /* timeburnernormal.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		428B3BC22407222C00C03769 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		428B3BC52407222C00C03769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		428B3BC72407222C00C03769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42CF966C240BCD3200276C23 /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
+		42CF966D240BCD3200276C23 /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +67,18 @@
 				428B3BC22407222C00C03769 /* Assets.xcassets */,
 				428B3BC42407222C00C03769 /* LaunchScreen.storyboard */,
 				428B3BC72407222C00C03769 /* Info.plist */,
+				42CF966B240BCCE400276C23 /* Fonts */,
 			);
 			path = Gridy;
+			sourceTree = "<group>";
+		};
+		42CF966B240BCCE400276C23 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				42CF966C240BCD3200276C23 /* timeburnerbold.ttf */,
+				42CF966D240BCD3200276C23 /* timeburnernormal.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +139,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42CF966E240BCD3200276C23 /* timeburnerbold.ttf in Resources */,
+				42CF966F240BCD3200276C23 /* timeburnernormal.ttf in Resources */,
 				428B3BC62407222C00C03769 /* LaunchScreen.storyboard in Resources */,
 				428B3BC32407222C00C03769 /* Assets.xcassets in Resources */,
 				428B3BC12407222B00C03769 /* Main.storyboard in Resources */,
