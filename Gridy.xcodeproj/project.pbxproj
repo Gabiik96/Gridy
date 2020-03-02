@@ -16,6 +16,8 @@
 		42CF966E240BCD3200276C23 /* timeburnerbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42CF966C240BCD3200276C23 /* timeburnerbold.ttf */; };
 		42CF966F240BCD3200276C23 /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42CF966D240BCD3200276C23 /* timeburnernormal.ttf */; };
 		42CF9673240BD2A100276C23 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF9672240BD2A100276C23 /* RoundedButton.swift */; };
+		42CF967D240C685300276C23 /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF967C240C685300276C23 /* ImageEditorViewController.swift */; };
+		42CF967F240C686600276C23 /* PlayFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF967E240C686600276C23 /* PlayFieldViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		42CF966C240BCD3200276C23 /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
 		42CF966D240BCD3200276C23 /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
 		42CF9672240BD2A100276C23 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		42CF967C240C685300276C23 /* ImageEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
+		42CF967E240C686600276C23 /* PlayFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayFieldViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,14 +66,11 @@
 		428B3BB82407222B00C03769 /* Gridy */ = {
 			isa = PBXGroup;
 			children = (
-				428B3BB92407222B00C03769 /* AppDelegate.swift */,
-				428B3BBB2407222B00C03769 /* SceneDelegate.swift */,
-				428B3BBD2407222B00C03769 /* IntroViewController.swift */,
-				428B3BBF2407222B00C03769 /* Main.storyboard */,
-				428B3BC22407222C00C03769 /* Assets.xcassets */,
-				428B3BC42407222C00C03769 /* LaunchScreen.storyboard */,
-				428B3BC72407222C00C03769 /* Info.plist */,
+				42CF9679240C66C500276C23 /* Model */,
+				42CF9675240C667400276C23 /* View */,
+				42CF9677240C669C00276C23 /* Controller */,
 				42CF9671240BD27F00276C23 /* Customs */,
+				42CF9676240C668500276C23 /* Supporting Files */,
 			);
 			path = Gridy;
 			sourceTree = "<group>";
@@ -90,6 +91,43 @@
 				42CF966B240BCCE400276C23 /* Fonts */,
 			);
 			path = Customs;
+			sourceTree = "<group>";
+		};
+		42CF9675240C667400276C23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				428B3BBF2407222B00C03769 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42CF9676240C668500276C23 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				428B3BB92407222B00C03769 /* AppDelegate.swift */,
+				428B3BBB2407222B00C03769 /* SceneDelegate.swift */,
+				428B3BC22407222C00C03769 /* Assets.xcassets */,
+				428B3BC42407222C00C03769 /* LaunchScreen.storyboard */,
+				428B3BC72407222C00C03769 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42CF9677240C669C00276C23 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				428B3BBD2407222B00C03769 /* IntroViewController.swift */,
+				42CF967C240C685300276C23 /* ImageEditorViewController.swift */,
+				42CF967E240C686600276C23 /* PlayFieldViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42CF9679240C66C500276C23 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +203,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42CF967D240C685300276C23 /* ImageEditorViewController.swift in Sources */,
+				42CF967F240C686600276C23 /* PlayFieldViewController.swift in Sources */,
 				428B3BBE2407222B00C03769 /* IntroViewController.swift in Sources */,
 				428B3BBA2407222B00C03769 /* AppDelegate.swift in Sources */,
 				428B3BBC2407222B00C03769 /* SceneDelegate.swift in Sources */,
@@ -314,7 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4YKPW2G86;
-				INFOPLIST_FILE = Gridy/Info.plist;
+				INFOPLIST_FILE = "Gridy/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,7 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = GabrielBalta.Gridy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -332,7 +372,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4YKPW2G86;
-				INFOPLIST_FILE = Gridy/Info.plist;
+				INFOPLIST_FILE = "Gridy/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,7 +380,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = GabrielBalta.Gridy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
