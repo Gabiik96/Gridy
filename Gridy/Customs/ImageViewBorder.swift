@@ -1,22 +1,21 @@
 //
-//  RoundedButton.swift
-//  Gridy
-//
-//  Created by Gabriel Balta on 01/03/2020.
-//  Copyright © 2020 Gabriel Balta. All rights reserved.
-//
-//
 //  ImageViewBorder.swift
 //  Gridy
 //
-//  Created by Gabriel Balta on 02/03/2020.
+//  Created by Gabriel Balta on 03/03/2020.
 //  Copyright © 2020 Gabriel Balta. All rights reserved.
 //
 
 import UIKit
 
 @IBDesignable
-class BorderedImage: UIImageView{
+class RoundButton: UIButton {
+
+    @IBInspectable var cornerRadius: CGFloat = 0{
+        didSet{
+        self.layer.cornerRadius = cornerRadius
+        }
+    }
 
     @IBInspectable var borderWidth: CGFloat = 0{
         didSet{
