@@ -13,10 +13,10 @@
 		428B3BC12407222B00C03769 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428B3BBF2407222B00C03769 /* Main.storyboard */; };
 		428B3BC32407222C00C03769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 428B3BC22407222C00C03769 /* Assets.xcassets */; };
 		428B3BC62407222C00C03769 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428B3BC42407222C00C03769 /* LaunchScreen.storyboard */; };
-		42C16B13240DE9EE00651C23 /* ImageViewBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C16B12240DE9EE00651C23 /* ImageViewBorder.swift */; };
+		42C16B13240DE9EE00651C23 /* RoundedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C16B12240DE9EE00651C23 /* RoundedBtn.swift */; };
 		42CF966E240BCD3200276C23 /* timeburnerbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42CF966C240BCD3200276C23 /* timeburnerbold.ttf */; };
 		42CF966F240BCD3200276C23 /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42CF966D240BCD3200276C23 /* timeburnernormal.ttf */; };
-		42CF9673240BD2A100276C23 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF9672240BD2A100276C23 /* RoundedButton.swift */; };
+		42CF9673240BD2A100276C23 /* BorderedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF9672240BD2A100276C23 /* BorderedImage.swift */; };
 		42CF967D240C685300276C23 /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF967C240C685300276C23 /* ImageEditorViewController.swift */; };
 		42CF967F240C686600276C23 /* PlayFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF967E240C686600276C23 /* PlayFieldViewController.swift */; };
 /* End PBXBuildFile section */
@@ -30,10 +30,10 @@
 		428B3BC22407222C00C03769 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		428B3BC52407222C00C03769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		428B3BC72407222C00C03769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42C16B12240DE9EE00651C23 /* ImageViewBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewBorder.swift; sourceTree = "<group>"; };
+		42C16B12240DE9EE00651C23 /* RoundedBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBtn.swift; sourceTree = "<group>"; };
 		42CF966C240BCD3200276C23 /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
 		42CF966D240BCD3200276C23 /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
-		42CF9672240BD2A100276C23 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		42CF9672240BD2A100276C23 /* BorderedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedImage.swift; sourceTree = "<group>"; };
 		42CF967C240C685300276C23 /* ImageEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
 		42CF967E240C686600276C23 /* PlayFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayFieldViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,8 +89,8 @@
 		42CF9671240BD27F00276C23 /* Customs */ = {
 			isa = PBXGroup;
 			children = (
-				42CF9672240BD2A100276C23 /* RoundedButton.swift */,
-				42C16B12240DE9EE00651C23 /* ImageViewBorder.swift */,
+				42CF9672240BD2A100276C23 /* BorderedImage.swift */,
+				42C16B12240DE9EE00651C23 /* RoundedBtn.swift */,
 				42CF966B240BCCE400276C23 /* Fonts */,
 			);
 			path = Customs;
@@ -208,11 +208,11 @@
 			files = (
 				42CF967D240C685300276C23 /* ImageEditorViewController.swift in Sources */,
 				42CF967F240C686600276C23 /* PlayFieldViewController.swift in Sources */,
-				42C16B13240DE9EE00651C23 /* ImageViewBorder.swift in Sources */,
+				42C16B13240DE9EE00651C23 /* RoundedBtn.swift in Sources */,
 				428B3BBE2407222B00C03769 /* IntroViewController.swift in Sources */,
 				428B3BBA2407222B00C03769 /* AppDelegate.swift in Sources */,
 				428B3BBC2407222B00C03769 /* SceneDelegate.swift in Sources */,
-				42CF9673240BD2A100276C23 /* RoundedButton.swift in Sources */,
+				42CF9673240BD2A100276C23 /* BorderedImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

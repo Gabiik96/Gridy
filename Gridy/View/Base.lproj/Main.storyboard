@@ -145,129 +145,265 @@
         <scene sceneID="srY-F3-lal">
             <objects>
                 <viewController title="ImageEditorView" id="58j-jS-QyZ" customClass="ImageEditorViewController" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tEx-XT-XtW">
+                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="tEx-XT-XtW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XiM-pM-zvL">
-                                <rect key="frame" x="0.0" y="-20" width="375" height="687"/>
+                            <imageView clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XiM-pM-zvL" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                <rect key="frame" x="16" y="51" width="339" height="432"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="-500"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="Color1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <stackView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="gAd-DM-1cZ">
+                            <stackView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gAd-DM-1cZ">
                                 <rect key="frame" x="20" y="148.5" width="335" height="335"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="2hz-g0-WL7">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="83"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2hz-g0-WL7">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="84"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TBr-ec-oNr">
-                                                <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TBr-ec-oNr" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="TBr-ec-oNr" secondAttribute="height" multiplier="1:1" id="yU0-CD-kkH"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ar-lb-hks">
-                                                <rect key="frame" x="84" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ar-lb-hks" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="84" y="0.0" width="83.5" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9Ar-lb-hks" secondAttribute="height" multiplier="1:1" id="yDJ-Xt-e9v"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="isx-ac-bHQ">
-                                                <rect key="frame" x="168" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="isx-ac-bHQ" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="167.5" y="0.0" width="84" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="isx-ac-bHQ" secondAttribute="height" multiplier="1:1" id="mqt-qm-wSj"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CkE-g7-gc0">
-                                                <rect key="frame" x="252" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CkE-g7-gc0" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="251.5" y="0.0" width="83.5" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="CkE-g7-gc0" secondAttribute="height" multiplier="1:1" id="bav-9K-P9C"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="aV4-Ts-IIk">
-                                        <rect key="frame" x="0.0" y="84" width="335" height="83"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aV4-Ts-IIk">
+                                        <rect key="frame" x="0.0" y="84" width="335" height="83.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NQS-dC-FfD">
-                                                <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NQS-dC-FfD" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="83.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="NQS-dC-FfD" secondAttribute="height" multiplier="1:1" id="MvD-a6-5iY"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7jQ-fE-YEb">
-                                                <rect key="frame" x="84" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7jQ-fE-YEb" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="84" y="0.0" width="83.5" height="83.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="7jQ-fE-YEb" secondAttribute="height" multiplier="1:1" id="cTU-FG-ugv"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dhi-AE-da7">
-                                                <rect key="frame" x="168" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dhi-AE-da7" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="167.5" y="0.0" width="84" height="83.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Dhi-AE-da7" secondAttribute="height" multiplier="1:1" id="bbR-G9-gXi"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-ZA-SfF">
-                                                <rect key="frame" x="252" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-ZA-SfF" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="251.5" y="0.0" width="83.5" height="83.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ObT-ZA-SfF" secondAttribute="height" multiplier="1:1" id="ZNa-q8-EAa"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Pjq-bB-eUY">
-                                        <rect key="frame" x="0.0" y="168" width="335" height="83"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Pjq-bB-eUY">
+                                        <rect key="frame" x="0.0" y="167.5" width="335" height="84"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rn1-T1-1QR">
-                                                <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rn1-T1-1QR" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="rn1-T1-1QR" secondAttribute="height" multiplier="1:1" id="9Yv-DB-8p4"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hlO-NB-K4X">
-                                                <rect key="frame" x="84" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hlO-NB-K4X" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="84" y="0.0" width="83.5" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="hlO-NB-K4X" secondAttribute="height" multiplier="1:1" id="N1S-Zq-13b"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b5r-Sr-TRi">
-                                                <rect key="frame" x="168" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b5r-Sr-TRi" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="167.5" y="0.0" width="84" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="b5r-Sr-TRi" secondAttribute="height" multiplier="1:1" id="8eW-7A-7yn"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pLM-0g-evN">
-                                                <rect key="frame" x="252" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pLM-0g-evN" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="251.5" y="0.0" width="83.5" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="pLM-0g-evN" secondAttribute="height" multiplier="1:1" id="hPQ-ig-AtX"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="2k1-gH-drK">
-                                        <rect key="frame" x="0.0" y="252" width="335" height="83"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2k1-gH-drK">
+                                        <rect key="frame" x="0.0" y="251.5" width="335" height="83.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xp2-hf-fEP">
-                                                <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xp2-hf-fEP" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="83.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Xp2-hf-fEP" secondAttribute="height" multiplier="1:1" id="dXV-wx-kRI"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hwe-3o-xx8">
-                                                <rect key="frame" x="84" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hwe-3o-xx8" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="84" y="0.0" width="83.5" height="83.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Hwe-3o-xx8" secondAttribute="height" multiplier="1:1" id="ZY9-bm-1et"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g7d-gL-jIc">
-                                                <rect key="frame" x="168" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g7d-gL-jIc" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="167.5" y="0.0" width="84" height="83.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="g7d-gL-jIc" secondAttribute="height" multiplier="1:1" id="0m5-RA-Fsg"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="enl-8d-gAY">
-                                                <rect key="frame" x="252" y="0.0" width="83" height="83"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="enl-8d-gAY" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="251.5" y="0.0" width="83.5" height="83.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="enl-8d-gAY" secondAttribute="height" multiplier="1:1" id="Bsp-gu-gyM"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                         </subviews>
                                     </stackView>
@@ -312,22 +448,23 @@ zoom, rotate, reposition</string>
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XiM-pM-zvL" firstAttribute="leading" secondItem="Xhv-X0-iqf" secondAttribute="leading" id="Ca7-HY-FY3"/>
+                            <constraint firstItem="Xhv-X0-iqf" firstAttribute="trailing" secondItem="XiM-pM-zvL" secondAttribute="trailing" constant="20" id="As7-01-muF"/>
                             <constraint firstItem="gAd-DM-1cZ" firstAttribute="top" secondItem="4c3-ht-hSj" secondAttribute="bottom" constant="30" id="Cd6-YY-kos"/>
                             <constraint firstItem="gAd-DM-1cZ" firstAttribute="centerX" secondItem="tEx-XT-XtW" secondAttribute="centerX" id="Cis-z2-7mG"/>
+                            <constraint firstItem="XiM-pM-zvL" firstAttribute="leading" secondItem="Xhv-X0-iqf" secondAttribute="leading" constant="20" id="DCl-bA-WYJ"/>
                             <constraint firstItem="3XA-vT-kLV" firstAttribute="centerX" secondItem="tEx-XT-XtW" secondAttribute="centerX" id="HGU-JR-j6S"/>
                             <constraint firstItem="gAd-DM-1cZ" firstAttribute="leading" secondItem="Xhv-X0-iqf" secondAttribute="leading" constant="20" id="Ih4-LV-PDL"/>
                             <constraint firstItem="4c3-ht-hSj" firstAttribute="top" secondItem="Xhv-X0-iqf" secondAttribute="top" constant="80" id="KjB-nl-iCL"/>
                             <constraint firstItem="Xhv-X0-iqf" firstAttribute="trailing" secondItem="gAd-DM-1cZ" secondAttribute="trailing" constant="20" id="M6m-cz-GGK"/>
-                            <constraint firstItem="XiM-pM-zvL" firstAttribute="centerX" secondItem="tEx-XT-XtW" secondAttribute="centerX" id="MbK-Oh-RXh"/>
+                            <constraint firstItem="XiM-pM-zvL" firstAttribute="top" secondItem="4c3-ht-hSj" secondAttribute="bottom" constant="30" id="MMy-QZ-xCi"/>
                             <constraint firstItem="Xhv-X0-iqf" firstAttribute="bottom" secondItem="3XA-vT-kLV" secondAttribute="bottom" constant="30" id="Wjm-j7-gDw"/>
                             <constraint firstItem="3XA-vT-kLV" firstAttribute="top" secondItem="gAd-DM-1cZ" secondAttribute="bottom" constant="30" id="aNH-8c-0RF"/>
                             <constraint firstItem="2ya-qF-5Ms" firstAttribute="top" secondItem="Xhv-X0-iqf" secondAttribute="top" constant="20" id="dqa-mq-wPi"/>
                             <constraint firstItem="Xhv-X0-iqf" firstAttribute="trailing" secondItem="2ya-qF-5Ms" secondAttribute="trailing" constant="20" id="jWu-9G-O5F"/>
-                            <constraint firstItem="XiM-pM-zvL" firstAttribute="top" secondItem="tEx-XT-XtW" secondAttribute="top" constant="-20" id="scC-Lx-Z7Y"/>
-                            <constraint firstAttribute="bottom" secondItem="XiM-pM-zvL" secondAttribute="bottom" id="x8v-h9-Sdc"/>
+                            <constraint firstItem="3XA-vT-kLV" firstAttribute="top" secondItem="XiM-pM-zvL" secondAttribute="bottom" constant="30" id="nEE-Q2-tLV"/>
+                            <constraint firstItem="XiM-pM-zvL" firstAttribute="centerX" secondItem="tEx-XT-XtW" secondAttribute="centerX" id="wCs-Yo-Knk"/>
                             <constraint firstItem="4c3-ht-hSj" firstAttribute="centerX" secondItem="tEx-XT-XtW" secondAttribute="centerX" id="zAI-KC-dbD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xhv-X0-iqf"/>
@@ -339,7 +476,7 @@ zoom, rotate, reposition</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzV-O3-oIF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1823.1884057971015" y="113.31521739130436"/>
+            <point key="canvasLocation" x="1821.5999999999999" y="112.89355322338831"/>
         </scene>
         <!--PlayfieldView-->
         <scene sceneID="Apl-jc-rjT">
@@ -349,7 +486,7 @@ zoom, rotate, reposition</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yQ-II-2Ap" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yQ-II-2Ap" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
                                 <rect key="frame" x="16" y="20" width="142.5" height="35"/>
                                 <color key="backgroundColor" name="Color1"/>
                                 <constraints>
@@ -365,19 +502,19 @@ zoom, rotate, reposition</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Gridy-name-small-green" translatesAutoresizingMaskIntoConstraints="NO" id="NZZ-iE-ym5">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-name-small-green" translatesAutoresizingMaskIntoConstraints="NO" id="NZZ-iE-ym5">
                                 <rect key="frame" x="178.5" y="20" width="70" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="lIr-gi-qNZ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rT-rJ-lJo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rT-rJ-lJo">
                                 <rect key="frame" x="324.5" y="20" width="34.5" height="36.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="moves:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sb8-Lh-hch">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="moves:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sb8-Lh-hch">
                                 <rect key="frame" x="258.5" y="37.5" width="52" height="19"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

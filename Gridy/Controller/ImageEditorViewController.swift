@@ -14,14 +14,16 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     
     var imagePicked: UIImage!
     
+    let screenSize = UIScreen.main.bounds
+    
     @IBOutlet weak var pickedImage: UIImageView!
     
-
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
         pickedImage.image = imagePicked
-        
+    
     }
     
     override func viewDidLoad() {
@@ -39,7 +41,7 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     
     
     
-    
+   
     
     
     
