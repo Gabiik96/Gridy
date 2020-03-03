@@ -28,6 +28,14 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
         
     }
     
+    @IBAction func XBtnPressed(_ sender: UIButton) {
+       if let nav = self.navigationController {
+                nav.popViewController(animated: true)
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
     
     
     
@@ -35,4 +43,5 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     
     
     
-}
+    
+
