@@ -21,6 +21,7 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
     var localImages = [UIImage].init()
     var imageToPass: UIImage?
     
+    
 
     override func viewWillAppear(_ animated: Bool) {
         PickBtnLbl.alignTextBelow()
