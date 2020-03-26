@@ -145,12 +145,13 @@
         <scene sceneID="srY-F3-lal">
             <objects>
                 <viewController title="ImageEditorView" id="58j-jS-QyZ" customClass="ImageEditorViewController" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="tEx-XT-XtW">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="tEx-XT-XtW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XiM-pM-zvL">
+                            <imageView clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XiM-pM-zvL">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="-500"/>
@@ -160,11 +161,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttU-ji-ej7">
+                            <view opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttU-ji-ej7">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <stackView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gAd-DM-1cZ">
+                            <stackView opaque="NO" multipleTouchEnabled="YES" alpha="0.84999999999999998" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gAd-DM-1cZ">
                                 <rect key="frame" x="20" y="192.5" width="374" height="374"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2hz-g0-WL7">
@@ -422,7 +423,7 @@ zoom, rotate, reposition</string>
                                 <color key="textColor" name="Color6"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XA-vT-kLV" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XA-vT-kLV" userLabel="Start" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
                                 <rect key="frame" x="109" y="596.5" width="196" height="235.5"/>
                                 <color key="backgroundColor" name="Color1"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="60"/>
@@ -436,15 +437,17 @@ zoom, rotate, reposition</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="startBtnPressed:" destination="58j-jS-QyZ" eventType="touchUpInside" id="O7V-6c-jzX"/>
                                     <segue destination="VZ7-En-4JS" kind="show" identifier="goToPlayFieldView" id="2Sa-Pd-KuZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ya-qF-5Ms">
-                                <rect key="frame" x="364" y="64" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ya-qF-5Ms">
+                                <rect key="frame" x="354" y="74" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="2ya-qF-5Ms" secondAttribute="height" multiplier="1:1" id="BBr-32-aGD"/>
+                                    <constraint firstAttribute="width" secondItem="2ya-qF-5Ms" secondAttribute="height" multiplier="1:1" id="3cq-Kd-2VO"/>
                                     <constraint firstAttribute="height" constant="30" id="T50-OF-w6o"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <color key="tintColor" name="Color6"/>
                                 <state key="normal" title="XButton" image="xmark" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
@@ -452,38 +455,36 @@ zoom, rotate, reposition</string>
                                     </preferredSymbolConfiguration>
                                 </state>
                                 <connections>
-                                    <action selector="XBtnPressed:" destination="58j-jS-QyZ" eventType="touchUpInside" id="UzB-tN-fyh"/>
+                                    <action selector="XBtnPressed:" destination="58j-jS-QyZ" eventType="touchUpInside" id="BKh-Lu-vZf"/>
                                 </connections>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="XiM-pM-zvL" firstAttribute="trailing" secondItem="Xhv-X0-iqf" secondAttribute="trailing" id="3o4-1K-Plp"/>
                             <constraint firstAttribute="bottom" secondItem="ttU-ji-ej7" secondAttribute="bottom" id="9S0-2Y-3DQ"/>
                             <constraint firstItem="gAd-DM-1cZ" firstAttribute="top" secondItem="4c3-ht-hSj" secondAttribute="bottom" constant="30" id="Cd6-YY-kos"/>
                             <constraint firstItem="gAd-DM-1cZ" firstAttribute="centerX" secondItem="tEx-XT-XtW" secondAttribute="centerX" id="Cis-z2-7mG"/>
-                            <constraint firstItem="Xhv-X0-iqf" firstAttribute="trailing" secondItem="2ya-qF-5Ms" secondAttribute="trailing" constant="20" id="Gnu-to-ET5"/>
+                            <constraint firstItem="2ya-qF-5Ms" firstAttribute="top" secondItem="Xhv-X0-iqf" secondAttribute="top" constant="30" id="EvD-wj-WTL"/>
                             <constraint firstItem="3XA-vT-kLV" firstAttribute="centerX" secondItem="tEx-XT-XtW" secondAttribute="centerX" id="HGU-JR-j6S"/>
                             <constraint firstItem="gAd-DM-1cZ" firstAttribute="leading" secondItem="Xhv-X0-iqf" secondAttribute="leading" constant="20" id="Ih4-LV-PDL"/>
                             <constraint firstItem="4c3-ht-hSj" firstAttribute="top" secondItem="Xhv-X0-iqf" secondAttribute="top" constant="80" id="KjB-nl-iCL"/>
                             <constraint firstItem="Xhv-X0-iqf" firstAttribute="trailing" secondItem="gAd-DM-1cZ" secondAttribute="trailing" constant="20" id="M6m-cz-GGK"/>
                             <constraint firstItem="Xhv-X0-iqf" firstAttribute="trailing" secondItem="ttU-ji-ej7" secondAttribute="trailing" id="Mbq-LU-sGI"/>
-                            <constraint firstItem="XiM-pM-zvL" firstAttribute="leading" secondItem="Xhv-X0-iqf" secondAttribute="leading" id="P5B-VM-mMo"/>
                             <constraint firstItem="Xhv-X0-iqf" firstAttribute="bottom" secondItem="3XA-vT-kLV" secondAttribute="bottom" constant="30" id="Wjm-j7-gDw"/>
                             <constraint firstItem="3XA-vT-kLV" firstAttribute="top" secondItem="gAd-DM-1cZ" secondAttribute="bottom" constant="30" id="aNH-8c-0RF"/>
                             <constraint firstItem="ttU-ji-ej7" firstAttribute="top" secondItem="tEx-XT-XtW" secondAttribute="top" id="dKE-wE-R1B"/>
-                            <constraint firstItem="2ya-qF-5Ms" firstAttribute="top" secondItem="Xhv-X0-iqf" secondAttribute="top" constant="20" id="dqa-mq-wPi"/>
-                            <constraint firstItem="XiM-pM-zvL" firstAttribute="bottom" secondItem="tEx-XT-XtW" secondAttribute="bottom" id="f5v-9T-FFO"/>
-                            <constraint firstItem="XiM-pM-zvL" firstAttribute="top" secondItem="tEx-XT-XtW" secondAttribute="top" id="mPU-SX-kZV"/>
                             <constraint firstItem="ttU-ji-ej7" firstAttribute="leading" secondItem="Xhv-X0-iqf" secondAttribute="leading" id="ogm-eQ-UEM"/>
+                            <constraint firstItem="Xhv-X0-iqf" firstAttribute="trailing" secondItem="2ya-qF-5Ms" secondAttribute="trailing" constant="30" id="wWp-K4-BRI"/>
                             <constraint firstItem="4c3-ht-hSj" firstAttribute="centerX" secondItem="tEx-XT-XtW" secondAttribute="centerX" id="zAI-KC-dbD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xhv-X0-iqf"/>
                     </view>
                     <navigationItem key="navigationItem" id="Tw1-k0-guC"/>
                     <connections>
+                        <outlet property="XBtn" destination="2ya-qF-5Ms" id="GSm-d4-JHf"/>
                         <outlet property="alphaView" destination="ttU-ji-ej7" id="ta7-Mm-sxJ"/>
                         <outlet property="bigStackView" destination="gAd-DM-1cZ" id="G2i-IT-Xtt"/>
                         <outlet property="pickedImage" destination="XiM-pM-zvL" id="80H-7M-TnD"/>
+                        <outlet property="view" destination="tEx-XT-XtW" id="Hsj-bc-RCQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzV-O3-oIF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -499,7 +500,7 @@ zoom, rotate, reposition</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yQ-II-2Ap" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
-                                <rect key="frame" x="16" y="64" width="111.5" height="35"/>
+                                <rect key="frame" x="16" y="64" width="181.5" height="35"/>
                                 <color key="backgroundColor" name="Color1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="TRc-Xy-neq"/>
@@ -515,7 +516,7 @@ zoom, rotate, reposition</string>
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-name-small-green" translatesAutoresizingMaskIntoConstraints="NO" id="NZZ-iE-ym5">
-                                <rect key="frame" x="147.5" y="64" width="140" height="40"/>
+                                <rect key="frame" x="217.5" y="64" width="70" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="lIr-gi-qNZ"/>
                                 </constraints>

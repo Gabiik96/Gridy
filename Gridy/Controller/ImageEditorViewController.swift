@@ -11,83 +11,89 @@ import AVFoundation
 import Photos
 import CoreGraphics
 
-class ImageEditorViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class ImageEditorViewController: UIViewController, UINavigationControllerDelegate {
     
     var imagePicked: UIImage!
     
-    let screenSize = UIScreen.main.bounds
-    
-
-    
-    
-  
-  func createRect() {
-      pickedImage.image = imagePicked
-      
-      
-      // Set white background color with custom alpha
-      alphaView.backgroundColor = UIColor(white: 255/255, alpha: 0.85)
-
-      // Create the initial layer from the stackView bounds.
-      let maskLayer = CAShapeLayer()
-      maskLayer.frame = alphaView.bounds
-
-      // Create the frame to cover whole stackView
-      let rect = CGRect(
-          x: bigStackView.frame.minX,
-          y: bigStackView.frame.minY,
-          width: bigStackView.bounds.width,
-          height: bigStackView.bounds.height)
-
-      // Create the path
-      let path = UIBezierPath(rect: alphaView.bounds)
-      maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
-
-      // Append the framer to the path so that it is subtracted
-      path.append(UIBezierPath(rect: rect))
-      maskLayer.path = path.cgPath
-
-      // Set the mask of the alphaview
-      alphaView.layer.mask = maskLayer
-  }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    @IBOutlet var vieww: UIView!
     @IBOutlet weak var alphaView: UIView!
     @IBOutlet weak var pickedImage: UIImageView!
     @IBOutlet weak var bigStackView: UIStackView!
+    @IBOutlet weak var XBtn: UIButton!
     
     
     override func viewWillAppear(_ animated: Bool) {
         pickedImage.image = imagePicked
+        XBtn.setNeedsDisplay()
+        alphaView.setNeedsDisplay()
         
 
  
     }
     
-    
     override func viewDidLoad() {
+        createRect()
+        view.bringSubviewToFront(XBtn)
         
-               createRect()
+
 
         
     }
     
-    @IBAction func XBtnPressed(_ sender: UIButton) {
+    @IBAction func XBtnPressed(_ sender: Any) {
        if let nav = self.navigationController {
                 nav.popViewController(animated: true)
             } else {
                 self.dismiss(animated: true, completion: nil)
             }
         print("XButton pressed")
-        }
     }
+    
+    
+    
+    @IBAction func startBtnPressed(_ sender: Any) {
+        print("startBtn pressed")
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func createRect() {
+        pickedImage.image = imagePicked
+        
+        // Set white background color with custom alpha
+        alphaView.backgroundColor = UIColor(white: 255/255, alpha: 0.85)
+
+        // Create the initial layer from the stackView bounds.
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = alphaView.bounds
+
+        // Create the frame to cover whole stackView
+        let rect = CGRect(
+            x: bigStackView.frame.minX,
+            y: bigStackView.frame.minY,
+            width: view.frame.size.width - 40,
+            height: bigStackView.frame.size.height)
+
+        // Create the path
+        let path = UIBezierPath(rect: alphaView.bounds)
+        maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
+
+        // Append the framer to the path so that it is subtracted
+        path.append(UIBezierPath(rect: rect))
+        maskLayer.path = path.cgPath
+
+        // Set the mask of the alphaview
+        alphaView.layer.mask = maskLayer
+    }
+      
+}
     
     
     
