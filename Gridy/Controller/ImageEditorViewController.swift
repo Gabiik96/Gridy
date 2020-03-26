@@ -15,12 +15,18 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     
     var imagePicked: UIImage!
     
+ 
+//MARK:- IBOutlets
+
     @IBOutlet var vieww: UIView!
     @IBOutlet weak var alphaView: UIView!
     @IBOutlet weak var pickedImage: UIImageView!
     @IBOutlet weak var bigStackView: UIStackView!
     @IBOutlet weak var XBtn: UIButton!
     
+    
+    
+//MARK:- View lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         pickedImage.image = imagePicked
@@ -40,6 +46,8 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
         
     }
     
+//MARK: - IBActions
+    
     @IBAction func XBtnPressed(_ sender: Any) {
        if let nav = self.navigationController {
                 nav.popViewController(animated: true)
@@ -55,6 +63,7 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
         print("startBtn pressed")
     }
     
+//MARK: - Functions
     
     
     
