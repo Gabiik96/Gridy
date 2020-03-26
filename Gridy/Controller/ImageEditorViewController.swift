@@ -12,8 +12,11 @@ import Photos
 import CoreGraphics
 
 class ImageEditorViewController: UIViewController, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
-    
+
+//MARK:- Global variables
+
     var imagePicked: UIImage!
+    var initialImageViewOffSet = CGPoint()
  
 //MARK:- IBOutlets
 
@@ -70,14 +73,25 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
 //MARK: - Functions
     
     @objc func movePickedImage(_ sender: UIPanGestureRecognizer) {
-       
+        let translation = sender.translation(in: pickedImage.superview)
+        
+        if sender.state == .began {
+            initialImageViewOffSet = pickedImage.frame.origin
+        }
+        
+        let position = CGPoint(x: translation.x + initialImageViewOffSet.x - pickedImage.frame.origin.x,
+                               y: translation.y + initialImageViewOffSet.y - pickedImage.frame.origin.y)
+        pickedImage.transform = pickedImage.transform.translatedBy(x: position.x, y: position.y)
     }
           
     @objc func rotatePickedImage(_ sender: UIRotationGestureRecognizer) {
-         
+        pickedImage.transform = pickedImage.transform.rotated(by: sender.rotation)
+        sender.rotation = 0
     }
           
     @objc func scalePickedImage(_ sender: UIPinchGestureRecognizer) {
+        pickedImage.transform = pickedImage.transform.scaledBy(x: sender.scale, y: sender.scale)
+        sender.scale = 1
         
     }
       
