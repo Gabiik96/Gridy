@@ -11,10 +11,9 @@ import AVFoundation
 import Photos
 import CoreGraphics
 
-class ImageEditorViewController: UIViewController, UINavigationControllerDelegate {
+class ImageEditorViewController: UIViewController, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
     
     var imagePicked: UIImage!
-    
  
 //MARK:- IBOutlets
 
@@ -33,16 +32,23 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
         XBtn.setNeedsDisplay()
         alphaView.setNeedsDisplay()
         
-
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(movePickedImage(_:)))
+        pickedImage.addGestureRecognizer(panGestureRecognizer)
+        panGestureRecognizer.delegate = self
+                   
+        let rotationGestureRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(rotatePickedImage(_:)))
+        pickedImage.addGestureRecognizer(rotationGestureRecognizer)
+        rotationGestureRecognizer.delegate = self
+                   
+        let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(scalePickedImage(_:)))
+        pickedImage.addGestureRecognizer(pinchGestureRecognizer)
+        pinchGestureRecognizer.delegate = self
  
     }
     
     override func viewDidLoad() {
         createRect()
         view.bringSubviewToFront(XBtn)
-        
-
-
         
     }
     
@@ -57,20 +63,41 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
         print("XButton pressed")
     }
     
-    
-    
     @IBAction func startBtnPressed(_ sender: Any) {
         print("startBtn pressed")
     }
     
 //MARK: - Functions
     
-    
-    
-    
-    
-    
-    
+    @objc func movePickedImage(_ sender: UIPanGestureRecognizer) {
+       
+    }
+          
+    @objc func rotatePickedImage(_ sender: UIRotationGestureRecognizer) {
+         
+    }
+          
+    @objc func scalePickedImage(_ sender: UIPinchGestureRecognizer) {
+        
+    }
+      
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                               shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer)
+            -> Bool {
+                
+        // simultaneous gesture recognition will be supported for pickedImage view
+        if gestureRecognizer.view != pickedImage {
+            return false
+        }
+                
+        // TapGestureRecognition will not be supported by simultaneous gesture recognition
+        if gestureRecognizer is UITapGestureRecognizer
+            || otherGestureRecognizer is UITapGestureRecognizer{
+            return false
+        }
+                
+        return true
+    }
     
     
     func createRect() {

@@ -500,7 +500,7 @@ zoom, rotate, reposition</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yQ-II-2Ap" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
-                                <rect key="frame" x="16" y="64" width="181.5" height="35"/>
+                                <rect key="frame" x="16" y="64" width="111.5" height="35"/>
                                 <color key="backgroundColor" name="Color1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="TRc-Xy-neq"/>
@@ -516,7 +516,7 @@ zoom, rotate, reposition</string>
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-name-small-green" translatesAutoresizingMaskIntoConstraints="NO" id="NZZ-iE-ym5">
-                                <rect key="frame" x="217.5" y="64" width="70" height="40"/>
+                                <rect key="frame" x="147.5" y="64" width="140" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="lIr-gi-qNZ"/>
                                 </constraints>
