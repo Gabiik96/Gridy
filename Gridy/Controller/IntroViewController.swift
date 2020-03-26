@@ -116,30 +116,39 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
        }
 
 
-       func troubleAlert(message: String?) {
-           let alertController = UIAlertController(title: "Oops...", message:message , preferredStyle: .alert)
-           let OKAction = UIAlertAction(title: "Got it", style: .cancel)
-           alertController.addAction(OKAction)
-           present(alertController, animated: true)
-       }
+    func troubleAlert(message: String?) {
+        let alertController = UIAlertController(title: "Oops...", message:message , preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "Got it", style: .cancel)
+        alertController.addAction(OKAction)
+        present(alertController, animated: true)
+    }
        
-
-       
-       func collectLocalImageSet() {
-           localImages.removeAll()
+    func collectLocalImageSet() {
+        localImages.removeAll()
         let imageNames = ["car", "cat", "christmas", "city", "dog", "ducati", "joker", "smurf", "starWars"]
-
-           for name in imageNames {
-               if let image = UIImage.init(named: name) {
-                   localImages.append(image)
-               }
-           }
-       }
+        
+        for name in imageNames {
+            if let image = UIImage.init(named: name) {
+                localImages.append(image)
+            }
+        }
+    }
        
-       
-       func configure() {
-           collectLocalImageSet()
-       }
+    func configure() {
+        collectLocalImageSet()
+    }
+    
+    func randomImage() {
+    
+        if localImages.count > 0 {
+            let randomIndex = Int(arc4random_uniform(UInt32(localImages.count)))
+            let newImage = localImages[randomIndex]
+            self.imageToPass = newImage
+            self.performSegue(withIdentifier: "getToImageEditorView", sender: nil)
+        } else {
+            print("Error choosing random image from assets!")
+        }
+    }
        
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -152,14 +161,13 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        configure()
         
-        // Do any additional setup after loading the view.
     }
     
 
     @IBAction func PickBtnPressed(_ sender: RoundButton) {
-
+        randomImage()
     }
     @IBAction func CameraBtnPressed(_ sender: RoundButton) {
         displayCamera()
