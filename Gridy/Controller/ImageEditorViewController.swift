@@ -17,18 +17,30 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
 
     var imagePicked: UIImage!
     var initialImageViewOffSet = CGPoint()
+    var imageSquares: [UIImage] = []
  
 //MARK:- IBOutlets
 
     @IBOutlet var vieww: UIView!
     @IBOutlet weak var alphaView: UIView!
     @IBOutlet weak var pickedImage: UIImageView!
-    @IBOutlet weak var bigStackView: UIStackView!
+    @IBOutlet weak var squareImagesStack: UIStackView!
     @IBOutlet weak var XBtn: UIButton!
+    @IBOutlet weak var firstSquareStack: UIStackView!
+    @IBOutlet weak var secondSquareStack: UIStackView!
+    @IBOutlet weak var thirdSquareStack: UIStackView!
+    @IBOutlet weak var fourthSquareStack: UIStackView!
     
     
     
 //MARK:- View lifecycle
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "getToPlayFieldView" {
+            let nextView: PlayFieldViewController = segue.destination as! PlayFieldViewController
+            nextView.pickedSquares = self.imageSquares
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         pickedImage.image = imagePicked
@@ -51,7 +63,9 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     
     override func viewDidLoad() {
         createRect()
-        view.bringSubviewToFront(XBtn)
+        
+    
+
         
     }
     
@@ -63,11 +77,19 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
             } else {
                 self.dismiss(animated: true, completion: nil)
             }
-        print("XButton pressed")
     }
     
     @IBAction func startBtnPressed(_ sender: Any) {
-        print("startBtn pressed")
+        var index = 1
+        while index <= 4 {
+            createPuzzleSquareImage(square: firstSquareStack.viewWithTag(index)!)
+            createPuzzleSquareImage(square: secondSquareStack.viewWithTag(index)!)
+            createPuzzleSquareImage(square: thirdSquareStack.viewWithTag(index)!)
+            createPuzzleSquareImage(square: fourthSquareStack.viewWithTag(index)!)
+            index += 1
+        }
+        performSegue(withIdentifier: "getToPlayFieldView", sender: nil)
+        imageSquares.removeAll()
     }
     
 //MARK: - Functions
@@ -126,10 +148,10 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
 
         // Create the frame to cover whole stackView
         let rect = CGRect(
-            x: bigStackView.frame.minX,
-            y: bigStackView.frame.minY,
+            x: squareImagesStack.frame.minX,
+            y: squareImagesStack.frame.minY,
             width: view.frame.size.width - 40,
-            height: bigStackView.frame.size.height)
+            height: squareImagesStack.frame.size.height)
 
         // Create the path
         let path = UIBezierPath(rect: alphaView.bounds)
@@ -142,8 +164,18 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
         // Set the mask of the alphaview
         alphaView.layer.mask = maskLayer
     }
-      
+    
+    func createPuzzleSquareImage(square: UIView) {
+          
+        UIGraphicsBeginImageContextWithOptions(square.bounds.size, false, 0.0)
+        vieww.drawHierarchy(in: square.bounds, afterScreenUpdates: true)
+        let screenshot = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        imageSquares.append(screenshot)
+
+    }
 }
+
     
     
     
