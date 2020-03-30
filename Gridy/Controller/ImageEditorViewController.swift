@@ -41,14 +41,13 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "getToPlayFieldView" {
             let nextView: PlayFieldViewController = segue.destination as! PlayFieldViewController
-            nextView.pickedSquares = self.imageSquares
+            nextView.puzzle.pickedSquares = self.imageSquares
+            nextView.puzzle.hintImage = self.imageCropped
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         pickedImage.image = imagePicked
-        XBtn.setNeedsDisplay()
-        alphaView.setNeedsDisplay()
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(movePickedImage(_:)))
         pickedImage.addGestureRecognizer(panGestureRecognizer)
@@ -83,14 +82,8 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     }
     
     @IBAction func startBtnPressed(_ sender: Any) {
-        var index = 1
-        while index <= 4 {
-            createPuzzleSquareImage(square: firstSquareStack.viewWithTag(index)!)
-            createPuzzleSquareImage(square: secondSquareStack.viewWithTag(index)!)
-            createPuzzleSquareImage(square: thirdSquareStack.viewWithTag(index)!)
-            createPuzzleSquareImage(square: fourthSquareStack.viewWithTag(index)!)
-            index += 1
-        }
+        createPuzzleSquareImage(square: cropAreaView)
+        imageSquares = crop.cropImage(for: imageCropped)
         performSegue(withIdentifier: "getToPlayFieldView", sender: nil)
         imageSquares.removeAll()
     }
@@ -169,12 +162,14 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     }
     
     func createPuzzleSquareImage(square: UIView) {
-          
-        UIGraphicsBeginImageContextWithOptions(square.bounds.size, false, 0.0)
-        vieww.drawHierarchy(in: square.bounds, afterScreenUpdates: true)
+
+        
+        UIGraphicsBeginImageContextWithOptions(cropAreaView.bounds.size, true, 0.0)
+        cropAreaView.drawHierarchy(in: cropAreaView.bounds, afterScreenUpdates: true)
         let screenshot = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        imageSquares.append(screenshot)
+        
+        imageCropped = screenshot
 
     }
 }
