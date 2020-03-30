@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fsJ-IB-2AQ">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -14,14 +14,14 @@
             <objects>
                 <viewController title="IntroView" id="BYZ-38-t0r" customClass="IntroViewController" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gr8-LH-BKc">
-                                <rect key="frame" x="0.0" y="44" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-Image_1VC" translatesAutoresizingMaskIntoConstraints="NO" id="lxB-0d-MXT">
-                                        <rect key="frame" x="20" y="20" width="374" height="408"/>
+                                        <rect key="frame" x="20" y="20" width="335" height="293.5"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -35,10 +35,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" restorationIdentifier="BottomView" translatesAutoresizingMaskIntoConstraints="NO" id="ZZC-iT-BNE">
-                                <rect key="frame" x="0.0" y="414" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="63K-hO-0r9" customClass="RoundButton" customModule="Gridy" customModuleProvider="target" propertyAccessControl="none">
-                                        <rect key="frame" x="147" y="20" width="120" height="90"/>
+                                        <rect key="frame" x="127.5" y="20" width="120" height="90"/>
                                         <color key="backgroundColor" name="Color3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="9K5-4q-QnY"/>
@@ -58,13 +58,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="– OR load your own –" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxV-o9-47u">
-                                        <rect key="frame" x="130" y="140" width="154" height="19"/>
+                                        <rect key="frame" x="110.5" y="140" width="154" height="19"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" name="Color6"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="wlI-pE-i1u">
-                                        <rect key="frame" x="72" y="174" width="270" height="90"/>
+                                        <rect key="frame" x="52.5" y="174" width="270" height="90"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xqx-dh-vvb" customClass="RoundButton" customModule="Gridy" customModuleProvider="target" propertyAccessControl="none">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="90"/>
@@ -146,31 +146,37 @@
             <objects>
                 <viewController title="ImageEditorView" id="58j-jS-QyZ" customClass="ImageEditorViewController" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="tEx-XT-XtW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XiM-pM-zvL">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="-500"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" name="Color1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RhU-TM-UPj">
-                                <rect key="frame" x="20" y="192.5" width="374" height="374"/>
+                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHC-9F-P6l">
+                                <rect key="frame" x="20" y="148.5" width="335" height="335"/>
+                                <subviews>
+                                    <imageView clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XiM-pM-zvL">
+                                        <rect key="frame" x="-20" y="-148.5" width="375" height="667"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="-500"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="Color1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                            </view>
+                            <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttU-ji-ej7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gAd-DM-1cZ">
-                                <rect key="frame" x="20" y="192.5" width="374" height="374"/>
+                                <rect key="frame" x="20" y="148.5" width="335" height="335"/>
                                 <subviews>
                                     <stackView opaque="NO" tag="1" contentMode="scaleToFill" distribution="fillEqually" spacing="-0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2hz-g0-WL7">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="94"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="84"/>
                                         <subviews>
                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="euz-da-E2K" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="euz-da-E2K" secondAttribute="height" multiplier="1:1" id="1b2-ja-B5J"/>
                                                 </constraints>
@@ -184,7 +190,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Qi-xj-KMY" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="93.5" y="0.0" width="94" height="94"/>
+                                                <rect key="frame" x="83.5" y="0.0" width="84.5" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9Qi-xj-KMY" secondAttribute="height" multiplier="1:1" id="Zdq-Yj-YPp"/>
                                                 </constraints>
@@ -198,7 +204,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dz1-R7-uad" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="187" y="0.0" width="93.5" height="94"/>
+                                                <rect key="frame" x="167.5" y="0.0" width="84" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="dz1-R7-uad" secondAttribute="height" multiplier="1:1" id="yf7-hY-Opw"/>
                                                 </constraints>
@@ -212,7 +218,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZX1-jY-Tq5" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="280" y="0.0" width="94" height="94"/>
+                                                <rect key="frame" x="251" y="0.0" width="84" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ZX1-jY-Tq5" secondAttribute="height" multiplier="1:1" id="NDI-ug-sLZ"/>
                                                 </constraints>
@@ -228,10 +234,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" tag="2" contentMode="scaleToFill" distribution="fillEqually" spacing="-0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aV4-Ts-IIk">
-                                        <rect key="frame" x="0.0" y="93.5" width="374" height="94"/>
+                                        <rect key="frame" x="0.0" y="83.5" width="335" height="84.5"/>
                                         <subviews>
                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXg-i1-fJE" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="84.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="IXg-i1-fJE" secondAttribute="height" multiplier="1:1" id="nlw-ew-DcC"/>
                                                 </constraints>
@@ -245,7 +251,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gni-1R-t78" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="93.5" y="0.0" width="94" height="94"/>
+                                                <rect key="frame" x="83.5" y="0.0" width="84.5" height="84.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="gni-1R-t78" secondAttribute="height" multiplier="1:1" id="7IN-kD-jlS"/>
                                                 </constraints>
@@ -259,7 +265,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nA6-ap-8J0" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="187" y="0.0" width="93.5" height="94"/>
+                                                <rect key="frame" x="167.5" y="0.0" width="84" height="84.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="nA6-ap-8J0" secondAttribute="height" multiplier="1:1" id="C8D-LM-W0Z"/>
                                                 </constraints>
@@ -273,7 +279,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9D-Iz-Ae8" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="280" y="0.0" width="94" height="94"/>
+                                                <rect key="frame" x="251" y="0.0" width="84" height="84.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="v9D-Iz-Ae8" secondAttribute="height" multiplier="1:1" id="UHk-du-wwO"/>
                                                 </constraints>
@@ -289,10 +295,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" tag="3" contentMode="scaleToFill" distribution="fillEqually" spacing="-0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pjq-bB-eUY">
-                                        <rect key="frame" x="0.0" y="187" width="374" height="93.5"/>
+                                        <rect key="frame" x="0.0" y="167.5" width="335" height="84"/>
                                         <subviews>
                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zuu-dW-N7u" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="94" height="93.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Zuu-dW-N7u" secondAttribute="height" multiplier="1:1" id="8OS-PV-7cB"/>
                                                 </constraints>
@@ -306,7 +312,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6H-gl-eqS" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="93.5" y="0.0" width="94" height="93.5"/>
+                                                <rect key="frame" x="83.5" y="0.0" width="84.5" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="X6H-gl-eqS" secondAttribute="height" multiplier="1:1" id="BkR-eR-vKg"/>
                                                 </constraints>
@@ -320,7 +326,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BzY-8p-upX" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="187" y="0.0" width="93.5" height="93.5"/>
+                                                <rect key="frame" x="167.5" y="0.0" width="84" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="BzY-8p-upX" secondAttribute="height" multiplier="1:1" id="tpw-w7-IlM"/>
                                                 </constraints>
@@ -334,7 +340,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Io8-oS-gdy" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="280" y="0.0" width="94" height="93.5"/>
+                                                <rect key="frame" x="251" y="0.0" width="84" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Io8-oS-gdy" secondAttribute="height" multiplier="1:1" id="tYE-xy-Ud7"/>
                                                 </constraints>
@@ -350,10 +356,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" tag="4" contentMode="scaleToFill" distribution="fillEqually" spacing="-0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2k1-gH-drK">
-                                        <rect key="frame" x="0.0" y="280" width="374" height="94"/>
+                                        <rect key="frame" x="0.0" y="251" width="335" height="84"/>
                                         <subviews>
                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAO-0C-Ean" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="bAO-0C-Ean" secondAttribute="height" multiplier="1:1" id="wW9-kD-tFM"/>
                                                 </constraints>
@@ -367,7 +373,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANu-3B-tMp" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="93.5" y="0.0" width="94" height="94"/>
+                                                <rect key="frame" x="83.5" y="0.0" width="84.5" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ANu-3B-tMp" secondAttribute="height" multiplier="1:1" id="xcP-ww-BEi"/>
                                                 </constraints>
@@ -381,7 +387,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7db-wp-2uL" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="187" y="0.0" width="93.5" height="94"/>
+                                                <rect key="frame" x="167.5" y="0.0" width="84" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="7db-wp-2uL" secondAttribute="height" multiplier="1:1" id="msj-Yf-xqs"/>
                                                 </constraints>
@@ -395,7 +401,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vie-5x-qu1" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="280" y="0.0" width="94" height="94"/>
+                                                <rect key="frame" x="251" y="0.0" width="84" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Vie-5x-qu1" secondAttribute="height" multiplier="1:1" id="eDQ-UM-apN"/>
                                                 </constraints>
@@ -412,12 +418,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttU-ji-ej7">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4c3-ht-hSj">
-                                <rect key="frame" x="116.5" y="124" width="181.5" height="38.5"/>
+                                <rect key="frame" x="97" y="80" width="181.5" height="38.5"/>
                                 <string key="text">Adjust the puzzle image:
 zoom, rotate, reposition</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
@@ -425,7 +427,7 @@ zoom, rotate, reposition</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XA-vT-kLV" userLabel="Start" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
-                                <rect key="frame" x="109" y="596.5" width="196" height="235.5"/>
+                                <rect key="frame" x="89.5" y="513.5" width="196" height="123.5"/>
                                 <color key="backgroundColor" name="Color1"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="  Start  ">
@@ -442,7 +444,7 @@ zoom, rotate, reposition</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ya-qF-5Ms">
-                                <rect key="frame" x="354" y="74" width="30" height="30"/>
+                                <rect key="frame" x="315" y="30" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2ya-qF-5Ms" secondAttribute="height" multiplier="1:1" id="3cq-Kd-2VO"/>
                                     <constraint firstAttribute="height" constant="30" id="T50-OF-w6o"/>
@@ -460,28 +462,32 @@ zoom, rotate, reposition</string>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Xhv-X0-iqf" firstAttribute="trailing" secondItem="RhU-TM-UPj" secondAttribute="trailing" constant="20" id="2v2-gW-CK9"/>
-                            <constraint firstItem="RhU-TM-UPj" firstAttribute="top" secondItem="4c3-ht-hSj" secondAttribute="bottom" constant="30" id="57I-WQ-RUs"/>
-                            <constraint firstItem="RhU-TM-UPj" firstAttribute="leading" secondItem="Xhv-X0-iqf" secondAttribute="leading" constant="20" id="6CS-k5-aCc"/>
+                            <constraint firstItem="gAd-DM-1cZ" firstAttribute="top" secondItem="IHC-9F-P6l" secondAttribute="top" id="2Su-Gp-ShP"/>
+                            <constraint firstItem="gAd-DM-1cZ" firstAttribute="leading" secondItem="IHC-9F-P6l" secondAttribute="leading" id="4do-e8-yRb"/>
                             <constraint firstAttribute="bottom" secondItem="ttU-ji-ej7" secondAttribute="bottom" id="9S0-2Y-3DQ"/>
-                            <constraint firstItem="3XA-vT-kLV" firstAttribute="top" secondItem="RhU-TM-UPj" secondAttribute="bottom" constant="30" id="AUv-Th-mSE"/>
+                            <constraint firstItem="Xhv-X0-iqf" firstAttribute="trailing" secondItem="IHC-9F-P6l" secondAttribute="trailing" constant="20" id="CGD-Wt-UoA"/>
                             <constraint firstItem="gAd-DM-1cZ" firstAttribute="top" secondItem="4c3-ht-hSj" secondAttribute="bottom" constant="30" id="Cd6-YY-kos"/>
                             <constraint firstItem="gAd-DM-1cZ" firstAttribute="centerX" secondItem="tEx-XT-XtW" secondAttribute="centerX" id="Cis-z2-7mG"/>
-                            <constraint firstItem="Xhv-X0-iqf" firstAttribute="trailing" secondItem="XiM-pM-zvL" secondAttribute="trailing" id="Cpt-n4-l3A"/>
                             <constraint firstItem="2ya-qF-5Ms" firstAttribute="top" secondItem="Xhv-X0-iqf" secondAttribute="top" constant="30" id="EvD-wj-WTL"/>
                             <constraint firstItem="3XA-vT-kLV" firstAttribute="centerX" secondItem="tEx-XT-XtW" secondAttribute="centerX" id="HGU-JR-j6S"/>
                             <constraint firstItem="gAd-DM-1cZ" firstAttribute="leading" secondItem="Xhv-X0-iqf" secondAttribute="leading" constant="20" id="Ih4-LV-PDL"/>
                             <constraint firstItem="4c3-ht-hSj" firstAttribute="top" secondItem="Xhv-X0-iqf" secondAttribute="top" constant="80" id="KjB-nl-iCL"/>
                             <constraint firstItem="Xhv-X0-iqf" firstAttribute="trailing" secondItem="gAd-DM-1cZ" secondAttribute="trailing" constant="20" id="M6m-cz-GGK"/>
                             <constraint firstItem="Xhv-X0-iqf" firstAttribute="trailing" secondItem="ttU-ji-ej7" secondAttribute="trailing" id="Mbq-LU-sGI"/>
+                            <constraint firstItem="3XA-vT-kLV" firstAttribute="top" secondItem="IHC-9F-P6l" secondAttribute="bottom" constant="30" id="Mi8-d5-lWA"/>
+                            <constraint firstItem="IHC-9F-P6l" firstAttribute="centerX" secondItem="tEx-XT-XtW" secondAttribute="centerX" id="Rts-Js-Ebi"/>
                             <constraint firstItem="Xhv-X0-iqf" firstAttribute="bottom" secondItem="3XA-vT-kLV" secondAttribute="bottom" constant="30" id="Wjm-j7-gDw"/>
-                            <constraint firstItem="XiM-pM-zvL" firstAttribute="top" secondItem="Xhv-X0-iqf" secondAttribute="top" id="Y3U-v5-P8K"/>
-                            <constraint firstItem="XiM-pM-zvL" firstAttribute="leading" secondItem="Xhv-X0-iqf" secondAttribute="leading" id="ZQd-21-sxK"/>
                             <constraint firstItem="3XA-vT-kLV" firstAttribute="top" secondItem="gAd-DM-1cZ" secondAttribute="bottom" constant="30" id="aNH-8c-0RF"/>
-                            <constraint firstAttribute="bottom" secondItem="XiM-pM-zvL" secondAttribute="bottom" constant="34" id="brc-4j-NEh"/>
                             <constraint firstItem="ttU-ji-ej7" firstAttribute="top" secondItem="tEx-XT-XtW" secondAttribute="top" id="dKE-wE-R1B"/>
-                            <constraint firstItem="RhU-TM-UPj" firstAttribute="centerX" secondItem="tEx-XT-XtW" secondAttribute="centerX" id="hEf-WT-2q0"/>
+                            <constraint firstItem="gAd-DM-1cZ" firstAttribute="bottom" secondItem="IHC-9F-P6l" secondAttribute="bottom" id="gfH-1P-BUH"/>
+                            <constraint firstItem="IHC-9F-P6l" firstAttribute="top" secondItem="4c3-ht-hSj" secondAttribute="bottom" constant="30" id="jHB-BM-I2C"/>
+                            <constraint firstItem="XiM-pM-zvL" firstAttribute="top" secondItem="tEx-XT-XtW" secondAttribute="top" id="mEU-L0-1yK"/>
+                            <constraint firstAttribute="bottom" secondItem="XiM-pM-zvL" secondAttribute="bottom" id="o7i-rb-kid"/>
+                            <constraint firstItem="gAd-DM-1cZ" firstAttribute="trailing" secondItem="IHC-9F-P6l" secondAttribute="trailing" id="oFj-4U-UuZ"/>
+                            <constraint firstItem="IHC-9F-P6l" firstAttribute="leading" secondItem="Xhv-X0-iqf" secondAttribute="leading" constant="20" id="oID-HH-bR0"/>
                             <constraint firstItem="ttU-ji-ej7" firstAttribute="leading" secondItem="Xhv-X0-iqf" secondAttribute="leading" id="ogm-eQ-UEM"/>
+                            <constraint firstItem="XiM-pM-zvL" firstAttribute="leading" secondItem="tEx-XT-XtW" secondAttribute="leading" id="rD5-wt-eqI"/>
+                            <constraint firstAttribute="trailing" secondItem="XiM-pM-zvL" secondAttribute="trailing" id="wEn-df-wHl"/>
                             <constraint firstItem="Xhv-X0-iqf" firstAttribute="trailing" secondItem="2ya-qF-5Ms" secondAttribute="trailing" constant="30" id="wWp-K4-BRI"/>
                             <constraint firstItem="4c3-ht-hSj" firstAttribute="centerX" secondItem="tEx-XT-XtW" secondAttribute="centerX" id="zAI-KC-dbD"/>
                         </constraints>
@@ -491,6 +497,7 @@ zoom, rotate, reposition</string>
                     <connections>
                         <outlet property="XBtn" destination="2ya-qF-5Ms" id="GSm-d4-JHf"/>
                         <outlet property="alphaView" destination="ttU-ji-ej7" id="ta7-Mm-sxJ"/>
+                        <outlet property="cropAreaView" destination="IHC-9F-P6l" id="j20-Ec-uTR"/>
                         <outlet property="firstSquareStack" destination="2hz-g0-WL7" id="OaF-HB-WQM"/>
                         <outlet property="fourthSquareStack" destination="2k1-gH-drK" id="z31-ZU-S5k"/>
                         <outlet property="pickedImage" destination="XiM-pM-zvL" id="80H-7M-TnD"/>
@@ -509,11 +516,11 @@ zoom, rotate, reposition</string>
             <objects>
                 <viewController title="PlayFieldView" id="VZ7-En-4JS" customClass="PlayFieldViewController" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iR2-aE-fqD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yQ-II-2Ap" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
-                                <rect key="frame" x="16" y="64" width="111.5" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yQ-II-2Ap" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
+                                <rect key="frame" x="16" y="20" width="142.5" height="35"/>
                                 <color key="backgroundColor" name="Color1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="TRc-Xy-neq"/>
@@ -531,32 +538,32 @@ zoom, rotate, reposition</string>
                                     <action selector="newGameBtn:" destination="VZ7-En-4JS" eventType="touchUpInside" id="GYE-8K-p55"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-name-small-green" translatesAutoresizingMaskIntoConstraints="NO" id="NZZ-iE-ym5">
-                                <rect key="frame" x="147.5" y="64" width="140" height="40"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Gridy-name-small-green" translatesAutoresizingMaskIntoConstraints="NO" id="NZZ-iE-ym5">
+                                <rect key="frame" x="178.5" y="20" width="70" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="lIr-gi-qNZ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rT-rJ-lJo">
-                                <rect key="frame" x="363.5" y="64" width="34.5" height="36.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rT-rJ-lJo">
+                                <rect key="frame" x="324.5" y="20" width="34.5" height="36.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="moves:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sb8-Lh-hch">
-                                <rect key="frame" x="297.5" y="81.5" width="52" height="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="moves:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sb8-Lh-hch">
+                                <rect key="frame" x="258.5" y="37.5" width="52" height="19"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IvH-x2-wfw">
-                                <rect key="frame" x="16" y="120" width="382" height="187"/>
+                                <rect key="frame" x="16" y="76" width="343" height="167.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zfm-0S-osd">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="57"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rmn-9B-GWk" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Rmn-9B-GWk" secondAttribute="height" multiplier="1:1" id="sJh-7i-VVT"/>
                                                 </constraints>
@@ -570,7 +577,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PKk-dU-zbP" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="65" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="58.5" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="PKk-dU-zbP" secondAttribute="height" multiplier="1:1" id="hR7-OP-8NL"/>
                                                 </constraints>
@@ -584,7 +591,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z7O-LH-geV" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="130" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="117" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Z7O-LH-geV" secondAttribute="height" multiplier="1:1" id="DjW-Ue-usa"/>
                                                 </constraints>
@@ -598,7 +605,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GY1-RT-cAk" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="195" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="175.5" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="GY1-RT-cAk" secondAttribute="height" multiplier="1:1" id="HYa-P3-Gr7"/>
                                                 </constraints>
@@ -612,7 +619,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ob6-O0-fok" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="260" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="234" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ob6-O0-fok" secondAttribute="height" multiplier="1:1" id="fJV-pf-mWV"/>
                                                 </constraints>
@@ -626,7 +633,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YHh-x6-qSV" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="325" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="292.5" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="YHh-x6-qSV" secondAttribute="height" multiplier="1:1" id="trv-bb-mMw"/>
                                                 </constraints>
@@ -642,10 +649,10 @@ zoom, rotate, reposition</string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8OU-Dr-z4x">
-                                        <rect key="frame" x="0.0" y="65" width="382" height="57"/>
+                                        <rect key="frame" x="0.0" y="58.5" width="343" height="50.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2P4-lh-3rh" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="2P4-lh-3rh" secondAttribute="height" multiplier="1:1" id="UBy-mm-LlM"/>
                                                 </constraints>
@@ -659,7 +666,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="13B-zZ-vpa" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="65" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="58.5" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="13B-zZ-vpa" secondAttribute="height" multiplier="1:1" id="fRA-kS-Vht"/>
                                                 </constraints>
@@ -673,7 +680,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iDV-DP-300" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="130" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="117" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="iDV-DP-300" secondAttribute="height" multiplier="1:1" id="Ptk-lR-eVm"/>
                                                 </constraints>
@@ -687,7 +694,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NKq-Ws-vRj" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="195" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="175.5" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="NKq-Ws-vRj" secondAttribute="height" multiplier="1:1" id="RXS-hs-fgR"/>
                                                 </constraints>
@@ -701,7 +708,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0an-wk-CCc" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="260" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="234" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="0an-wk-CCc" secondAttribute="height" multiplier="1:1" id="dLN-Lq-tJ7"/>
                                                 </constraints>
@@ -715,7 +722,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ll6-Sr-pJS" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="325" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="292.5" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ll6-Sr-pJS" secondAttribute="height" multiplier="1:1" id="979-cG-ewc"/>
                                                 </constraints>
@@ -731,10 +738,10 @@ zoom, rotate, reposition</string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9DP-Wp-0zG">
-                                        <rect key="frame" x="0.0" y="130" width="382" height="57"/>
+                                        <rect key="frame" x="0.0" y="117" width="343" height="50.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pI8-K3-D0K" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="pI8-K3-D0K" secondAttribute="height" multiplier="1:1" id="L16-2T-IhW"/>
                                                 </constraints>
@@ -748,7 +755,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zPE-cG-A5z" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="65" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="58.5" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zPE-cG-A5z" secondAttribute="height" multiplier="1:1" id="eCK-3g-Tu3"/>
                                                 </constraints>
@@ -762,7 +769,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IZj-Gi-Qsc" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="130" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="117" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="IZj-Gi-Qsc" secondAttribute="height" multiplier="1:1" id="MSi-mf-KXo"/>
                                                 </constraints>
@@ -776,7 +783,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3kX-YU-1fv" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="195" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="175.5" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="3kX-YU-1fv" secondAttribute="height" multiplier="1:1" id="tFM-ge-v4D"/>
                                                 </constraints>
@@ -790,34 +797,37 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="17" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ORS-Yt-Mnq">
-                                                <rect key="frame" x="260" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="234" y="0.0" width="50.5" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ORS-Yt-Mnq" secondAttribute="height" multiplier="1:1" id="CHR-ch-ead"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" tag="18" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mc-gi-Xhl">
-                                                <rect key="frame" x="325" y="0.0" width="57" height="57"/>
+                                                <rect key="frame" x="292.5" y="0.0" width="50.5" height="50.5"/>
                                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="Gridy-lookup"/>
+                                                <connections>
+                                                    <action selector="hintBtnPressed:" destination="VZ7-En-4JS" eventType="touchUpInside" id="0fF-ME-rZE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag pieces to the grid swipe out of the grid to undo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p2F-hG-b0n">
-                                <rect key="frame" x="104" y="312" width="206.5" height="147"/>
+                                <rect key="frame" x="84.5" y="248.5" width="206.5" height="54.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" name="Color6"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-0.25" translatesAutoresizingMaskIntoConstraints="NO" id="ssb-Tt-0Uq">
-                                <rect key="frame" x="16" y="464" width="382" height="382"/>
+                                <rect key="frame" x="16" y="308" width="343" height="343"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-0.25" translatesAutoresizingMaskIntoConstraints="NO" id="6t4-3x-8W8">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="96"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="86"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s1d-aM-dQe" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="s1d-aM-dQe" secondAttribute="height" multiplier="1:1" id="Eoa-4I-Tbg"/>
                                                 </constraints>
@@ -831,7 +841,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jBd-5o-gpy" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="95.5" y="0.0" width="96" height="96"/>
+                                                <rect key="frame" x="85.5" y="0.0" width="86.5" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="jBd-5o-gpy" secondAttribute="height" multiplier="1:1" id="yMJ-J1-T77"/>
                                                 </constraints>
@@ -845,7 +855,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gj7-fv-G5y" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="191" y="0.0" width="95.5" height="96"/>
+                                                <rect key="frame" x="171.5" y="0.0" width="86" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="gj7-fv-G5y" secondAttribute="height" multiplier="1:1" id="D3l-bL-3yM"/>
                                                 </constraints>
@@ -859,7 +869,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j9d-PG-sca" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="286" y="0.0" width="96" height="96"/>
+                                                <rect key="frame" x="257" y="0.0" width="86" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="j9d-PG-sca" secondAttribute="height" multiplier="1:1" id="K0w-fh-c5m"/>
                                                 </constraints>
@@ -880,10 +890,10 @@ zoom, rotate, reposition</string>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-0.25" translatesAutoresizingMaskIntoConstraints="NO" id="Ute-jy-ULz">
-                                        <rect key="frame" x="0.0" y="95.5" width="382" height="96"/>
+                                        <rect key="frame" x="0.0" y="85.5" width="343" height="86.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lgE-VZ-TAg" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="86.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="lgE-VZ-TAg" secondAttribute="height" multiplier="1:1" id="lju-Ng-ey6"/>
                                                 </constraints>
@@ -897,7 +907,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B69-dv-kHR" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="95.5" y="0.0" width="96" height="96"/>
+                                                <rect key="frame" x="85.5" y="0.0" width="86.5" height="86.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="B69-dv-kHR" secondAttribute="height" multiplier="1:1" id="RTu-gJ-XkU"/>
                                                 </constraints>
@@ -911,7 +921,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W7I-BJ-N8k" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="191" y="0.0" width="95.5" height="96"/>
+                                                <rect key="frame" x="171.5" y="0.0" width="86" height="86.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="W7I-BJ-N8k" secondAttribute="height" multiplier="1:1" id="Yyv-ag-EtK"/>
                                                 </constraints>
@@ -925,7 +935,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Yk-8h-dFm" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="286" y="0.0" width="96" height="96"/>
+                                                <rect key="frame" x="257" y="0.0" width="86" height="86.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="4Yk-8h-dFm" secondAttribute="height" multiplier="1:1" id="eQT-l1-MAz"/>
                                                 </constraints>
@@ -946,10 +956,10 @@ zoom, rotate, reposition</string>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-0.25" translatesAutoresizingMaskIntoConstraints="NO" id="uA1-9n-QrF">
-                                        <rect key="frame" x="0.0" y="191" width="382" height="95.5"/>
+                                        <rect key="frame" x="0.0" y="171.5" width="343" height="86"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-SM-knX" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="96" height="95.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Nde-SM-knX" secondAttribute="height" multiplier="1:1" id="MOu-DK-GG3"/>
                                                 </constraints>
@@ -963,7 +973,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fgs-Uf-i3o" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="95.5" y="0.0" width="96" height="95.5"/>
+                                                <rect key="frame" x="85.5" y="0.0" width="86.5" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="fgs-Uf-i3o" secondAttribute="height" multiplier="1:1" id="uar-3q-Cth"/>
                                                 </constraints>
@@ -977,7 +987,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="anU-wM-OvU" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="191" y="0.0" width="95.5" height="95.5"/>
+                                                <rect key="frame" x="171.5" y="0.0" width="86" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="anU-wM-OvU" secondAttribute="height" multiplier="1:1" id="ou8-OM-wpy"/>
                                                 </constraints>
@@ -991,7 +1001,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xg5-Q2-IdK" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="286" y="0.0" width="96" height="95.5"/>
+                                                <rect key="frame" x="257" y="0.0" width="86" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Xg5-Q2-IdK" secondAttribute="height" multiplier="1:1" id="9Rw-E7-w5O"/>
                                                 </constraints>
@@ -1012,10 +1022,10 @@ zoom, rotate, reposition</string>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-0.25" translatesAutoresizingMaskIntoConstraints="NO" id="Z0f-K1-yoB">
-                                        <rect key="frame" x="0.0" y="286" width="382" height="96"/>
+                                        <rect key="frame" x="0.0" y="257" width="343" height="86"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LDx-SC-L01" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="LDx-SC-L01" secondAttribute="height" multiplier="1:1" id="43I-4J-jFD"/>
                                                 </constraints>
@@ -1029,7 +1039,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bwn-7I-Dw6" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="95.5" y="0.0" width="96" height="96"/>
+                                                <rect key="frame" x="85.5" y="0.0" width="86.5" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Bwn-7I-Dw6" secondAttribute="height" multiplier="1:1" id="N6t-ot-6T8"/>
                                                 </constraints>
@@ -1043,7 +1053,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZLG-db-FxG" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="191" y="0.0" width="95.5" height="96"/>
+                                                <rect key="frame" x="171.5" y="0.0" width="86" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ZLG-db-FxG" secondAttribute="height" multiplier="1:1" id="z1j-02-hVJ"/>
                                                 </constraints>
@@ -1057,7 +1067,7 @@ zoom, rotate, reposition</string>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mz6-j1-1Da" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
-                                                <rect key="frame" x="286" y="0.0" width="96" height="96"/>
+                                                <rect key="frame" x="257" y="0.0" width="86" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="mz6-j1-1Da" secondAttribute="height" multiplier="1:1" id="UB5-ja-Pzf"/>
                                                 </constraints>
@@ -1079,6 +1089,16 @@ zoom, rotate, reposition</string>
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <view hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYk-sQ-070">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ikm-HO-m2P">
+                                <rect key="frame" x="20" y="166" width="335" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ikm-HO-m2P" secondAttribute="height" multiplier="1:1" id="C9C-Rc-3G5"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1086,12 +1106,17 @@ zoom, rotate, reposition</string>
                             <constraint firstItem="ssb-Tt-0Uq" firstAttribute="top" secondItem="p2F-hG-b0n" secondAttribute="bottom" constant="5" id="3IB-Ig-fqE"/>
                             <constraint firstItem="Sb8-Lh-hch" firstAttribute="leading" secondItem="NZZ-iE-ym5" secondAttribute="trailing" constant="10" id="3cR-uK-uM2"/>
                             <constraint firstItem="CcM-hT-bRi" firstAttribute="bottom" secondItem="ssb-Tt-0Uq" secondAttribute="bottom" constant="16" id="4Iz-qS-ahh"/>
+                            <constraint firstItem="ikm-HO-m2P" firstAttribute="leading" secondItem="CcM-hT-bRi" secondAttribute="leading" constant="20" id="AST-Mg-NYm"/>
+                            <constraint firstItem="CcM-hT-bRi" firstAttribute="trailing" secondItem="ikm-HO-m2P" secondAttribute="trailing" constant="20" id="DpH-XY-WQl"/>
                             <constraint firstItem="IvH-x2-wfw" firstAttribute="top" secondItem="4yQ-II-2Ap" secondAttribute="bottom" constant="21" id="FMb-4V-gZe"/>
+                            <constraint firstItem="SYk-sQ-070" firstAttribute="trailing" secondItem="CcM-hT-bRi" secondAttribute="trailing" id="GX8-PF-QJI"/>
                             <constraint firstItem="NZZ-iE-ym5" firstAttribute="top" secondItem="CcM-hT-bRi" secondAttribute="top" constant="20" id="Ho4-po-ont"/>
                             <constraint firstItem="9rT-rJ-lJo" firstAttribute="top" secondItem="CcM-hT-bRi" secondAttribute="top" constant="20" id="JQC-Js-XZd"/>
                             <constraint firstItem="9rT-rJ-lJo" firstAttribute="leading" secondItem="Sb8-Lh-hch" secondAttribute="trailing" constant="14" id="LWu-Gc-Ufu"/>
                             <constraint firstItem="p2F-hG-b0n" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CcM-hT-bRi" secondAttribute="leading" id="LqJ-Tr-yvX"/>
                             <constraint firstItem="p2F-hG-b0n" firstAttribute="centerX" secondItem="iR2-aE-fqD" secondAttribute="centerX" id="M58-1V-Dbt"/>
+                            <constraint firstItem="SYk-sQ-070" firstAttribute="leading" secondItem="CcM-hT-bRi" secondAttribute="leading" id="Pzs-jd-GFb"/>
+                            <constraint firstItem="ikm-HO-m2P" firstAttribute="centerX" secondItem="iR2-aE-fqD" secondAttribute="centerX" id="RJI-P5-QL7"/>
                             <constraint firstItem="CcM-hT-bRi" firstAttribute="trailing" secondItem="9rT-rJ-lJo" secondAttribute="trailing" constant="16" id="VCn-Ct-p7H"/>
                             <constraint firstItem="CcM-hT-bRi" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="p2F-hG-b0n" secondAttribute="trailing" id="XZ2-5H-J5l"/>
                             <constraint firstItem="4yQ-II-2Ap" firstAttribute="leading" secondItem="CcM-hT-bRi" secondAttribute="leading" constant="16" id="bIv-hz-Lg5"/>
@@ -1100,15 +1125,21 @@ zoom, rotate, reposition</string>
                             <constraint firstItem="p2F-hG-b0n" firstAttribute="top" secondItem="IvH-x2-wfw" secondAttribute="bottom" constant="5" id="h5F-3G-hdH"/>
                             <constraint firstAttribute="trailing" secondItem="IvH-x2-wfw" secondAttribute="trailing" constant="16" id="nKh-a1-xbF"/>
                             <constraint firstItem="ssb-Tt-0Uq" firstAttribute="leading" secondItem="CcM-hT-bRi" secondAttribute="leading" constant="16" id="oAD-c2-Oed"/>
+                            <constraint firstItem="SYk-sQ-070" firstAttribute="top" secondItem="CcM-hT-bRi" secondAttribute="top" id="qHv-RV-UrI"/>
                             <constraint firstItem="NZZ-iE-ym5" firstAttribute="leading" secondItem="4yQ-II-2Ap" secondAttribute="trailing" constant="20" id="r1T-1r-wgX"/>
+                            <constraint firstItem="SYk-sQ-070" firstAttribute="bottom" secondItem="CcM-hT-bRi" secondAttribute="bottom" id="thX-QM-xPV"/>
                             <constraint firstItem="Sb8-Lh-hch" firstAttribute="bottom" secondItem="9rT-rJ-lJo" secondAttribute="bottom" id="tvW-fm-4wu"/>
                             <constraint firstItem="IvH-x2-wfw" firstAttribute="leading" secondItem="CcM-hT-bRi" secondAttribute="leading" constant="16" id="vZT-6j-aeo"/>
+                            <constraint firstItem="ikm-HO-m2P" firstAttribute="centerY" secondItem="iR2-aE-fqD" secondAttribute="centerY" id="yP0-j6-t5C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CcM-hT-bRi"/>
                     </view>
                     <navigationItem key="navigationItem" id="Yr1-Bc-ZMl"/>
                     <connections>
                         <outlet property="bottomSmallSquaresStack" destination="9DP-Wp-0zG" id="c6T-xe-hwI"/>
+                        <outlet property="hintAlphaBackgroundView" destination="SYk-sQ-070" id="MCk-Ar-LdE"/>
+                        <outlet property="hintBtnView" destination="0mc-gi-Xhl" id="pPJ-b4-Af0"/>
+                        <outlet property="hintImageView" destination="ikm-HO-m2P" id="wgb-5p-X24"/>
                         <outlet property="middleSmallSquaresStack" destination="8OU-Dr-z4x" id="e69-AL-Qv2"/>
                         <outlet property="movesLbl" destination="9rT-rJ-lJo" id="wQd-lb-q21"/>
                         <outlet property="smallSquareImagesStack" destination="9DP-Wp-0zG" id="6Sm-SB-o0p"/>
@@ -1117,7 +1148,7 @@ zoom, rotate, reposition</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaW-Oa-d7y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2652" y="113"/>
+            <point key="canvasLocation" x="2652" y="112.89355322338831"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HYt-mM-6Lp">
