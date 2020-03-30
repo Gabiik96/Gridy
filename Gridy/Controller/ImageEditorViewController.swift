@@ -14,14 +14,17 @@ import CoreGraphics
 class ImageEditorViewController: UIViewController, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
 
 //MARK:- Global variables
+    
+    var crop = Puzzle()
 
     var imagePicked: UIImage!
+    var imageCropped: UIImage!
     var initialImageViewOffSet = CGPoint()
     var imageSquares: [UIImage] = []
  
 //MARK:- IBOutlets
 
-    @IBOutlet var vieww: UIView!
+    @IBOutlet weak var cropAreaView: UIView!
     @IBOutlet weak var alphaView: UIView!
     @IBOutlet weak var pickedImage: UIImageView!
     @IBOutlet weak var squareImagesStack: UIStackView!
