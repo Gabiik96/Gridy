@@ -11,42 +11,51 @@ import AVFoundation
 import Photos
 
 
-class PlayFieldViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class PlayFieldViewController: UIViewController, UINavigationControllerDelegate, UIGestureRecognizerDelegate{
     
-    var pickedSquares: [UIImage] = []
+    // MARK: - Global variables
+    var puzzle = Puzzle()
     
     
+    // MARK: - IBOutlets
     @IBOutlet weak var topSmallSquaresStack: UIStackView!
     @IBOutlet weak var middleSmallSquaresStack: UIStackView!
     @IBOutlet weak var bottomSmallSquaresStack: UIStackView!
     @IBOutlet weak var smallSquareImagesStack: UIStackView!
     @IBOutlet weak var movesLbl: UILabel!
+    @IBOutlet weak var hintImageView: UIImageView!
+    @IBOutlet weak var hintBtnView: UIButton!
+    @IBOutlet weak var hintAlphaBackgroundView: UIView!
     
     
-    
+    // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {
- 
+        puzzle.addSquaresToAllImageViews(bottom: bottomSmallSquaresStack,
+                                         middle: middleSmallSquaresStack,
+                                         top:     topSmallSquaresStack)
+        hintImageView.image = puzzle.hintImage
+
+
+        
     }
     
     override func viewDidLoad() {
-        print(pickedSquares.count)
-        var index = 4
-        while index >= 6 {
-            while index >= 0 {
-                pickedSquares.shuffle()
-                addSquareImageToSquareView(tag: index)
-                index += -1
-            }
-            pickedSquares.shuffle()
-            addSquareImageToSquareView(tag: index)
-            index += 1
+      
+    }
+    
+    // MARK: - IBActions
+    @IBAction func hintBtnPressed(_ sender: Any) {
+        self.hintImageView.isHidden = false
+        self.hintAlphaBackgroundView.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.hintImageView.isHidden = true
+            self.hintAlphaBackgroundView.isHidden = true
         }
-        
     }
     
     
     @IBAction func newGameBtn(_ sender: Any) {
-        pickedSquares.removeAll()
+        puzzle.pickedSquares.removeAll()
         if let nav = self.navigationController {
                  nav.popViewController(animated: true)
              } else {
@@ -54,21 +63,8 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
              }
     }
     
-    func addSquareImageToSquareView(tag: Int) {
-        
-        if tag >= 0 {
-            bottomSmallSquaresStack.viewWithTag(tag)?.backgroundColor = UIColor(patternImage: pickedSquares[tag])
-            pickedSquares.remove(at: tag)
-        }
-        
-        let index = Int.random(in: 0...(pickedSquares.count - 1))
-        topSmallSquaresStack.viewWithTag(tag)?.backgroundColor = UIColor(patternImage: pickedSquares[index])
-        pickedSquares.remove(at: index)
-        let index2 = Int.random(in: 0...(pickedSquares.count - 1))
-        middleSmallSquaresStack.viewWithTag(tag)?.backgroundColor = UIColor(patternImage: pickedSquares[index2])
-        pickedSquares.remove(at: index2)
+    //MARK: - Functions
 
-        
-    }
+    
     
 }
