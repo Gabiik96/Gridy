@@ -168,7 +168,7 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
 
 // MARK: - Extensions
 
-extension UIButton {
+extension RoundButton {
     func alignTextBelow(spacing: CGFloat = 6.0) {
         guard let image = self.imageView?.image else {
             return
