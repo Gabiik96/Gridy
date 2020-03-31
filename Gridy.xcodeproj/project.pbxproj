@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		425CCAC1243261FF00886B39 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CCAC0243261FF00886B39 /* Puzzle.swift */; };
+		425CCB072433F50F00886B39 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CCB062433F50F00886B39 /* CustomImageView.swift */; };
 		428B3BBA2407222B00C03769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428B3BB92407222B00C03769 /* AppDelegate.swift */; };
 		428B3BBC2407222B00C03769 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428B3BBB2407222B00C03769 /* SceneDelegate.swift */; };
 		428B3BBE2407222B00C03769 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428B3BBD2407222B00C03769 /* IntroViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		425CCAC0243261FF00886B39 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
+		425CCB062433F50F00886B39 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		428B3BB62407222B00C03769 /* Gridy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gridy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		428B3BB92407222B00C03769 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		428B3BBB2407222B00C03769 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				425CCAC0243261FF00886B39 /* Puzzle.swift */,
+				425CCB062433F50F00886B39 /* CustomImageView.swift */,
 				42CF9671240BD27F00276C23 /* Customs */,
 			);
 			path = Model;
@@ -213,6 +216,7 @@
 				42CF967F240C686600276C23 /* PlayFieldViewController.swift in Sources */,
 				42C16B13240DE9EE00651C23 /* RoundedBtn.swift in Sources */,
 				428B3BBE2407222B00C03769 /* IntroViewController.swift in Sources */,
+				425CCB072433F50F00886B39 /* CustomImageView.swift in Sources */,
 				428B3BBA2407222B00C03769 /* AppDelegate.swift in Sources */,
 				425CCAC1243261FF00886B39 /* Puzzle.swift in Sources */,
 				428B3BBC2407222B00C03769 /* SceneDelegate.swift in Sources */,
