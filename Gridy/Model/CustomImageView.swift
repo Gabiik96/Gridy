@@ -8,14 +8,40 @@
 
 import UIKit
 
-class CustomView: UIImageView {
+class CustomImageView: BorderedImage {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    var initialSquareOffSet = CGPoint()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
-    */
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        let panRecognizer = UIPanGestureRecognizer(target:self, action:#selector(moveSquareImage))
+        self.gestureRecognizers = [panRecognizer]
+    }
+    
+   
+  
+    @objc func moveSquareImage(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: self.superview)
+              
+        if sender.state == .began {
+            initialSquareOffSet = self.frame.origin
+            }
 
+        let position = CGPoint(x: translation.x + initialSquareOffSet.x - self.frame.origin.x,
+                               y: translation.y + initialSquareOffSet.y - self.frame.origin.y)
+        self.transform = self.transform.translatedBy(x: position.x, y: position.y)
+    }
+    
+//    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        // Promote the touched view
+//        self.superview?.bringSubviewToFront(self)
+//
+//        // Remember original location
+//        initialSquareOffSet = self.center
+//    }
 }
