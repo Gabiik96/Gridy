@@ -45,11 +45,12 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     
     // MARK: - IBActions
     @IBAction func hintBtnPressed(_ sender: Any) {
-        self.hintImageView.isHidden = false
-        self.hintAlphaBackgroundView.isHidden = false
+        hintAlphaBackgroundView.unHideWithAnimation()
+        hintImageView.unHideWithAnimation()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.hintImageView.isHidden = true
-            self.hintAlphaBackgroundView.isHidden = true
+            self.hintAlphaBackgroundView.hideWithAnimation()
+            self.hintImageView.hideWithAnimation()
+   
         }
     }
     
@@ -65,6 +66,20 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     
     //MARK: - Functions
 
-    
-    
+
+}
+
+//MARK: - Extensions
+
+extension UIView {
+    func unHideWithAnimation() {
+        UIView.transition(with: self, duration: 0.5, options: .transitionCurlDown, animations: {
+            self.alpha = self.alpha == 1 ? 0 : 1
+            })
+        }
+    func hideWithAnimation() {
+        UIView.transition(with: self, duration: 0.5, options: .transitionCurlUp, animations: {
+            self.alpha = self.alpha == 1 ? 0 : 1
+        })
+    }
 }
