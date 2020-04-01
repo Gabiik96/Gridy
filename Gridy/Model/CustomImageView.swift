@@ -11,7 +11,6 @@ import UIKit
 class CustomImageView: BorderedImage {
 
     var initialSquareOffSet = CGPoint()
-    var originalLocation = CGPoint()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,7 +20,6 @@ class CustomImageView: BorderedImage {
         super.init(coder: aDecoder)
         let panRecognizer = UIPanGestureRecognizer(target:self, action:#selector(moveSquareImage))
         self.gestureRecognizers = [panRecognizer]
-        originalLocation = self.frame.origin
     }
     
    
@@ -32,7 +30,6 @@ class CustomImageView: BorderedImage {
         switch sender.state {
             case .began:
                 initialSquareOffSet = self.frame.origin
-                originalLocation = self.frame.origin
                 
             case .changed:
                 let position = CGPoint(x: translation.x + initialSquareOffSet.x - self.frame.origin.x,
@@ -41,7 +38,7 @@ class CustomImageView: BorderedImage {
                 self.transform = self.transform.translatedBy(x: position.x, y: position.y)
                 
             case.ended:
-                returnViewToOrigin(view: self, location: originalLocation)
+                returnViewToOrigin(view: self, location: initialSquareOffSet)
             
             default: break
                 }
