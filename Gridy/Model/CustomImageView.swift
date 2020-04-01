@@ -11,6 +11,7 @@ import UIKit
 class CustomImageView: BorderedImage {
 
     var initialSquareOffSet = CGPoint()
+    var originalLocation = CGPoint()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,28 +21,39 @@ class CustomImageView: BorderedImage {
         super.init(coder: aDecoder)
         let panRecognizer = UIPanGestureRecognizer(target:self, action:#selector(moveSquareImage))
         self.gestureRecognizers = [panRecognizer]
+        originalLocation = self.frame.origin
     }
     
    
   
     @objc func moveSquareImage(_ sender: UIPanGestureRecognizer) {
-        let translation = sender.translation(in: self.superview)
+        let translation = sender.translation(in: self.superview!.superview!.superview)
               
-        if sender.state == .began {
-            initialSquareOffSet = self.frame.origin
-            }
-
-        let position = CGPoint(x: translation.x + initialSquareOffSet.x - self.frame.origin.x,
-                               y: translation.y + initialSquareOffSet.y - self.frame.origin.y)
-        self.transform = self.transform.translatedBy(x: position.x, y: position.y)
+        switch sender.state {
+            case .began:
+                initialSquareOffSet = self.frame.origin
+                originalLocation = self.frame.origin
+                
+            case .changed:
+                let position = CGPoint(x: translation.x + initialSquareOffSet.x - self.frame.origin.x,
+                                       y: translation.y + initialSquareOffSet.y - self.frame.origin.y)
+                
+                self.transform = self.transform.translatedBy(x: position.x, y: position.y)
+                
+            case.ended:
+                returnViewToOrigin(view: self, location: originalLocation)
+            
+            default: break
+                }
+        self.setNeedsUpdateConstraints()
+            
     }
     
-//    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        // Promote the touched view
-//        self.superview?.bringSubviewToFront(self)
-//
-//        // Remember original location
-//        initialSquareOffSet = self.center
-//    }
+    func returnViewToOrigin(view: UIView, location: CGPoint) {
+
+           UIView.animate(withDuration: 0.5, animations: {
+               view.frame.origin = location
+           })
+    }
 }
+
