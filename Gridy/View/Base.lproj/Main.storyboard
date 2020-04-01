@@ -514,7 +514,7 @@ zoom, rotate, reposition</string>
         <!--PlayFieldView-->
         <scene sceneID="Apl-jc-rjT">
             <objects>
-                <viewController title="PlayFieldView" id="VZ7-En-4JS" customClass="PlayFieldViewController" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayFieldViewController" title="PlayFieldView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VZ7-En-4JS" customClass="PlayFieldViewController" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iR2-aE-fqD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -568,7 +568,7 @@ zoom, rotate, reposition</string>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-0.25" translatesAutoresizingMaskIntoConstraints="NO" id="6t4-3x-8W8">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="96"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s1d-aM-dQe" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s1d-aM-dQe" userLabel="bigSquare1" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="s1d-aM-dQe" secondAttribute="height" multiplier="1:1" id="Eoa-4I-Tbg"/>
@@ -582,7 +582,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jBd-5o-gpy" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jBd-5o-gpy" userLabel="bigSquare2" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="95.5" y="0.0" width="96" height="96"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="jBd-5o-gpy" secondAttribute="height" multiplier="1:1" id="yMJ-J1-T77"/>
@@ -596,7 +596,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gj7-fv-G5y" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gj7-fv-G5y" userLabel="bigSquare3" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="191" y="0.0" width="95.5" height="96"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="gj7-fv-G5y" secondAttribute="height" multiplier="1:1" id="D3l-bL-3yM"/>
@@ -610,7 +610,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j9d-PG-sca" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j9d-PG-sca" userLabel="bigSquare4" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="286" y="0.0" width="96" height="96"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="j9d-PG-sca" secondAttribute="height" multiplier="1:1" id="K0w-fh-c5m"/>
@@ -634,7 +634,7 @@ zoom, rotate, reposition</string>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-0.25" translatesAutoresizingMaskIntoConstraints="NO" id="Ute-jy-ULz">
                                         <rect key="frame" x="0.0" y="95.5" width="382" height="96"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lgE-VZ-TAg" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lgE-VZ-TAg" userLabel="bigSquare5" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="lgE-VZ-TAg" secondAttribute="height" multiplier="1:1" id="lju-Ng-ey6"/>
@@ -648,7 +648,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B69-dv-kHR" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B69-dv-kHR" userLabel="bigSquare6" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="95.5" y="0.0" width="96" height="96"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="B69-dv-kHR" secondAttribute="height" multiplier="1:1" id="RTu-gJ-XkU"/>
@@ -662,7 +662,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W7I-BJ-N8k" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W7I-BJ-N8k" userLabel="bigSquare7" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="191" y="0.0" width="95.5" height="96"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="W7I-BJ-N8k" secondAttribute="height" multiplier="1:1" id="Yyv-ag-EtK"/>
@@ -676,7 +676,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Yk-8h-dFm" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Yk-8h-dFm" userLabel="bigSquare8" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="286" y="0.0" width="96" height="96"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="4Yk-8h-dFm" secondAttribute="height" multiplier="1:1" id="eQT-l1-MAz"/>
@@ -700,7 +700,7 @@ zoom, rotate, reposition</string>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-0.25" translatesAutoresizingMaskIntoConstraints="NO" id="uA1-9n-QrF">
                                         <rect key="frame" x="0.0" y="191" width="382" height="95.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-SM-knX" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-SM-knX" userLabel="bigSquare9" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="96" height="95.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Nde-SM-knX" secondAttribute="height" multiplier="1:1" id="MOu-DK-GG3"/>
@@ -714,7 +714,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fgs-Uf-i3o" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fgs-Uf-i3o" userLabel="bigSquare10" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="95.5" y="0.0" width="96" height="95.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="fgs-Uf-i3o" secondAttribute="height" multiplier="1:1" id="uar-3q-Cth"/>
@@ -728,7 +728,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="anU-wM-OvU" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="anU-wM-OvU" userLabel="bigSquare11" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="191" y="0.0" width="95.5" height="95.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="anU-wM-OvU" secondAttribute="height" multiplier="1:1" id="ou8-OM-wpy"/>
@@ -742,7 +742,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xg5-Q2-IdK" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xg5-Q2-IdK" userLabel="bigSquare12" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="286" y="0.0" width="96" height="95.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Xg5-Q2-IdK" secondAttribute="height" multiplier="1:1" id="9Rw-E7-w5O"/>
@@ -766,7 +766,7 @@ zoom, rotate, reposition</string>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-0.25" translatesAutoresizingMaskIntoConstraints="NO" id="Z0f-K1-yoB">
                                         <rect key="frame" x="0.0" y="286" width="382" height="96"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LDx-SC-L01" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LDx-SC-L01" userLabel="bigSquare13" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="LDx-SC-L01" secondAttribute="height" multiplier="1:1" id="43I-4J-jFD"/>
@@ -780,7 +780,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bwn-7I-Dw6" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bwn-7I-Dw6" userLabel="bigSquare14" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="95.5" y="0.0" width="96" height="96"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Bwn-7I-Dw6" secondAttribute="height" multiplier="1:1" id="N6t-ot-6T8"/>
@@ -794,7 +794,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZLG-db-FxG" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZLG-db-FxG" userLabel="bigSquare15" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="191" y="0.0" width="95.5" height="96"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ZLG-db-FxG" secondAttribute="height" multiplier="1:1" id="z1j-02-hVJ"/>
@@ -808,7 +808,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mz6-j1-1Da" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mz6-j1-1Da" userLabel="bigSquare16" customClass="BorderedImage" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="286" y="0.0" width="96" height="96"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="mz6-j1-1Da" secondAttribute="height" multiplier="1:1" id="UB5-ja-Pzf"/>
@@ -837,11 +837,14 @@ zoom, rotate, reposition</string>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zfm-0S-osd">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="57"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rmn-9B-GWk" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rmn-9B-GWk" userLabel="square1" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Rmn-9B-GWk" secondAttribute="height" multiplier="1:1" id="sJh-7i-VVT"/>
                                                 </constraints>
+                                                <attributedString key="userComments">
+                                                    <fragment content="square1"/>
+                                                </attributedString>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -851,7 +854,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PKk-dU-zbP" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PKk-dU-zbP" userLabel="square2" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="65" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="PKk-dU-zbP" secondAttribute="height" multiplier="1:1" id="hR7-OP-8NL"/>
@@ -865,7 +868,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z7O-LH-geV" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z7O-LH-geV" userLabel="square3" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="130" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Z7O-LH-geV" secondAttribute="height" multiplier="1:1" id="DjW-Ue-usa"/>
@@ -879,7 +882,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GY1-RT-cAk" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GY1-RT-cAk" userLabel="square4" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="195" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="GY1-RT-cAk" secondAttribute="height" multiplier="1:1" id="HYa-P3-Gr7"/>
@@ -893,7 +896,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ob6-O0-fok" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ob6-O0-fok" userLabel="square5" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="260" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ob6-O0-fok" secondAttribute="height" multiplier="1:1" id="fJV-pf-mWV"/>
@@ -907,7 +910,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YHh-x6-qSV" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YHh-x6-qSV" userLabel="square6" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="325" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="YHh-x6-qSV" secondAttribute="height" multiplier="1:1" id="trv-bb-mMw"/>
@@ -926,7 +929,7 @@ zoom, rotate, reposition</string>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8OU-Dr-z4x">
                                         <rect key="frame" x="0.0" y="65" width="382" height="57"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2P4-lh-3rh" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2P4-lh-3rh" userLabel="square7" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="2P4-lh-3rh" secondAttribute="height" multiplier="1:1" id="UBy-mm-LlM"/>
@@ -940,7 +943,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="13B-zZ-vpa" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="13B-zZ-vpa" userLabel="square8" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="65" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="13B-zZ-vpa" secondAttribute="height" multiplier="1:1" id="fRA-kS-Vht"/>
@@ -954,7 +957,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iDV-DP-300" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iDV-DP-300" userLabel="square9" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="130" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="iDV-DP-300" secondAttribute="height" multiplier="1:1" id="Ptk-lR-eVm"/>
@@ -968,7 +971,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NKq-Ws-vRj" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NKq-Ws-vRj" userLabel="square10" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="195" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="NKq-Ws-vRj" secondAttribute="height" multiplier="1:1" id="RXS-hs-fgR"/>
@@ -982,7 +985,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0an-wk-CCc" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0an-wk-CCc" userLabel="square11" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="260" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="0an-wk-CCc" secondAttribute="height" multiplier="1:1" id="dLN-Lq-tJ7"/>
@@ -996,7 +999,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ll6-Sr-pJS" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ll6-Sr-pJS" userLabel="square12" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="325" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ll6-Sr-pJS" secondAttribute="height" multiplier="1:1" id="979-cG-ewc"/>
@@ -1015,7 +1018,7 @@ zoom, rotate, reposition</string>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9DP-Wp-0zG">
                                         <rect key="frame" x="0.0" y="130" width="382" height="57"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pI8-K3-D0K" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pI8-K3-D0K" userLabel="square13" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="pI8-K3-D0K" secondAttribute="height" multiplier="1:1" id="L16-2T-IhW"/>
@@ -1029,7 +1032,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zPE-cG-A5z" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zPE-cG-A5z" userLabel="square14" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="65" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zPE-cG-A5z" secondAttribute="height" multiplier="1:1" id="eCK-3g-Tu3"/>
@@ -1043,7 +1046,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IZj-Gi-Qsc" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IZj-Gi-Qsc" userLabel="square15" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="130" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="IZj-Gi-Qsc" secondAttribute="height" multiplier="1:1" id="MSi-mf-KXo"/>
@@ -1057,7 +1060,7 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3kX-YU-1fv" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3kX-YU-1fv" userLabel="square16" customClass="CustomImageView" customModule="Gridy" customModuleProvider="target">
                                                 <rect key="frame" x="195" y="0.0" width="57" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="3kX-YU-1fv" secondAttribute="height" multiplier="1:1" id="tFM-ge-v4D"/>
@@ -1136,14 +1139,42 @@ zoom, rotate, reposition</string>
                     </view>
                     <navigationItem key="navigationItem" id="Yr1-Bc-ZMl"/>
                     <connections>
-                        <outlet property="bottomSmallSquaresStack" destination="9DP-Wp-0zG" id="c6T-xe-hwI"/>
                         <outlet property="hintAlphaBackgroundView" destination="SYk-sQ-070" id="MCk-Ar-LdE"/>
                         <outlet property="hintBtnView" destination="0mc-gi-Xhl" id="pPJ-b4-Af0"/>
                         <outlet property="hintImageView" destination="ikm-HO-m2P" id="wgb-5p-X24"/>
-                        <outlet property="middleSmallSquaresStack" destination="8OU-Dr-z4x" id="e69-AL-Qv2"/>
                         <outlet property="movesLbl" destination="9rT-rJ-lJo" id="wQd-lb-q21"/>
-                        <outlet property="smallSquareImagesStack" destination="9DP-Wp-0zG" id="6Sm-SB-o0p"/>
-                        <outlet property="topSmallSquaresStack" destination="zfm-0S-osd" id="Q1z-uu-Rm3"/>
+                        <outletCollection property="squaresCollection" destination="Rmn-9B-GWk" collectionClass="NSMutableArray" id="u7H-df-EBw"/>
+                        <outletCollection property="squaresCollection" destination="PKk-dU-zbP" collectionClass="NSMutableArray" id="h7n-9d-Fhb"/>
+                        <outletCollection property="squaresCollection" destination="Z7O-LH-geV" collectionClass="NSMutableArray" id="jmr-nI-QaQ"/>
+                        <outletCollection property="squaresCollection" destination="GY1-RT-cAk" collectionClass="NSMutableArray" id="4Kq-IH-ABn"/>
+                        <outletCollection property="squaresCollection" destination="ob6-O0-fok" collectionClass="NSMutableArray" id="1wn-up-pmE"/>
+                        <outletCollection property="squaresCollection" destination="YHh-x6-qSV" collectionClass="NSMutableArray" id="ia8-g7-GKO"/>
+                        <outletCollection property="squaresCollection" destination="2P4-lh-3rh" collectionClass="NSMutableArray" id="iJJ-Z9-8Q5"/>
+                        <outletCollection property="squaresCollection" destination="13B-zZ-vpa" collectionClass="NSMutableArray" id="pk7-uU-Wma"/>
+                        <outletCollection property="squaresCollection" destination="iDV-DP-300" collectionClass="NSMutableArray" id="GRL-Ob-rho"/>
+                        <outletCollection property="squaresCollection" destination="NKq-Ws-vRj" collectionClass="NSMutableArray" id="QxV-6O-uDq"/>
+                        <outletCollection property="squaresCollection" destination="0an-wk-CCc" collectionClass="NSMutableArray" id="aW1-7C-rTa"/>
+                        <outletCollection property="squaresCollection" destination="Ll6-Sr-pJS" collectionClass="NSMutableArray" id="nBe-Ec-Xv3"/>
+                        <outletCollection property="squaresCollection" destination="pI8-K3-D0K" collectionClass="NSMutableArray" id="NSq-fx-qu6"/>
+                        <outletCollection property="squaresCollection" destination="zPE-cG-A5z" collectionClass="NSMutableArray" id="T9Q-es-cih"/>
+                        <outletCollection property="squaresCollection" destination="IZj-Gi-Qsc" collectionClass="NSMutableArray" id="1Md-6q-vNb"/>
+                        <outletCollection property="squaresCollection" destination="3kX-YU-1fv" collectionClass="NSMutableArray" id="Bnc-eL-4G2"/>
+                        <outletCollection property="bigSquaresCollection" destination="s1d-aM-dQe" collectionClass="NSMutableArray" id="0iP-QF-aW8"/>
+                        <outletCollection property="bigSquaresCollection" destination="jBd-5o-gpy" collectionClass="NSMutableArray" id="10I-id-KCb"/>
+                        <outletCollection property="bigSquaresCollection" destination="gj7-fv-G5y" collectionClass="NSMutableArray" id="rge-lu-FaH"/>
+                        <outletCollection property="bigSquaresCollection" destination="j9d-PG-sca" collectionClass="NSMutableArray" id="PuU-sx-aUL"/>
+                        <outletCollection property="bigSquaresCollection" destination="lgE-VZ-TAg" collectionClass="NSMutableArray" id="Y79-HQ-ril"/>
+                        <outletCollection property="bigSquaresCollection" destination="B69-dv-kHR" collectionClass="NSMutableArray" id="TvN-UV-f5a"/>
+                        <outletCollection property="bigSquaresCollection" destination="W7I-BJ-N8k" collectionClass="NSMutableArray" id="H5F-0a-VT1"/>
+                        <outletCollection property="bigSquaresCollection" destination="4Yk-8h-dFm" collectionClass="NSMutableArray" id="b5e-5r-VFx"/>
+                        <outletCollection property="bigSquaresCollection" destination="Nde-SM-knX" collectionClass="NSMutableArray" id="jUs-MS-IHP"/>
+                        <outletCollection property="bigSquaresCollection" destination="fgs-Uf-i3o" collectionClass="NSMutableArray" id="7Wd-fB-7n2"/>
+                        <outletCollection property="bigSquaresCollection" destination="anU-wM-OvU" collectionClass="NSMutableArray" id="uI3-63-OVo"/>
+                        <outletCollection property="bigSquaresCollection" destination="Xg5-Q2-IdK" collectionClass="NSMutableArray" id="WEu-Jt-gtA"/>
+                        <outletCollection property="bigSquaresCollection" destination="LDx-SC-L01" collectionClass="NSMutableArray" id="59b-uN-yJ3"/>
+                        <outletCollection property="bigSquaresCollection" destination="Bwn-7I-Dw6" collectionClass="NSMutableArray" id="ww2-Bq-eJc"/>
+                        <outletCollection property="bigSquaresCollection" destination="ZLG-db-FxG" collectionClass="NSMutableArray" id="J0N-5r-zvm"/>
+                        <outletCollection property="bigSquaresCollection" destination="mz6-j1-1Da" collectionClass="NSMutableArray" id="YhX-zz-Y5s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaW-Oa-d7y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

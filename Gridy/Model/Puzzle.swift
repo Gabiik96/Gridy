@@ -58,30 +58,12 @@ struct Puzzle {
         return imageArray
     }
     
-    mutating func addSquareImageToSquareView(tag: Int, bottom: UIStackView, middle: UIStackView, top: UIStackView ) {
-        
-        if tag >= 1 && tag <= 4 {
-            let bottom = bottom.viewWithTag(tag) as! UIImageView
-            bottom.image = pickedSquares[tag]
-            pickedSquares.remove(at: tag)
+    mutating func addSquareImageToSquareView(collection: [CustomImageView]) {
+        pickedSquares.shuffle()
+        for view in collection {
+            let randomInt = Int.random(in: 0...(pickedSquares.count - 1))
+            view.image = pickedSquares[randomInt]
+            pickedSquares.remove(at: randomInt)
         }
-        
-        let index = Int.random(in: 0...(pickedSquares.count - 1))
-        let top = top.viewWithTag(tag) as! UIImageView
-        top.image = pickedSquares[index]
-        pickedSquares.remove(at: index)
-        let index2 = Int.random(in: 0...(pickedSquares.count - 1))
-        let middle = middle.viewWithTag(tag) as! UIImageView
-        middle.image = pickedSquares[index2]
-        pickedSquares.remove(at: index2)
-    }
-    
-    mutating func addSquaresToAllImageViews(bottom: UIStackView, middle: UIStackView, top: UIStackView) {
-             var index = 1
-           while index <= 6 {
-                   pickedSquares.shuffle()
-            addSquareImageToSquareView(tag: index, bottom: bottom, middle: middle, top: top)
-                   index += 1
-           }
     }
 }

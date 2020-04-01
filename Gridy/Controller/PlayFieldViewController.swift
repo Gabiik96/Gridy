@@ -11,35 +11,42 @@ import AVFoundation
 import Photos
 
 
+
 class PlayFieldViewController: UIViewController, UINavigationControllerDelegate, UIGestureRecognizerDelegate{
     
     // MARK: - Global variables
     var puzzle = Puzzle()
+    var squaresArray = [UIImageView]()
+
     
     
     // MARK: - IBOutlets
-    @IBOutlet weak var topSmallSquaresStack: UIStackView!
-    @IBOutlet weak var middleSmallSquaresStack: UIStackView!
-    @IBOutlet weak var bottomSmallSquaresStack: UIStackView!
-    @IBOutlet weak var smallSquareImagesStack: UIStackView!
+ 
+    
     @IBOutlet weak var movesLbl: UILabel!
+    
     @IBOutlet weak var hintImageView: UIImageView!
     @IBOutlet weak var hintBtnView: UIButton!
     @IBOutlet weak var hintAlphaBackgroundView: UIView!
     
+    @IBOutlet var squaresCollection: [CustomImageView]!
+    @IBOutlet var bigSquaresCollection: [CustomImageView]!
     
     // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {
-        puzzle.addSquaresToAllImageViews(bottom: bottomSmallSquaresStack,
-                                         middle: middleSmallSquaresStack,
-                                         top:     topSmallSquaresStack)
+        puzzle.addSquareImageToSquareView(collection: squaresCollection)
+
         hintImageView.image = puzzle.hintImage
+        
 
 
         
     }
     
     override func viewDidLoad() {
+  
+        print(squaresCollection.count)
+        print(bigSquaresCollection.count)
       
     }
     
@@ -83,3 +90,6 @@ extension UIView {
         })
     }
 }
+
+
+
