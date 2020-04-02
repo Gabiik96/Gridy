@@ -64,6 +64,7 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     }
     
     override func viewDidLoad() {
+        
         createRect()
         
     
@@ -133,14 +134,13 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     
     
     func createRect() {
-        pickedImage.image = imagePicked
-        
+        alphaView.updateConstraints()
         // Set white background color with custom alpha
         alphaView.backgroundColor = UIColor(white: 255/255, alpha: 0.85)
 
         // Create the initial layer from the stackView bounds.
         let maskLayer = CAShapeLayer()
-        maskLayer.frame = alphaView.bounds
+        maskLayer.frame = squareImagesStack.bounds
 
         // Create the frame to cover whole stackView
         let rect = CGRect(

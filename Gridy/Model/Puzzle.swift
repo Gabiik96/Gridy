@@ -58,7 +58,7 @@ struct Puzzle {
         return imageArray
     }
     
-    mutating func addSquareImageToSquareView(collection: [CustomImageView]) {
+    mutating func addSquareImageToSquareView(collection: [UIImageView]) {
         pickedSquares.shuffle()
         for view in collection {
             let randomInt = Int.random(in: 0...(pickedSquares.count - 1))
