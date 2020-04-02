@@ -38,7 +38,9 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {
         puzzle.addSquareImageToSquareView(collection: squaresCollection)
+        movesLbl.text = "0"
         hintImageView.image = puzzle.hintImage
+        checkSquares()
         
         for view in squaresCollection {
             addPanGesture(view: view)
@@ -92,6 +94,8 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
                     swapImage(imageView: pannedImageView, imageView2: view)
                     }
                 }
+            checkSquares()
+            addMoveToScore()
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
         default: break
         }
@@ -132,6 +136,8 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
                     }
                 }
             }
+            checkSquares()
+            addMoveToScore()
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
         default: break
         }
@@ -167,8 +173,26 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         })
     }
     
+    func addMoveToScore() {
+        var currentScore = Int(movesLbl.text!)!
+        currentScore += 1
+        movesLbl.text = String(currentScore)
+    }
     
+    func checkSquares() {
+        for view in squaresCollection {
+            if view.image != nil {
+                view.borderWidth = 0
+            } else {
+                view.borderWidth = 0.5
+            }
         }
+        for view in bigSquaresCollection {
+            if view.image != nil {
+                view.borderWidth = 0
+            } else {
+                view.borderWidth = 0.5
+            }
         }
     }
 }
