@@ -520,7 +520,7 @@ zoom, rotate, reposition</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yQ-II-2Ap" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
-                                <rect key="frame" x="16" y="64" width="181.5" height="35"/>
+                                <rect key="frame" x="16" y="64" width="111.5" height="35"/>
                                 <color key="backgroundColor" name="Color1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="TRc-Xy-neq"/>
@@ -535,11 +535,11 @@ zoom, rotate, reposition</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="newGameBtn:" destination="VZ7-En-4JS" eventType="touchUpInside" id="GYE-8K-p55"/>
+                                    <action selector="newGameBtnPressed:" destination="VZ7-En-4JS" eventType="touchUpInside" id="GYE-8K-p55"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-name-small-green" translatesAutoresizingMaskIntoConstraints="NO" id="NZZ-iE-ym5">
-                                <rect key="frame" x="217.5" y="64" width="70" height="40"/>
+                                <rect key="frame" x="147.5" y="64" width="140" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="lIr-gi-qNZ"/>
                                 </constraints>
@@ -557,11 +557,30 @@ zoom, rotate, reposition</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag pieces to the grid swipe out of the grid to undo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p2F-hG-b0n">
-                                <rect key="frame" x="104" y="312" width="206.5" height="147"/>
+                                <rect key="frame" x="0.0" y="312" width="414" height="96.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" name="Color6"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C44-nT-1c3" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
+                                <rect key="frame" x="116" y="409" width="181.5" height="35"/>
+                                <color key="backgroundColor" name="Color1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="XwX-8I-sI9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="shareBtnPressed:" destination="VZ7-En-4JS" eventType="touchUpInside" id="fGg-hp-6WZ"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-0.25" translatesAutoresizingMaskIntoConstraints="NO" id="ssb-Tt-0Uq">
                                 <rect key="frame" x="16" y="464" width="382" height="382"/>
                                 <subviews>
@@ -1106,7 +1125,6 @@ zoom, rotate, reposition</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4yQ-II-2Ap" firstAttribute="top" secondItem="CcM-hT-bRi" secondAttribute="top" constant="20" id="21c-m8-dDr"/>
-                            <constraint firstItem="ssb-Tt-0Uq" firstAttribute="top" secondItem="p2F-hG-b0n" secondAttribute="bottom" constant="5" id="3IB-Ig-fqE"/>
                             <constraint firstItem="Sb8-Lh-hch" firstAttribute="leading" secondItem="NZZ-iE-ym5" secondAttribute="trailing" constant="10" id="3cR-uK-uM2"/>
                             <constraint firstItem="CcM-hT-bRi" firstAttribute="bottom" secondItem="ssb-Tt-0Uq" secondAttribute="bottom" constant="16" id="4Iz-qS-ahh"/>
                             <constraint firstItem="ikm-HO-m2P" firstAttribute="leading" secondItem="CcM-hT-bRi" secondAttribute="leading" constant="20" id="AST-Mg-NYm"/>
@@ -1116,16 +1134,18 @@ zoom, rotate, reposition</string>
                             <constraint firstItem="NZZ-iE-ym5" firstAttribute="top" secondItem="CcM-hT-bRi" secondAttribute="top" constant="20" id="Ho4-po-ont"/>
                             <constraint firstItem="9rT-rJ-lJo" firstAttribute="top" secondItem="CcM-hT-bRi" secondAttribute="top" constant="20" id="JQC-Js-XZd"/>
                             <constraint firstItem="9rT-rJ-lJo" firstAttribute="leading" secondItem="Sb8-Lh-hch" secondAttribute="trailing" constant="14" id="LWu-Gc-Ufu"/>
-                            <constraint firstItem="p2F-hG-b0n" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CcM-hT-bRi" secondAttribute="leading" id="LqJ-Tr-yvX"/>
+                            <constraint firstItem="p2F-hG-b0n" firstAttribute="leading" secondItem="iR2-aE-fqD" secondAttribute="leading" id="LqJ-Tr-yvX"/>
                             <constraint firstItem="p2F-hG-b0n" firstAttribute="centerX" secondItem="iR2-aE-fqD" secondAttribute="centerX" id="M58-1V-Dbt"/>
                             <constraint firstItem="SYk-sQ-070" firstAttribute="leading" secondItem="CcM-hT-bRi" secondAttribute="leading" id="Pzs-jd-GFb"/>
                             <constraint firstItem="ikm-HO-m2P" firstAttribute="centerX" secondItem="iR2-aE-fqD" secondAttribute="centerX" id="RJI-P5-QL7"/>
+                            <constraint firstItem="C44-nT-1c3" firstAttribute="top" secondItem="p2F-hG-b0n" secondAttribute="bottom" constant="0.5" id="SaK-jD-yPM"/>
                             <constraint firstItem="CcM-hT-bRi" firstAttribute="trailing" secondItem="9rT-rJ-lJo" secondAttribute="trailing" constant="16" id="VCn-Ct-p7H"/>
-                            <constraint firstItem="CcM-hT-bRi" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="p2F-hG-b0n" secondAttribute="trailing" id="XZ2-5H-J5l"/>
+                            <constraint firstAttribute="trailing" secondItem="p2F-hG-b0n" secondAttribute="trailing" id="XZ2-5H-J5l"/>
                             <constraint firstItem="4yQ-II-2Ap" firstAttribute="leading" secondItem="CcM-hT-bRi" secondAttribute="leading" constant="16" id="bIv-hz-Lg5"/>
                             <constraint firstItem="IvH-x2-wfw" firstAttribute="centerX" secondItem="iR2-aE-fqD" secondAttribute="centerX" id="cmb-hW-jZl"/>
                             <constraint firstItem="CcM-hT-bRi" firstAttribute="trailing" secondItem="ssb-Tt-0Uq" secondAttribute="trailing" constant="16" id="gFX-di-J2h"/>
                             <constraint firstItem="p2F-hG-b0n" firstAttribute="top" secondItem="IvH-x2-wfw" secondAttribute="bottom" constant="5" id="h5F-3G-hdH"/>
+                            <constraint firstItem="ssb-Tt-0Uq" firstAttribute="top" secondItem="C44-nT-1c3" secondAttribute="bottom" constant="20" id="mdK-XY-4ht"/>
                             <constraint firstAttribute="trailing" secondItem="IvH-x2-wfw" secondAttribute="trailing" constant="16" id="nKh-a1-xbF"/>
                             <constraint firstItem="ssb-Tt-0Uq" firstAttribute="leading" secondItem="CcM-hT-bRi" secondAttribute="leading" constant="16" id="oAD-c2-Oed"/>
                             <constraint firstItem="SYk-sQ-070" firstAttribute="top" secondItem="CcM-hT-bRi" secondAttribute="top" id="qHv-RV-UrI"/>

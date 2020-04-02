@@ -61,13 +61,16 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         }
     }
     
-    @IBAction func newGameBtn(_ sender: Any) {
+    @IBAction func newGameBtnPressed(_ sender: Any) {
         puzzle.pickedSquares.removeAll()
         if let nav = self.navigationController {
             nav.popViewController(animated: true)
         } else {
             self.dismiss(animated: true, completion: nil)
         }
+    }
+    @IBAction func shareBtnPressed(_ sender: Any) {
+        
     }
     
     //MARK: - Functions
