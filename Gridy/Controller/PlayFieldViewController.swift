@@ -20,6 +20,10 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     var squaresArray = [UIImage]()
     var imageViewOrigin: CGPoint!
     
+    let squareInSound = URL(fileURLWithPath: Bundle.main.path(forResource: "In", ofType: "m4a")!)
+    let squareOutSound = URL(fileURLWithPath: Bundle.main.path(forResource: "Out", ofType: "m4a")!)
+    var audioPlayer = AVAudioPlayer()
+    
 
     
     
@@ -103,6 +107,12 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
             checkSquares()
             addMoveToScore()
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: squareInSound)
+                audioPlayer.play()
+            } catch {
+                print(error)
+            }
         default: break
         }
             pannedImageView.setNeedsUpdateConstraints()
@@ -145,6 +155,12 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
             checkSquares()
             addMoveToScore()
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: squareOutSound)
+                audioPlayer.play()
+            } catch {
+                print(error)
+            }
         default: break
         }
     pannedImageView.setNeedsUpdateConstraints()

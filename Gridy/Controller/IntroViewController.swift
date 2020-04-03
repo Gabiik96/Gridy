@@ -99,9 +99,11 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
        
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
+
         guard let selectedImage = info[.originalImage] as? UIImage else {
             assert((info[.originalImage] as? UIImage) != nil,"Expected a dictionary containing an image, but was provided the following: \(info)")
             return }
+
         print("Did finish picking")
         self.imageToPass = selectedImage
         self.performSegue(withIdentifier: "getToImageEditorView", sender: nil)
