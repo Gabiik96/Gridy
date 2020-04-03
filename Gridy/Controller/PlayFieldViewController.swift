@@ -29,6 +29,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     
     // MARK: - IBOutlets
  
+    @IBOutlet weak var speakerBtn: UIButton!
     
     @IBOutlet weak var shareBtn: RoundButton!
     @IBOutlet weak var bigSquaresStackView: UIStackView!
@@ -47,11 +48,17 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         movesLbl.text = "0"
         hintImageView.image = puzzle.hintImage
         checkSquares()
-        
+        if let buttonState = UserDefaults.standard.object(forKey: "speaker") as? Bool {
+            if buttonState == true {
+                speakerBtnSetup(identifier: "speaker.2.fill")
+            } else {
+                speakerBtnSetup(identifier: "speaker.slash.fill")
+            }
+        }
+    
         for view in squaresCollection {
             addPanGesture(view: view)
         }
-        
         for view in bigSquaresCollection {
             addSwipe(view: view)
         }
@@ -75,10 +82,15 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
     @IBAction func shareBtnPressed(_ sender: Any) {
         displaySharingOptions()
-            
     }
+    
+    @IBAction func speakerBtnPressed(_ sender: Any) {
+        speakerBtn.toggleSpeakerImage()
+    }
+    
     
     //MARK: - Functions
     
@@ -107,12 +119,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
             checkSquares()
             addMoveToScore()
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: squareInSound)
-                audioPlayer.play()
-            } catch {
-                print(error)
-            }
+            playSound(sound: squareInSound)
         default: break
         }
             pannedImageView.setNeedsUpdateConstraints()
@@ -155,17 +162,11 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
             checkSquares()
             addMoveToScore()
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: squareOutSound)
-                audioPlayer.play()
-            } catch {
-                print(error)
-            }
+            playSound(sound: squareOutSound)
         default: break
         }
     pannedImageView.setNeedsUpdateConstraints()
     }
-    
     
     func swipeImageUP(view: UIImageView, sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view.superview)
@@ -217,7 +218,6 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
                 view.borderWidth = 0.5
             }
         }
-        print(squaresArray.count)
         if squaresArray.count == 16 && shareBtn.alpha == 0 {
             shareBtn.toggleVisibility(firstTransition: .curveEaseIn, secondTransition: .curveEaseOut)
             squaresArray.removeAll()
@@ -244,13 +244,28 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     func composePuzzleImage() -> UIImage{
-            
         UIGraphicsBeginImageContextWithOptions(bigSquaresStackView.bounds.size, false, 0)
         bigSquaresStackView.drawHierarchy(in: bigSquaresStackView.bounds, afterScreenUpdates: true)
         let screenshot = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             
         return screenshot
+    }
+    
+    func playSound(sound: URL ) {
+        if speakerBtn.imageView?.image == UIImage(systemName: "speaker.2.fill") {
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: sound)
+                audioPlayer.play()
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    func speakerBtnSetup(identifier: String) {
+        speakerBtn.setImage(UIImage(systemName: identifier), for: UIControl.State.normal)
+        speakerBtn.restorationIdentifier = identifier
     }
 }
 
@@ -262,6 +277,23 @@ extension UIView {
         UIView.transition(with: self, duration: 0.5, options: (isVisible ? firstTransition : secondTransition), animations: {
             self.alpha = isVisible ? 0 : 1
         })
+    }
+}
+
+extension UIButton {
+    func toggleSpeakerImage() {
+        if self.restorationIdentifier == "speaker.2.fill" {
+            saveUserDefaults(identifier: "speaker.slash.fill", bool: false)
+        } else {
+            saveUserDefaults(identifier: "speaker.2.fill", bool: true)
+        }
+    }
+    
+    func saveUserDefaults(identifier: String, bool: Bool){
+        self.setImage(UIImage(systemName: identifier), for: UIControl.State.normal)
+        self.restorationIdentifier = identifier
+        UserDefaults.standard.set(bool, forKey: "speaker")
+        UserDefaults.standard.synchronize()
     }
 }
 

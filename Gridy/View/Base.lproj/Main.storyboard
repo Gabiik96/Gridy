@@ -1093,12 +1093,19 @@ zoom, rotate, reposition</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="17" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ORS-Yt-Mnq">
+                                            <button opaque="NO" tag="18" contentMode="center" restorationIdentifier="speaker.2.fill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3X-Vt-hZL">
                                                 <rect key="frame" x="260" y="0.0" width="57" height="57"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="ORS-Yt-Mnq" secondAttribute="height" multiplier="1:1" id="CHR-ch-ead"/>
-                                                </constraints>
-                                            </imageView>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="speaker.2.fill" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    </preferredSymbolConfiguration>
+                                                </state>
+                                                <connections>
+                                                    <action selector="speakerBtnPressed:" destination="VZ7-En-4JS" eventType="touchUpInside" id="84f-co-x8A"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" tag="18" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mc-gi-Xhl">
                                                 <rect key="frame" x="325" y="0.0" width="57" height="57"/>
                                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1174,6 +1181,7 @@ zoom, rotate, reposition</string>
                         <outlet property="hintImageView" destination="ikm-HO-m2P" id="wgb-5p-X24"/>
                         <outlet property="movesLbl" destination="9rT-rJ-lJo" id="wQd-lb-q21"/>
                         <outlet property="shareBtn" destination="C44-nT-1c3" id="vyw-xV-l4F"/>
+                        <outlet property="speakerBtn" destination="s3X-Vt-hZL" id="rix-OK-PaM"/>
                         <outletCollection property="squaresCollection" destination="Rmn-9B-GWk" collectionClass="NSMutableArray" id="u7H-df-EBw"/>
                         <outletCollection property="squaresCollection" destination="PKk-dU-zbP" collectionClass="NSMutableArray" id="h7n-9d-Fhb"/>
                         <outletCollection property="squaresCollection" destination="Z7O-LH-geV" collectionClass="NSMutableArray" id="jmr-nI-QaQ"/>
@@ -1237,6 +1245,7 @@ zoom, rotate, reposition</string>
         <image name="Gridy-lookup" width="36" height="28"/>
         <image name="Gridy-name-small-green" width="70" height="34"/>
         <image name="Gridy-name-small-grey" width="70" height="34"/>
+        <image name="speaker.2.fill" catalog="system" width="64" height="48"/>
         <image name="xmark" catalog="system" width="64" height="56"/>
         <namedColor name="Color1">
             <color red="0.53299999237060547" green="0.83099997043609619" blue="0.59600001573562622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
