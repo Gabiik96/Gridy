@@ -562,8 +562,8 @@ zoom, rotate, reposition</string>
                                 <color key="textColor" name="Color6"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C44-nT-1c3" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
-                                <rect key="frame" x="116" y="409" width="181.5" height="35"/>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C44-nT-1c3" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
+                                <rect key="frame" x="151.5" y="409" width="111.5" height="35"/>
                                 <color key="backgroundColor" name="Color1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="XwX-8I-sI9"/>
@@ -1113,6 +1113,13 @@ zoom, rotate, reposition</string>
                             </stackView>
                             <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYk-sQ-070">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0j7-f6-DqJ">
+                                        <rect key="frame" x="87" y="544" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ikm-HO-m2P">
@@ -1147,8 +1154,10 @@ zoom, rotate, reposition</string>
                             <constraint firstItem="p2F-hG-b0n" firstAttribute="top" secondItem="IvH-x2-wfw" secondAttribute="bottom" constant="5" id="h5F-3G-hdH"/>
                             <constraint firstItem="ssb-Tt-0Uq" firstAttribute="top" secondItem="C44-nT-1c3" secondAttribute="bottom" constant="20" id="mdK-XY-4ht"/>
                             <constraint firstAttribute="trailing" secondItem="IvH-x2-wfw" secondAttribute="trailing" constant="16" id="nKh-a1-xbF"/>
+                            <constraint firstItem="C44-nT-1c3" firstAttribute="centerX" secondItem="iR2-aE-fqD" secondAttribute="centerX" id="nUj-AW-Z64"/>
                             <constraint firstItem="ssb-Tt-0Uq" firstAttribute="leading" secondItem="CcM-hT-bRi" secondAttribute="leading" constant="16" id="oAD-c2-Oed"/>
                             <constraint firstItem="SYk-sQ-070" firstAttribute="top" secondItem="CcM-hT-bRi" secondAttribute="top" id="qHv-RV-UrI"/>
+                            <constraint firstItem="C44-nT-1c3" firstAttribute="width" secondItem="4yQ-II-2Ap" secondAttribute="width" id="qy0-L9-FRk"/>
                             <constraint firstItem="NZZ-iE-ym5" firstAttribute="leading" secondItem="4yQ-II-2Ap" secondAttribute="trailing" constant="20" id="r1T-1r-wgX"/>
                             <constraint firstItem="SYk-sQ-070" firstAttribute="bottom" secondItem="CcM-hT-bRi" secondAttribute="bottom" id="thX-QM-xPV"/>
                             <constraint firstItem="Sb8-Lh-hch" firstAttribute="bottom" secondItem="9rT-rJ-lJo" secondAttribute="bottom" id="tvW-fm-4wu"/>
@@ -1159,10 +1168,12 @@ zoom, rotate, reposition</string>
                     </view>
                     <navigationItem key="navigationItem" id="Yr1-Bc-ZMl"/>
                     <connections>
+                        <outlet property="bigSquaresStackView" destination="ssb-Tt-0Uq" id="dpj-vH-9L2"/>
                         <outlet property="hintAlphaBackgroundView" destination="SYk-sQ-070" id="MCk-Ar-LdE"/>
                         <outlet property="hintBtnView" destination="0mc-gi-Xhl" id="pPJ-b4-Af0"/>
                         <outlet property="hintImageView" destination="ikm-HO-m2P" id="wgb-5p-X24"/>
                         <outlet property="movesLbl" destination="9rT-rJ-lJo" id="wQd-lb-q21"/>
+                        <outlet property="shareBtn" destination="C44-nT-1c3" id="vyw-xV-l4F"/>
                         <outletCollection property="squaresCollection" destination="Rmn-9B-GWk" collectionClass="NSMutableArray" id="u7H-df-EBw"/>
                         <outletCollection property="squaresCollection" destination="PKk-dU-zbP" collectionClass="NSMutableArray" id="h7n-9d-Fhb"/>
                         <outletCollection property="squaresCollection" destination="Z7O-LH-geV" collectionClass="NSMutableArray" id="jmr-nI-QaQ"/>

@@ -15,6 +15,8 @@
 		428B3BC12407222B00C03769 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428B3BBF2407222B00C03769 /* Main.storyboard */; };
 		428B3BC32407222C00C03769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 428B3BC22407222C00C03769 /* Assets.xcassets */; };
 		428B3BC62407222C00C03769 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428B3BC42407222C00C03769 /* LaunchScreen.storyboard */; };
+		42A0CE742437D76400FA056F /* In.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 42A0CE722437D76400FA056F /* In.m4a */; };
+		42A0CE752437D76400FA056F /* Out.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 42A0CE732437D76400FA056F /* Out.m4a */; };
 		42C16B13240DE9EE00651C23 /* RoundedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C16B12240DE9EE00651C23 /* RoundedBtn.swift */; };
 		42CF966E240BCD3200276C23 /* timeburnerbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42CF966C240BCD3200276C23 /* timeburnerbold.ttf */; };
 		42CF966F240BCD3200276C23 /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42CF966D240BCD3200276C23 /* timeburnernormal.ttf */; };
@@ -33,6 +35,8 @@
 		428B3BC22407222C00C03769 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		428B3BC52407222C00C03769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		428B3BC72407222C00C03769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42A0CE722437D76400FA056F /* In.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = In.m4a; sourceTree = "<group>"; };
+		42A0CE732437D76400FA056F /* Out.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Out.m4a; sourceTree = "<group>"; };
 		42C16B12240DE9EE00651C23 /* RoundedBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBtn.swift; sourceTree = "<group>"; };
 		42CF966C240BCD3200276C23 /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
 		42CF966D240BCD3200276C23 /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
@@ -78,6 +82,15 @@
 			path = Gridy;
 			sourceTree = "<group>";
 		};
+		42A0CE712437D74200FA056F /* SoundFiles */ = {
+			isa = PBXGroup;
+			children = (
+				42A0CE722437D76400FA056F /* In.m4a */,
+				42A0CE732437D76400FA056F /* Out.m4a */,
+			);
+			path = SoundFiles;
+			sourceTree = "<group>";
+		};
 		42CF966B240BCCE400276C23 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +120,7 @@
 		42CF9676240C668500276C23 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				42A0CE712437D74200FA056F /* SoundFiles */,
 				428B3BB92407222B00C03769 /* AppDelegate.swift */,
 				428B3BBB2407222B00C03769 /* SceneDelegate.swift */,
 				428B3BC22407222C00C03769 /* Assets.xcassets */,
@@ -202,6 +216,8 @@
 				428B3BC62407222C00C03769 /* LaunchScreen.storyboard in Resources */,
 				428B3BC32407222C00C03769 /* Assets.xcassets in Resources */,
 				428B3BC12407222B00C03769 /* Main.storyboard in Resources */,
+				42A0CE742437D76400FA056F /* In.m4a in Resources */,
+				42A0CE752437D76400FA056F /* Out.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     
     // MARK: - Global variables
     var puzzle = Puzzle()
-    var squaresArray = [UIImageView]()
+    var squaresArray = [UIImage]()
     var imageViewOrigin: CGPoint!
     
 
@@ -26,6 +26,8 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     // MARK: - IBOutlets
  
     
+    @IBOutlet weak var shareBtn: RoundButton!
+    @IBOutlet weak var bigSquaresStackView: UIStackView!
     @IBOutlet weak var movesLbl: UILabel!
     
     @IBOutlet weak var hintImageView: UIImageView!
@@ -53,11 +55,11 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     
     // MARK: - IBActions
     @IBAction func hintBtnPressed(_ sender: Any) {
-        hintAlphaBackgroundView.unHideWithAnimation()
-        hintImageView.unHideWithAnimation()
+        hintAlphaBackgroundView.toggleVisibility(firstTransition: .transitionCurlUp, secondTransition: .transitionCurlDown)
+        hintImageView.toggleVisibility(firstTransition: .transitionCurlUp, secondTransition: .transitionCurlDown)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.hintAlphaBackgroundView.hideWithAnimation()
-            self.hintImageView.hideWithAnimation()
+            self.hintAlphaBackgroundView.toggleVisibility(firstTransition: .transitionCurlUp, secondTransition: .transitionCurlDown)
+            self.hintImageView.toggleVisibility(firstTransition: .transitionCurlUp, secondTransition: .transitionCurlDown)
         }
     }
     
@@ -70,7 +72,8 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         }
     }
     @IBAction func shareBtnPressed(_ sender: Any) {
-        
+        displaySharingOptions()
+            
     }
     
     //MARK: - Functions
@@ -192,25 +195,56 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         }
         for view in bigSquaresCollection {
             if view.image != nil {
+                squaresArray.append(view.image!)
                 view.borderWidth = 0
             } else {
                 view.borderWidth = 0.5
             }
         }
+        print(squaresArray.count)
+        if squaresArray.count == 16 && shareBtn.alpha == 0 {
+            shareBtn.toggleVisibility(firstTransition: .curveEaseIn, secondTransition: .curveEaseOut)
+            squaresArray.removeAll()
+        } else if squaresArray.count < 16 && shareBtn.alpha == 1 {
+            squaresArray.removeAll()
+            shareBtn.toggleVisibility(firstTransition: .curveEaseIn, secondTransition: .curveEaseOut)
+        } else {
+            squaresArray.removeAll()
+        }
+    }
+    
+    func displaySharingOptions() {
+        // define content to share
+        let note = "Took me \(String(movesLbl.text!)) to complete this! Can you beat me ?"
+        let image = composePuzzleImage()
+        let items = [image as Any, note as Any]
+             
+        // create activity view controller
+        let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = view // so that iPads won't crash
+             
+        // present the view controller
+        present(activityViewController, animated: true, completion: nil)
+    }
+    
+    func composePuzzleImage() -> UIImage{
+            
+        UIGraphicsBeginImageContextWithOptions(bigSquaresStackView.bounds.size, false, 0)
+        bigSquaresStackView.drawHierarchy(in: bigSquaresStackView.bounds, afterScreenUpdates: true)
+        let screenshot = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            
+        return screenshot
     }
 }
 
 //MARK: - Extensions
 
 extension UIView {
-    func unHideWithAnimation() {
-        UIView.transition(with: self, duration: 0.5, options: .transitionCurlDown, animations: {
-            self.alpha = self.alpha == 1 ? 0 : 1
-            })
-        }
-    func hideWithAnimation() {
-        UIView.transition(with: self, duration: 0.5, options: .transitionCurlUp, animations: {
-            self.alpha = self.alpha == 1 ? 0 : 1
+    func toggleVisibility(firstTransition : UIView.AnimationOptions, secondTransition: UIView.AnimationOptions) {
+        let isVisible = self.alpha == 1
+        UIView.transition(with: self, duration: 0.5, options: (isVisible ? firstTransition : secondTransition), animations: {
+            self.alpha = isVisible ? 0 : 1
         })
     }
 }
