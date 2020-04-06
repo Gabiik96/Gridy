@@ -134,27 +134,19 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     
     
     func createRect() {
-        alphaView.updateConstraints()
         // Set white background color with custom alpha
         alphaView.backgroundColor = UIColor(white: 255/255, alpha: 0.85)
 
         // Create the initial layer from the stackView bounds.
         let maskLayer = CAShapeLayer()
-        maskLayer.frame = squareImagesStack.bounds
-
-        // Create the frame to cover whole stackView
-        let rect = CGRect(
-            x: squareImagesStack.frame.minX,
-            y: squareImagesStack.frame.minY,
-            width: view.frame.size.width - 40,
-            height: squareImagesStack.frame.size.height)
-
-        // Create the path
-        let path = UIBezierPath(rect: alphaView.bounds)
+        maskLayer.frame = cropAreaView.bounds
         maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
+        
+        // Create the path
+        let path = UIBezierPath(rect: alphaView.frame)
 
         // Append the framer to the path so that it is subtracted
-        path.append(UIBezierPath(rect: rect))
+        path.append(UIBezierPath(rect: cropAreaView.frame))
         maskLayer.path = path.cgPath
 
         // Set the mask of the alphaview
