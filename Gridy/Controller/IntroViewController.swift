@@ -12,26 +12,18 @@ import Photos
 
 class IntroViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    
     @IBOutlet weak var PickBtnLbl: RoundButton!
     @IBOutlet weak var CameraBtnLbl: RoundButton!
     @IBOutlet weak var PhotoLibraryBtnLbl: RoundButton!
     
-    
     var localImages = [UIImage].init()
     var imageToPass: UIImage?
-    
-    
 
     override func viewWillAppear(_ animated: Bool) {
         PickBtnLbl.alignTextBelow()
         CameraBtnLbl.alignTextBelow()
         PhotoLibraryBtnLbl.alignTextBelow()
     }
-    
-    
-
-    
     
     // MARK: - Functions
 
@@ -97,51 +89,61 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
     }
 
     func presentImagePicker(sourceType: UIImagePickerController.SourceType) {
-           let imagePicker =  UIImagePickerController()
-           imagePicker.delegate = self
-           imagePicker.sourceType = sourceType
-           present(imagePicker, animated: true, completion: nil)
+        let imagePicker =  UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = sourceType
+        present(imagePicker, animated: true, completion: nil)
        }
     
     
        
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-           picker.dismiss(animated: true, completion: nil)
-           guard let selectedImage = info[.originalImage] as? UIImage else {
-               fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
-           }
+        picker.dismiss(animated: true, completion: nil)
+
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            assert((info[.originalImage] as? UIImage) != nil,"Expected a dictionary containing an image, but was provided the following: \(info)")
+            return }
+
         print("Did finish picking")
         self.imageToPass = selectedImage
         self.performSegue(withIdentifier: "getToImageEditorView", sender: nil)
-       }
+    }
 
 
-       func troubleAlert(message: String?) {
-           let alertController = UIAlertController(title: "Oops...", message:message , preferredStyle: .alert)
-           let OKAction = UIAlertAction(title: "Got it", style: .cancel)
-           alertController.addAction(OKAction)
-           present(alertController, animated: true)
-       }
+    func troubleAlert(message: String?) {
+        let alertController = UIAlertController(title: "Oops...", message:message , preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "Got it", style: .cancel)
+        alertController.addAction(OKAction)
+        present(alertController, animated: true)
+    }
        
-
-       
-       func collectLocalImageSet() {
-           localImages.removeAll()
+    func collectLocalImageSet() {
+        localImages.removeAll()
         let imageNames = ["car", "cat", "christmas", "city", "dog", "ducati", "joker", "smurf", "starWars"]
-
-           for name in imageNames {
-               if let image = UIImage.init(named: name) {
-                   localImages.append(image)
-               }
-           }
-       }
+        
+        for name in imageNames {
+            if let image = UIImage.init(named: name) {
+                localImages.append(image)
+            }
+        }
+    }
        
-       
-       func configure() {
-           collectLocalImageSet()
-       }
-       
+    func configure() {
+        collectLocalImageSet()
+    }
     
+    func randomImage() {
+    
+        if localImages.count > 0 {
+            let randomIndex = Int(arc4random_uniform(UInt32(localImages.count)))
+            let newImage = localImages[randomIndex]
+            self.imageToPass = newImage
+            self.performSegue(withIdentifier: "getToImageEditorView", sender: nil)
+        } else {
+            print("Error choosing random image from assets!")
+        }
+    }
+       
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "getToImageEditorView" {
             let nextView: ImageEditorViewController = segue.destination as! ImageEditorViewController
@@ -149,36 +151,26 @@ class IntroViewController: UIViewController, UINavigationControllerDelegate, UII
         }
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        configure()
         
-        // Do any additional setup after loading the view.
     }
     
-
     @IBAction func PickBtnPressed(_ sender: RoundButton) {
-
+        randomImage()
     }
     @IBAction func CameraBtnPressed(_ sender: RoundButton) {
         displayCamera()
     }
     @IBAction func PhotoLibraryBtnPressed(_ sender: RoundButton) {
         displayLibrary()
-
     }
-
-    
 }
-
-
-
-
 
 // MARK: - Extensions
 
-extension UIButton {
+extension RoundButton {
     func alignTextBelow(spacing: CGFloat = 6.0) {
         guard let image = self.imageView?.image else {
             return
