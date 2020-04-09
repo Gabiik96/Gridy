@@ -134,8 +134,6 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     
     
     func createRect() {
-        // Set white background color with custom alpha
-        alphaView.backgroundColor = UIColor(white: 255/255, alpha: 0.85)
 
         // Create the initial layer from the stackView bounds.
         let maskLayer = CAShapeLayer()
