@@ -29,10 +29,6 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var pickedImage: UIImageView!
     @IBOutlet weak var squareImagesStack: UIStackView!
     @IBOutlet weak var XBtn: UIButton!
-    @IBOutlet weak var firstSquareStack: UIStackView!
-    @IBOutlet weak var secondSquareStack: UIStackView!
-    @IBOutlet weak var thirdSquareStack: UIStackView!
-    @IBOutlet weak var fourthSquareStack: UIStackView!
     
     
     
@@ -131,7 +127,6 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
                 
         return true
     }
-    
     
     func createRect() {
 

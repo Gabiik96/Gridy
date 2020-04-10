@@ -24,9 +24,6 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     let squareOutSound = URL(fileURLWithPath: Bundle.main.path(forResource: "Out", ofType: "m4a")!)
     var audioPlayer = AVAudioPlayer()
     
-
-    
-    
     // MARK: - IBOutlets
  
     @IBOutlet weak var speakerBtn: UIButton!
@@ -48,11 +45,12 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         movesLbl.text = "0"
         hintImageView.image = puzzle.hintImage
         checkSquares()
+        speakerBtnSetup(identifier: "speaker.slash.fill")
         if let buttonState = UserDefaults.standard.object(forKey: "speaker") as? Bool {
             if buttonState == true {
-                speakerBtnSetup(identifier: "speaker.2.fill")
-            } else {
                 speakerBtnSetup(identifier: "speaker.slash.fill")
+            } else if buttonState == false {
+                speakerBtnSetup(identifier: "speaker.2.fill")
             }
         }
     
@@ -152,7 +150,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         case.ended:
             let convertedPannedView = pannedImageView.convert(pannedImageView.bounds, to: self.view)
             let convertedY = convertedPannedView.minY
-            while pannedImageView.image != nil && convertedY < (self.view.bounds.height / 2.3) {
+            while pannedImageView.image != nil && convertedY < (self.view.bounds.height / 3) {
                 for view in squaresCollection {
                     if view.image == nil {
                         swapImage(imageView: pannedImageView, imageView2: view)
@@ -256,6 +254,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         if speakerBtn.imageView?.image == UIImage(systemName: "speaker.2.fill") {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: sound)
+                audioPlayer.prepareToPlay()
                 audioPlayer.play()
             } catch {
                 print(error)
@@ -283,9 +282,9 @@ extension UIView {
 extension UIButton {
     func toggleSpeakerImage() {
         if self.restorationIdentifier == "speaker.2.fill" {
-            saveUserDefaults(identifier: "speaker.slash.fill", bool: false)
+            saveUserDefaults(identifier: "speaker.slash.fill", bool: true)
         } else {
-            saveUserDefaults(identifier: "speaker.2.fill", bool: true)
+            saveUserDefaults(identifier: "speaker.2.fill", bool: false)
         }
     }
     
