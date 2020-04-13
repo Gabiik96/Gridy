@@ -10,12 +10,12 @@ import UIKit
 
 struct Puzzle {
     
-    
+    var originalLocations: [UIImage] = []
     var pickedSquares: [UIImage] = []
     var hintImage: UIImage?
     
     // create an array of slices from an image using the desired amount of columns and rows, then store that array inside another array
-    func cropImage(for image: UIImage) -> [UIImage] {
+    mutating func cropImage(for image: UIImage) -> [UIImage] {
         let row = 4
         let column = 4
         
@@ -42,10 +42,8 @@ struct Puzzle {
                 // add slice of image
                 let newImage = UIImage.init(cgImage: i!)
                 
-                // add newImage to yArray
+                // add newImage to Array
                 imageArray.append(newImage)
-                
-                
                 
                 // end drawing image
                 UIGraphicsEndImageContext();
@@ -53,6 +51,8 @@ struct Puzzle {
             }
             
         }
+        
+        
         // return imageArray
         print("[\(imageArray.count)]<- returning sliced images")
         return imageArray

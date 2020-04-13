@@ -21,7 +21,7 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     var imageCropped: UIImage!
     var initialImageViewOffSet = CGPoint()
     var imageSquares: [UIImage] = []
- 
+    
 //MARK:- IBOutlets
 
     @IBOutlet weak var cropAreaView: UIView!
@@ -30,14 +30,13 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var squareImagesStack: UIStackView!
     @IBOutlet weak var XBtn: UIButton!
     
-    
-    
 //MARK:- View lifecycle
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "getToPlayFieldView" {
             let nextView: PlayFieldViewController = segue.destination as! PlayFieldViewController
             nextView.puzzle.pickedSquares = self.imageSquares
+            nextView.puzzle.originalLocations = self.imageSquares
             nextView.puzzle.hintImage = self.imageCropped
         }
     }
@@ -60,12 +59,7 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     }
     
     override func viewDidLoad() {
-        
         createRect()
-        
-    
-
-        
     }
     
 //MARK: - IBActions
@@ -147,8 +141,7 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     }
     
     func createPuzzleSquareImage(square: UIView) {
-
-        
+    
         UIGraphicsBeginImageContextWithOptions(cropAreaView.bounds.size, true, 0.0)
         cropAreaView.drawHierarchy(in: cropAreaView.bounds, afterScreenUpdates: true)
         let screenshot = UIGraphicsGetImageFromCurrentImageContext()!
