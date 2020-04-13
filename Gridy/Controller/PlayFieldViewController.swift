@@ -53,7 +53,6 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
                 speakerBtnSetup(identifier: "speaker.2.fill")
             }
         }
-    
         for view in squaresCollection {
             addPanGesture(view: view)
         }
@@ -217,14 +216,39 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
             }
         }
         if squaresArray.count == 16 && shareBtn.alpha == 0 {
-            shareBtn.toggleVisibility(firstTransition: .curveEaseIn, secondTransition: .curveEaseOut)
-            squaresArray.removeAll()
+            checkLocationsOfPuzzles()
+
         } else if squaresArray.count < 16 && shareBtn.alpha == 1 {
             squaresArray.removeAll()
             shareBtn.toggleVisibility(firstTransition: .curveEaseIn, secondTransition: .curveEaseOut)
         } else {
             squaresArray.removeAll()
         }
+    }
+    
+    func checkLocationsOfPuzzles() {
+        var count = 0
+        for square in bigSquaresCollection {
+            let position = square.tag - 1
+            var originalImage : UIImage? {
+                if position <= puzzle.originalLocations.count {
+                    return puzzle.originalLocations[position]
+                } else { return nil }
+            }
+            if square.image == originalImage {
+                count += 1
+            }
+        }
+        if count == 16 {
+            shareBtn.toggleVisibility(firstTransition: .curveEaseIn, secondTransition: .curveEaseOut)
+            squaresArray.removeAll()
+            puzzleCompleted()
+        }
+    }
+    
+    func puzzleCompleted() {
+        }
+        
     }
     
     func displaySharingOptions() {
