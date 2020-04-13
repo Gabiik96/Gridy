@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42451E2224423A4600C66312 /* GridyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42451E2124423A4600C66312 /* GridyTests.swift */; };
+		42451E3024423B5D00C66312 /* GridyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42451E2F24423B5D00C66312 /* GridyUITests.swift */; };
 		425CCAC1243261FF00886B39 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CCAC0243261FF00886B39 /* Puzzle.swift */; };
 		425CCB072433F50F00886B39 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CCB062433F50F00886B39 /* CustomImageView.swift */; };
 		428B3BBA2407222B00C03769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428B3BB92407222B00C03769 /* AppDelegate.swift */; };
@@ -18,13 +20,59 @@
 		42A0CE742437D76400FA056F /* In.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 42A0CE722437D76400FA056F /* In.m4a */; };
 		42A0CE752437D76400FA056F /* Out.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 42A0CE732437D76400FA056F /* Out.m4a */; };
 		42C16B13240DE9EE00651C23 /* RoundedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C16B12240DE9EE00651C23 /* RoundedBtn.swift */; };
+		42C6879524450174003E36CD /* Pods_Gridy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351852117D3F826C55330406 /* Pods_Gridy.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		42C6879624450174003E36CD /* Pods_Gridy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 351852117D3F826C55330406 /* Pods_Gridy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42CF966E240BCD3200276C23 /* timeburnerbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42CF966C240BCD3200276C23 /* timeburnerbold.ttf */; };
 		42CF966F240BCD3200276C23 /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42CF966D240BCD3200276C23 /* timeburnernormal.ttf */; };
 		42CF967D240C685300276C23 /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF967C240C685300276C23 /* ImageEditorViewController.swift */; };
 		42CF967F240C686600276C23 /* PlayFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF967E240C686600276C23 /* PlayFieldViewController.swift */; };
+		AD18DC9DF1A7FF909C1894A6 /* Pods_GridyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022BBFBFD241361454E369EA /* Pods_GridyTests.framework */; };
+		C0B4871186F680491A7D89EC /* Pods_Gridy_GridyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BDD73481FB2AAAA5C6EF4FF /* Pods_Gridy_GridyUITests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		42451E2424423A4600C66312 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 428B3BAE2407222B00C03769 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 428B3BB52407222B00C03769;
+			remoteInfo = Gridy;
+		};
+		42451E3224423B5D00C66312 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 428B3BAE2407222B00C03769 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 428B3BB52407222B00C03769;
+			remoteInfo = Gridy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		42C6879724450174003E36CD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				42C6879624450174003E36CD /* Pods_Gridy.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		021AF61D214C9C5AB93639B9 /* Pods-Gridy-GridyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gridy-GridyUITests.release.xcconfig"; path = "Target Support Files/Pods-Gridy-GridyUITests/Pods-Gridy-GridyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		022BBFBFD241361454E369EA /* Pods_GridyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GridyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2705001EF83CD32E4C786A18 /* Pods-Gridy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gridy.release.xcconfig"; path = "Target Support Files/Pods-Gridy/Pods-Gridy.release.xcconfig"; sourceTree = "<group>"; };
+		2BDD73481FB2AAAA5C6EF4FF /* Pods_Gridy_GridyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gridy_GridyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		351852117D3F826C55330406 /* Pods_Gridy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gridy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42451E1F24423A4600C66312 /* GridyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42451E2124423A4600C66312 /* GridyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridyTests.swift; sourceTree = "<group>"; };
+		42451E2324423A4600C66312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42451E2D24423B5D00C66312 /* GridyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42451E2F24423B5D00C66312 /* GridyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridyUITests.swift; sourceTree = "<group>"; };
+		42451E3124423B5D00C66312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		425CCAC0243261FF00886B39 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		425CCB062433F50F00886B39 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		428B3BB62407222B00C03769 /* Gridy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gridy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,28 +86,85 @@
 		42A0CE722437D76400FA056F /* In.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = In.m4a; sourceTree = "<group>"; };
 		42A0CE732437D76400FA056F /* Out.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Out.m4a; sourceTree = "<group>"; };
 		42C16B12240DE9EE00651C23 /* RoundedBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBtn.swift; sourceTree = "<group>"; };
+		42C687902444FF82003E36CD /* SAConfettiView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SAConfettiView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42CF966C240BCD3200276C23 /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
 		42CF966D240BCD3200276C23 /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
 		42CF967C240C685300276C23 /* ImageEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
 		42CF967E240C686600276C23 /* PlayFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayFieldViewController.swift; sourceTree = "<group>"; };
+		58FC266A3F0F724343E29CB7 /* Pods-Gridy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gridy.debug.xcconfig"; path = "Target Support Files/Pods-Gridy/Pods-Gridy.debug.xcconfig"; sourceTree = "<group>"; };
+		A136624B1FD596710499AD76 /* Pods-GridyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GridyTests.release.xcconfig"; path = "Target Support Files/Pods-GridyTests/Pods-GridyTests.release.xcconfig"; sourceTree = "<group>"; };
+		B28FA7F7F81B140814E5717E /* Pods-Gridy-GridyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gridy-GridyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gridy-GridyUITests/Pods-Gridy-GridyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C5F857F7487F076095BF9BFC /* Pods-GridyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GridyTests.debug.xcconfig"; path = "Target Support Files/Pods-GridyTests/Pods-GridyTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		42451E1C24423A4600C66312 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD18DC9DF1A7FF909C1894A6 /* Pods_GridyTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42451E2A24423B5D00C66312 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0B4871186F680491A7D89EC /* Pods_Gridy_GridyUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		428B3BB32407222B00C03769 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C6879524450174003E36CD /* Pods_Gridy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35F25055C499AEC3B7AE76E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58FC266A3F0F724343E29CB7 /* Pods-Gridy.debug.xcconfig */,
+				2705001EF83CD32E4C786A18 /* Pods-Gridy.release.xcconfig */,
+				B28FA7F7F81B140814E5717E /* Pods-Gridy-GridyUITests.debug.xcconfig */,
+				021AF61D214C9C5AB93639B9 /* Pods-Gridy-GridyUITests.release.xcconfig */,
+				C5F857F7487F076095BF9BFC /* Pods-GridyTests.debug.xcconfig */,
+				A136624B1FD596710499AD76 /* Pods-GridyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		42451E2024423A4600C66312 /* GridyTests */ = {
+			isa = PBXGroup;
+			children = (
+				42451E2124423A4600C66312 /* GridyTests.swift */,
+				42451E2324423A4600C66312 /* Info.plist */,
+			);
+			path = GridyTests;
+			sourceTree = "<group>";
+		};
+		42451E2E24423B5D00C66312 /* GridyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				42451E2F24423B5D00C66312 /* GridyUITests.swift */,
+				42451E3124423B5D00C66312 /* Info.plist */,
+			);
+			path = GridyUITests;
+			sourceTree = "<group>";
+		};
 		428B3BAD2407222B00C03769 = {
 			isa = PBXGroup;
 			children = (
 				428B3BB82407222B00C03769 /* Gridy */,
+				42451E2024423A4600C66312 /* GridyTests */,
+				42451E2E24423B5D00C66312 /* GridyUITests */,
 				428B3BB72407222B00C03769 /* Products */,
+				35F25055C499AEC3B7AE76E8 /* Pods */,
+				BA76EC036CAC8D272CD0423C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				428B3BB62407222B00C03769 /* Gridy.app */,
+				42451E1F24423A4600C66312 /* GridyTests.xctest */,
+				42451E2D24423B5D00C66312 /* GridyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,16 +257,69 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BA76EC036CAC8D272CD0423C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42C687902444FF82003E36CD /* SAConfettiView.framework */,
+				351852117D3F826C55330406 /* Pods_Gridy.framework */,
+				2BDD73481FB2AAAA5C6EF4FF /* Pods_Gridy_GridyUITests.framework */,
+				022BBFBFD241361454E369EA /* Pods_GridyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		42451E1E24423A4600C66312 /* GridyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42451E2824423A4600C66312 /* Build configuration list for PBXNativeTarget "GridyTests" */;
+			buildPhases = (
+				AB1C0DD7B3A2499F04E25211 /* [CP] Check Pods Manifest.lock */,
+				42451E1B24423A4600C66312 /* Sources */,
+				42451E1C24423A4600C66312 /* Frameworks */,
+				42451E1D24423A4600C66312 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42451E2524423A4600C66312 /* PBXTargetDependency */,
+			);
+			name = GridyTests;
+			productName = GridyTests;
+			productReference = 42451E1F24423A4600C66312 /* GridyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		42451E2C24423B5D00C66312 /* GridyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42451E3424423B5D00C66312 /* Build configuration list for PBXNativeTarget "GridyUITests" */;
+			buildPhases = (
+				E9B9FE7C3DE6B3F197A7C7CE /* [CP] Check Pods Manifest.lock */,
+				42451E2924423B5D00C66312 /* Sources */,
+				42451E2A24423B5D00C66312 /* Frameworks */,
+				42451E2B24423B5D00C66312 /* Resources */,
+				7225F55FD3A8CE8E7BB0FBC7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42451E3324423B5D00C66312 /* PBXTargetDependency */,
+			);
+			name = GridyUITests;
+			productName = GridyUITests;
+			productReference = 42451E2D24423B5D00C66312 /* GridyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		428B3BB52407222B00C03769 /* Gridy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 428B3BCA2407222C00C03769 /* Build configuration list for PBXNativeTarget "Gridy" */;
 			buildPhases = (
+				860EDACCB421C8B6F76B46B2 /* [CP] Check Pods Manifest.lock */,
 				428B3BB22407222B00C03769 /* Sources */,
 				428B3BB32407222B00C03769 /* Frameworks */,
 				428B3BB42407222B00C03769 /* Resources */,
+				A6B647D8D0BF11939A61C526 /* [CP] Embed Pods Frameworks */,
+				42C6879724450174003E36CD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,6 +343,14 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Gabriel Balta";
 				TargetAttributes = {
+					42451E1E24423A4600C66312 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 428B3BB52407222B00C03769;
+					};
+					42451E2C24423B5D00C66312 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 428B3BB52407222B00C03769;
+					};
 					428B3BB52407222B00C03769 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -202,11 +370,27 @@
 			projectRoot = "";
 			targets = (
 				428B3BB52407222B00C03769 /* Gridy */,
+				42451E1E24423A4600C66312 /* GridyTests */,
+				42451E2C24423B5D00C66312 /* GridyUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		42451E1D24423A4600C66312 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42451E2B24423B5D00C66312 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		428B3BB42407222B00C03769 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,7 +407,126 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7225F55FD3A8CE8E7BB0FBC7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gridy-GridyUITests/Pods-Gridy-GridyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gridy-GridyUITests/Pods-Gridy-GridyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gridy-GridyUITests/Pods-Gridy-GridyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		860EDACCB421C8B6F76B46B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gridy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6B647D8D0BF11939A61C526 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gridy/Pods-Gridy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gridy/Pods-Gridy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gridy/Pods-Gridy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB1C0DD7B3A2499F04E25211 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GridyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9B9FE7C3DE6B3F197A7C7CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gridy-GridyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		42451E1B24423A4600C66312 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42451E2224423A4600C66312 /* GridyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42451E2924423B5D00C66312 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42451E3024423B5D00C66312 /* GridyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		428B3BB22407222B00C03769 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,6 +543,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42451E2524423A4600C66312 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 428B3BB52407222B00C03769 /* Gridy */;
+			targetProxy = 42451E2424423A4600C66312 /* PBXContainerItemProxy */;
+		};
+		42451E3324423B5D00C66312 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 428B3BB52407222B00C03769 /* Gridy */;
+			targetProxy = 42451E3224423B5D00C66312 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		428B3BBF2407222B00C03769 /* Main.storyboard */ = {
@@ -261,6 +577,88 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		42451E2624423A4600C66312 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5F857F7487F076095BF9BFC /* Pods-GridyTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4YKPW2G86;
+				INFOPLIST_FILE = GridyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielBalta.GridyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gridy.app/Gridy";
+			};
+			name = Debug;
+		};
+		42451E2724423A4600C66312 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A136624B1FD596710499AD76 /* Pods-GridyTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4YKPW2G86;
+				INFOPLIST_FILE = GridyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielBalta.GridyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gridy.app/Gridy";
+			};
+			name = Release;
+		};
+		42451E3524423B5D00C66312 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B28FA7F7F81B140814E5717E /* Pods-Gridy-GridyUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4YKPW2G86;
+				INFOPLIST_FILE = GridyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielBalta.GridyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Gridy;
+			};
+			name = Debug;
+		};
+		42451E3624423B5D00C66312 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 021AF61D214C9C5AB93639B9 /* Pods-Gridy-GridyUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4YKPW2G86;
+				INFOPLIST_FILE = GridyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielBalta.GridyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Gridy;
+			};
+			name = Release;
+		};
 		428B3BC82407222C00C03769 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -377,6 +775,7 @@
 		};
 		428B3BCB2407222C00C03769 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58FC266A3F0F724343E29CB7 /* Pods-Gridy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -395,6 +794,7 @@
 		};
 		428B3BCC2407222C00C03769 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2705001EF83CD32E4C786A18 /* Pods-Gridy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -414,6 +814,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		42451E2824423A4600C66312 /* Build configuration list for PBXNativeTarget "GridyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42451E2624423A4600C66312 /* Debug */,
+				42451E2724423A4600C66312 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42451E3424423B5D00C66312 /* Build configuration list for PBXNativeTarget "GridyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42451E3524423B5D00C66312 /* Debug */,
+				42451E3624423B5D00C66312 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		428B3BB12407222B00C03769 /* Build configuration list for PBXProject "Gridy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

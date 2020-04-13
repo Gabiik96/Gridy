@@ -1,0 +1,16 @@
+PODS:
+  - SAConfettiView (0.1.8)
+
+DEPENDENCIES:
+  - SAConfettiView
+
+SPEC REPOS:
+  trunk:
+    - SAConfettiView
+
+SPEC CHECKSUMS:
+  SAConfettiView: c87031a2280659261b730fce3669fb10e73636ee
+
+PODFILE CHECKSUM: f67f7723126e2849f1b572ef9cb91ba83bb11558
+
+COCOAPODS: 1.9.1
