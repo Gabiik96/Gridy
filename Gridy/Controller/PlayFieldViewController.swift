@@ -9,9 +9,7 @@
 import UIKit
 import AVFoundation
 import Photos
-
-
-
+import SAConfettiView
 
 class PlayFieldViewController: UIViewController, UINavigationControllerDelegate, UIGestureRecognizerDelegate{
     
@@ -27,8 +25,9 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     // MARK: - IBOutlets
  
     @IBOutlet weak var speakerBtn: UIButton!
-    
+    @IBOutlet weak var newGameBtn: RoundButton!
     @IBOutlet weak var shareBtn: RoundButton!
+    
     @IBOutlet weak var bigSquaresStackView: UIStackView!
     @IBOutlet weak var movesLbl: UILabel!
     
@@ -247,6 +246,15 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     func puzzleCompleted() {
+        let confettiView = SAConfettiView(frame: self.view.bounds)
+        confettiView.type = .Star
+        view.addSubview(confettiView)
+        confettiView.startConfetti()
+        view.bringSubviewToFront(newGameBtn)
+        view.bringSubviewToFront(shareBtn)
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: true) {_ in
+            self.shareBtn.shake()
+            self.newGameBtn.shake()
         }
         
     }
