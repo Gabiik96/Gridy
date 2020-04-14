@@ -47,12 +47,8 @@ struct Puzzle {
                 
                 // end drawing image
                 UIGraphicsEndImageContext();
-                
             }
-            
         }
-        
-        
         // return imageArray
         print("[\(imageArray.count)]<- returning sliced images")
         return imageArray

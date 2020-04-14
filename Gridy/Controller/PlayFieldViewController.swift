@@ -15,12 +15,9 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     
     // MARK: - Global variables
     var puzzle = Puzzle()
+    var sound = SoundManager()
     var squaresArray = [UIImage]()
     var imageViewOrigin: CGPoint!
-    
-    let squareInSound = URL(fileURLWithPath: Bundle.main.path(forResource: "In", ofType: "m4a")!)
-    let squareOutSound = URL(fileURLWithPath: Bundle.main.path(forResource: "Out", ofType: "m4a")!)
-    var audioPlayer = AVAudioPlayer()
     
     // MARK: - IBOutlets
  
@@ -115,7 +112,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
             checkSquares()
             addMoveToScore()
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
-            playSound(sound: squareInSound)
+            sound.playSound(sound: sound.squareInSound, speakerBtn: speakerBtn)
         default: break
         }
             pannedImageView.setNeedsUpdateConstraints()
@@ -158,7 +155,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
             checkSquares()
             addMoveToScore()
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
-            playSound(sound: squareOutSound)
+            sound.playSound(sound: sound.squareOutSound, speakerBtn: speakerBtn)
         default: break
         }
     pannedImageView.setNeedsUpdateConstraints()
@@ -252,6 +249,10 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         confettiView.startConfetti()
         view.bringSubviewToFront(newGameBtn)
         view.bringSubviewToFront(shareBtn)
+        sound.playSound(sound: sound.clapSound, speakerBtn: speakerBtn)
+        Timer.scheduledTimer(withTimeInterval: 6, repeats: true) {_ in
+            self.sound.playSound(sound: self.sound.clapSound, speakerBtn: self.speakerBtn)
+        }
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true) {_ in
             self.shareBtn.shake()
             self.newGameBtn.shake()
@@ -280,18 +281,6 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
             UIGraphicsEndImageContext()
             
         return screenshot
-    }
-    
-    func playSound(sound: URL ) {
-        if speakerBtn.imageView?.image == UIImage(systemName: "speaker.2.fill") {
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: sound)
-                audioPlayer.prepareToPlay()
-                audioPlayer.play()
-            } catch {
-                print(error)
-            }
-        }
     }
     
     func speakerBtnSetup(identifier: String) {

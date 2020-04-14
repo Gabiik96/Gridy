@@ -20,8 +20,10 @@
 		42A0CE742437D76400FA056F /* In.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 42A0CE722437D76400FA056F /* In.m4a */; };
 		42A0CE752437D76400FA056F /* Out.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 42A0CE732437D76400FA056F /* Out.m4a */; };
 		42C16B13240DE9EE00651C23 /* RoundedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C16B12240DE9EE00651C23 /* RoundedBtn.swift */; };
-		42C6879524450174003E36CD /* Pods_Gridy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351852117D3F826C55330406 /* Pods_Gridy.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		42C6879524450174003E36CD /* Pods_Gridy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351852117D3F826C55330406 /* Pods_Gridy.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		42C6879624450174003E36CD /* Pods_Gridy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 351852117D3F826C55330406 /* Pods_Gridy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42C6879E24450551003E36CD /* Clap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42C6879D24450551003E36CD /* Clap.mp3 */; };
+		42C687C524461C5A003E36CD /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C687C424461C5A003E36CD /* SoundManager.swift */; };
 		42CF966E240BCD3200276C23 /* timeburnerbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42CF966C240BCD3200276C23 /* timeburnerbold.ttf */; };
 		42CF966F240BCD3200276C23 /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42CF966D240BCD3200276C23 /* timeburnernormal.ttf */; };
 		42CF967D240C685300276C23 /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF967C240C685300276C23 /* ImageEditorViewController.swift */; };
@@ -87,6 +89,8 @@
 		42A0CE732437D76400FA056F /* Out.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Out.m4a; sourceTree = "<group>"; };
 		42C16B12240DE9EE00651C23 /* RoundedBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBtn.swift; sourceTree = "<group>"; };
 		42C687902444FF82003E36CD /* SAConfettiView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SAConfettiView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42C6879D24450551003E36CD /* Clap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Clap.mp3; sourceTree = "<group>"; };
+		42C687C424461C5A003E36CD /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		42CF966C240BCD3200276C23 /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
 		42CF966D240BCD3200276C23 /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
 		42CF967C240C685300276C23 /* ImageEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 		42A0CE712437D74200FA056F /* SoundFiles */ = {
 			isa = PBXGroup;
 			children = (
+				42C6879D24450551003E36CD /* Clap.mp3 */,
 				42A0CE722437D76400FA056F /* In.m4a */,
 				42A0CE732437D76400FA056F /* Out.m4a */,
 			);
@@ -252,6 +257,7 @@
 			children = (
 				425CCAC0243261FF00886B39 /* Puzzle.swift */,
 				425CCB062433F50F00886B39 /* CustomImageView.swift */,
+				42C687C424461C5A003E36CD /* SoundManager.swift */,
 				42CF9671240BD27F00276C23 /* Customs */,
 			);
 			path = Model;
@@ -401,6 +407,7 @@
 				428B3BC32407222C00C03769 /* Assets.xcassets in Resources */,
 				428B3BC12407222B00C03769 /* Main.storyboard in Resources */,
 				42A0CE742437D76400FA056F /* In.m4a in Resources */,
+				42C6879E24450551003E36CD /* Clap.mp3 in Resources */,
 				42A0CE752437D76400FA056F /* Out.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,6 +544,7 @@
 				428B3BBE2407222B00C03769 /* IntroViewController.swift in Sources */,
 				425CCB072433F50F00886B39 /* CustomImageView.swift in Sources */,
 				428B3BBA2407222B00C03769 /* AppDelegate.swift in Sources */,
+				42C687C524461C5A003E36CD /* SoundManager.swift in Sources */,
 				425CCAC1243261FF00886B39 /* Puzzle.swift in Sources */,
 				428B3BBC2407222B00C03769 /* SceneDelegate.swift in Sources */,
 			);
