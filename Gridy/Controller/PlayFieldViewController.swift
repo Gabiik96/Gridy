@@ -14,33 +14,37 @@ import SAConfettiView
 class PlayFieldViewController: UIViewController, UINavigationControllerDelegate, UIGestureRecognizerDelegate{
     
     // MARK: - Global variables
-    var puzzle = Puzzle()
-    var sound = SoundManager()
-    var squaresArray = [UIImage]()
-    var imageViewOrigin: CGPoint!
+    var pickedSquares = [UIImage]()
+    var hintImage: UIImage!
+    private var imageViewOrigin: CGPoint!
+    private var timer: Timer?
+    
     
     // MARK: - IBOutlets
     
     @IBOutlet weak var speakerBtn: UIButton!
     @IBOutlet weak var newGameBtn: RoundButton!
     @IBOutlet weak var shareBtn: RoundButton!
-    
     @IBOutlet weak var bigSquaresStackView: UIStackView!
     @IBOutlet weak var movesLbl: UILabel!
-    
     @IBOutlet weak var hintImageView: UIImageView!
     @IBOutlet weak var hintBtnView: UIButton!
     @IBOutlet weak var hintAlphaBackgroundView: UIView!
-    
     @IBOutlet var squaresCollection: [CustomImageView]!
     @IBOutlet var bigSquaresCollection: [CustomImageView]!
     
+    private var sound = SoundManager()
+    private var puzzle = Puzzle()
+    
     // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {
+        // Puzzle initiliazer
+        puzzle = Puzzle(originalLocations: pickedSquares, pickedSquares: pickedSquares, squaresCollection: squaresCollection, bigSquaresCollection: bigSquaresCollection, speakerBtn: speakerBtn, newGameBtn: newGameBtn, shareBtn: shareBtn, bigSquaresStackView: bigSquaresStackView, movesLbl: movesLbl)
+        
         puzzle.addSquareImageToSquareView(collection: squaresCollection)
         movesLbl.text = "0"
-        hintImageView.image = puzzle.hintImage
-        checkSquares()
+        hintImageView.image = hintImage
+        puzzle.checkSquares()
         speakerBtnSetup(identifier: "speaker.slash.fill")
         if let buttonState = UserDefaults.standard.object(forKey: "speaker") as? Bool {
             if buttonState == true {
@@ -69,14 +73,12 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     
     @IBAction func newGameBtnPressed(_ sender: Any) {
         puzzle.pickedSquares.removeAll()
-        if let nav = self.navigationController {
-            nav.popViewController(animated: true)
-        } else {
-            self.dismiss(animated: true, completion: nil)
-        }
+        sound.stopPlayingSounds(timer: timer)
+        if let nav = self.navigationController { nav.popViewController(animated: true) }
     }
     
     @IBAction func shareBtnPressed(_ sender: Any) {
+        sound.stopPlayingSounds(timer: timer)
         displaySharingOptions()
     }
     
@@ -110,9 +112,11 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
                     addMoveToScore()
                 }
             }
-            checkSquares()
+            if puzzle.checkSquares() == true {
+                puzzleCompleted()
+            }
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
-            sound.playSound(sound: sound.squareInSound, speakerBtn)
+            sound.playSound(sound.squareInSound, speakerBtn)
         default: break
         }
         pannedImageView.setNeedsUpdateConstraints()
@@ -153,9 +157,9 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
                     }
                 }
             }
-            checkSquares()
+            puzzle.checkSquares()
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
-            sound.playSound(sound: sound.squareOutSound, speakerBtn)
+            sound.playSound(sound.squareOutSound, speakerBtn)
         default: break
         }
         pannedImageView.setNeedsUpdateConstraints()
@@ -195,53 +199,6 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         movesLbl.text = String(currentScore)
     }
     
-    func checkSquares() {
-        for view in squaresCollection {
-            if view.image != nil {
-                view.borderWidth = 0
-            } else {
-                view.borderWidth = 0.5
-            }
-        }
-        for view in bigSquaresCollection {
-            if view.image != nil {
-                squaresArray.append(view.image!)
-                view.borderWidth = 0
-            } else {
-                view.borderWidth = 0.5
-            }
-        }
-        if squaresArray.count == 16 && shareBtn.alpha == 0 {
-            checkLocationsOfPuzzles()
-            
-        } else if squaresArray.count < 16 && shareBtn.alpha == 1 {
-            squaresArray.removeAll()
-            shareBtn.toggleVisibility(firstTransition: .curveEaseIn, secondTransition: .curveEaseOut)
-        } else {
-            squaresArray.removeAll()
-        }
-    }
-    
-    func checkLocationsOfPuzzles() {
-        var count = 0
-        for square in bigSquaresCollection {
-            let position = square.tag - 1
-            var originalImage : UIImage? {
-                if position <= puzzle.originalLocations.count {
-                    return puzzle.originalLocations[position]
-                } else { return nil }
-            }
-            if square.image == originalImage {
-                count += 1
-            }
-        }
-        if count == 16 {
-            shareBtn.toggleVisibility(firstTransition: .curveEaseIn, secondTransition: .curveEaseOut)
-            squaresArray.removeAll()
-            puzzleCompleted()
-        }
-    }
-    
     func puzzleCompleted() {
         let confettiView = SAConfettiView(frame: self.view.bounds)
         confettiView.type = .Star
@@ -249,15 +206,11 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         confettiView.startConfetti()
         view.bringSubviewToFront(newGameBtn)
         view.bringSubviewToFront(shareBtn)
-        sound.playSound(sound: sound.clapSound, speakerBtn)
-        Timer.scheduledTimer(withTimeInterval: 6, repeats: true) {_ in
-            self.sound.playSound(sound: self.sound.clapSound, self.speakerBtn)
-        }
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: true) {_ in
+        sound.soundWithTimer(interval: 6, sound: sound.clapSound, speakerBtn: speakerBtn)
+        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) {_ in
             self.shareBtn.shake()
             self.newGameBtn.shake()
         }
-        
     }
     
     func displaySharingOptions() {

@@ -10,9 +10,16 @@ import UIKit
 
 struct Puzzle {
     
-    var originalLocations: [UIImage] = []
-    var pickedSquares: [UIImage] = []
-    var hintImage: UIImage?
+    var originalLocations: [UIImage]!
+    var pickedSquares: [UIImage]!
+    var squaresCollection: [CustomImageView]!
+    var bigSquaresCollection: [CustomImageView]!
+    var squaresArray = [UIImage]()
+    var speakerBtn: UIButton!
+    var newGameBtn: RoundButton!
+    var shareBtn: RoundButton!
+    var bigSquaresStackView: UIStackView!
+    var movesLbl: UILabel!
     
     // create an array of slices from an image using the desired amount of columns and rows, then store that array inside another array
     mutating func cropImage(for image: UIImage) -> [UIImage] {
@@ -60,6 +67,59 @@ struct Puzzle {
             let randomInt = Int.random(in: 0...(pickedSquares.count - 1))
             view.image = pickedSquares[randomInt]
             pickedSquares.remove(at: randomInt)
+        }
+    }
+    
+    @discardableResult
+    mutating func checkSquares() -> Bool {
+        for view in squaresCollection {
+            if view.image != nil {
+                view.borderWidth = 0
+            } else {
+                view.borderWidth = 0.5
+            }
+        }
+        for view in bigSquaresCollection {
+            if view.image != nil {
+                squaresArray.append(view.image!)
+                view.borderWidth = 0
+            } else {
+                view.borderWidth = 0.5
+            }
+        }
+        if squaresArray.count == 16 && shareBtn.alpha == 0 {
+            if checkLocationsOfPuzzles() == true {
+                return true
+            } else { return false }
+        } else if squaresArray.count < 16 && shareBtn.alpha == 1 {
+            squaresArray.removeAll()
+            shareBtn.toggleVisibility(firstTransition: .curveEaseIn, secondTransition: .curveEaseOut)
+            return false
+        } else {
+            squaresArray.removeAll()
+            return false
+        }
+    }
+    
+    mutating func checkLocationsOfPuzzles() -> Bool {
+        var count = 0
+        for square in bigSquaresCollection {
+            let position = square.tag - 1
+            var originalImage : UIImage? {
+                if position <= originalLocations.count {
+                    return originalLocations[position]
+                } else { return nil }
+            }
+            if square.image == originalImage {
+                count += 1
+            }
+        }
+        if count == 16 {
+            shareBtn.toggleVisibility(firstTransition: .curveEaseIn, secondTransition: .curveEaseOut)
+            squaresArray.removeAll()
+            return true
+        } else {
+            return false
         }
     }
 }
