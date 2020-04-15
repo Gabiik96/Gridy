@@ -16,7 +16,7 @@ struct SoundManager {
     let clapSound = URL(fileURLWithPath: Bundle.main.path(forResource: "Clap", ofType: "mp3")!)
     var audioPlayer = AVAudioPlayer()
     
-    mutating func playSound(sound: URL, speakerBtn: UIButton ) {
+    mutating func playSound(sound: URL,_ speakerBtn: UIButton ) {
         if speakerBtn.imageView?.image == UIImage(systemName: "speaker.2.fill") {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: sound)

@@ -87,7 +87,6 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
         if sender.state == .began {
             initialImageViewOffSet = pickedImage.frame.origin
         }
-        
         let position = CGPoint(x: translation.x + initialImageViewOffSet.x - pickedImage.frame.origin.x,
                                y: translation.y + initialImageViewOffSet.y - pickedImage.frame.origin.y)
         pickedImage.transform = pickedImage.transform.translatedBy(x: position.x, y: position.y)
@@ -105,8 +104,7 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     }
       
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
-                               shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer)
-            -> Bool {
+                               shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
                 
         // simultaneous gesture recognition will be supported for pickedImage view
         if gestureRecognizer.view != pickedImage {
@@ -148,7 +146,6 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
         UIGraphicsEndImageContext()
         
         imageCropped = screenshot
-
     }
 }
 

@@ -215,6 +215,7 @@
 		42CF9671240BD27F00276C23 /* Customs */ = {
 			isa = PBXGroup;
 			children = (
+				425CCB062433F50F00886B39 /* CustomImageView.swift */,
 				42C16B12240DE9EE00651C23 /* RoundedBtn.swift */,
 				42CF966B240BCCE400276C23 /* Fonts */,
 			);
@@ -256,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				425CCAC0243261FF00886B39 /* Puzzle.swift */,
-				425CCB062433F50F00886B39 /* CustomImageView.swift */,
 				42C687C424461C5A003E36CD /* SoundManager.swift */,
 				42CF9671240BD27F00276C23 /* Customs */,
 			);

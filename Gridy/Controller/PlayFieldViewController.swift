@@ -20,7 +20,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     var imageViewOrigin: CGPoint!
     
     // MARK: - IBOutlets
- 
+    
     @IBOutlet weak var speakerBtn: UIButton!
     @IBOutlet weak var newGameBtn: RoundButton!
     @IBOutlet weak var shareBtn: RoundButton!
@@ -95,7 +95,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     
     @objc func moveSquareImage(_ sender: UIPanGestureRecognizer) {
         let pannedImageView = sender.view! as! UIImageView
-
+        
         switch sender.state {
         case .began:
             imageViewOrigin = pannedImageView.frame.origin
@@ -107,21 +107,21 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
                 let convertedView = view.convert(view.bounds, to: self.view)
                 if convertedPannedView.intersects(convertedView) && pannedImageView.image != view.image {
                     swapImage(imageView: pannedImageView, imageView2: view)
-                    }
+                    addMoveToScore()
                 }
+            }
             checkSquares()
-            addMoveToScore()
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
-            sound.playSound(sound: sound.squareInSound, speakerBtn: speakerBtn)
+            sound.playSound(sound: sound.squareInSound, speakerBtn)
         default: break
         }
-            pannedImageView.setNeedsUpdateConstraints()
-        }
+        pannedImageView.setNeedsUpdateConstraints()
+    }
     
     func moveViewWithPan(view: UIImageView, sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view.superview)
         view.center = CGPoint(x: translation.x + view.center.x,
-                               y: translation.y + view.center.y)
+                              y: translation.y + view.center.y)
         sender.setTranslation(CGPoint.zero, in: view)
     }
     
@@ -133,7 +133,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     
     @objc func swipeBigSquareImage(_ sender: UIPanGestureRecognizer) {
         let pannedImageView = sender.view! as! UIImageView
-            
+        
         switch sender.state {
         case .began:
             imageViewOrigin = pannedImageView.frame.origin
@@ -149,16 +149,16 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
                 for view in squaresCollection {
                     if view.image == nil {
                         swapImage(imageView: pannedImageView, imageView2: view)
+                        addMoveToScore()
                     }
                 }
             }
             checkSquares()
-            addMoveToScore()
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
-            sound.playSound(sound: sound.squareOutSound, speakerBtn: speakerBtn)
+            sound.playSound(sound: sound.squareOutSound, speakerBtn)
         default: break
         }
-    pannedImageView.setNeedsUpdateConstraints()
+        pannedImageView.setNeedsUpdateConstraints()
     }
     
     func swipeImageUP(view: UIImageView, sender: UIPanGestureRecognizer) {
@@ -169,17 +169,17 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
             sender.setTranslation(CGPoint.zero, in: view.superview)
         }
     }
-
+    
     //MARK Mutual movement functionality && others
     func returnViewToOrigin(view: UIImageView, location: CGPoint) {
         if view.image == nil {
             view.frame.origin = location
         } else {
             UIView.animate(withDuration: 0.5, animations: {
-            view.frame.origin = location})
+                view.frame.origin = location})
         }
     }
-
+    
     func swapImage(imageView: UIImageView, imageView2: UIImageView) {
         let image1 = imageView.image
         let image2 = imageView2.image
@@ -213,7 +213,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         }
         if squaresArray.count == 16 && shareBtn.alpha == 0 {
             checkLocationsOfPuzzles()
-
+            
         } else if squaresArray.count < 16 && shareBtn.alpha == 1 {
             squaresArray.removeAll()
             shareBtn.toggleVisibility(firstTransition: .curveEaseIn, secondTransition: .curveEaseOut)
@@ -249,9 +249,9 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         confettiView.startConfetti()
         view.bringSubviewToFront(newGameBtn)
         view.bringSubviewToFront(shareBtn)
-        sound.playSound(sound: sound.clapSound, speakerBtn: speakerBtn)
+        sound.playSound(sound: sound.clapSound, speakerBtn)
         Timer.scheduledTimer(withTimeInterval: 6, repeats: true) {_ in
-            self.sound.playSound(sound: self.sound.clapSound, speakerBtn: self.speakerBtn)
+            self.sound.playSound(sound: self.sound.clapSound, self.speakerBtn)
         }
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true) {_ in
             self.shareBtn.shake()
@@ -265,11 +265,11 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         let note = "Took me \(String(movesLbl.text!)) to complete this! Can you beat me ?"
         let image = composePuzzleImage()
         let items = [image as Any, note as Any]
-             
+        
         // create activity view controller
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = view // so that iPads won't crash
-             
+        
         // present the view controller
         present(activityViewController, animated: true, completion: nil)
     }
@@ -278,8 +278,8 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         UIGraphicsBeginImageContextWithOptions(bigSquaresStackView.bounds.size, false, 0)
         bigSquaresStackView.drawHierarchy(in: bigSquaresStackView.bounds, afterScreenUpdates: true)
         let screenshot = UIGraphicsGetImageFromCurrentImageContext()!
-            UIGraphicsEndImageContext()
-            
+        UIGraphicsEndImageContext()
+        
         return screenshot
     }
     
