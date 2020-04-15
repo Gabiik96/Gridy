@@ -97,9 +97,11 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     
     @objc func moveSquareImage(_ sender: UIPanGestureRecognizer) {
         let pannedImageView = sender.view! as! UIImageView
+        guard pannedImageView.image != nil else { return }
         
         switch sender.state {
         case .began:
+            view.bringSubviewToFront(pannedImageView)
             imageViewOrigin = pannedImageView.frame.origin
         case .changed:
             moveViewWithPan(view: pannedImageView, sender: sender)
@@ -137,6 +139,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     
     @objc func swipeBigSquareImage(_ sender: UIPanGestureRecognizer) {
         let pannedImageView = sender.view! as! UIImageView
+        guard pannedImageView.image != nil else { return }
         
         switch sender.state {
         case .began:
@@ -216,7 +219,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     func displaySharingOptions() {
         // define content to share
         let note = "Took me \(String(movesLbl.text!)) to complete this! Can you beat me ?"
-        let image = composePuzzleImage()
+        let image = composeCompletedPuzzleImage()
         let items = [image as Any, note as Any]
         
         // create activity view controller
@@ -227,7 +230,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         present(activityViewController, animated: true, completion: nil)
     }
     
-    func composePuzzleImage() -> UIImage{
+    func composeCompletedPuzzleImage() -> UIImage{
         UIGraphicsBeginImageContextWithOptions(bigSquaresStackView.bounds.size, false, 0)
         bigSquaresStackView.drawHierarchy(in: bigSquaresStackView.bounds, afterScreenUpdates: true)
         let screenshot = UIGraphicsGetImageFromCurrentImageContext()!
