@@ -148,11 +148,18 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
                 break
             }
         case .changed:
-            swipeImageUP(view: pannedImageView, sender: sender)
+            if UIDevice.current.orientation.isPortrait {
+                swipeImageUP(view: pannedImageView, sender: sender)
+            } else {
+                swipeImageLeft(view: pannedImageView, sender: sender)
+            }
         case.ended:
             let convertedPannedView = pannedImageView.convert(pannedImageView.bounds, to: self.view)
             let convertedY = convertedPannedView.minY
-            while pannedImageView.image != nil && convertedY < (self.view.bounds.height / 3) {
+            let orientation = UIDevice.current.orientation.isPortrait
+            print(orientation)
+            let direction = orientation ? (self.view.bounds.height / 3) : (self.view.bounds.width / 3)
+            while pannedImageView.image != nil && convertedY < direction {
                 for view in smallTilesCollection {
                     if view.image == nil {
                         swapImage(imageView: pannedImageView, imageView2: view)
@@ -173,6 +180,15 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         if translation.y < 0 {
             view.center =  CGPoint(x: view.center.x,
                                    y: translation.y + view.center.y)
+            sender.setTranslation(CGPoint.zero, in: view.superview)
+        }
+    }
+    
+    func swipeImageLeft(view: UIImageView, sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: view.superview)
+        if translation.x < 0 {
+            view.center =  CGPoint(x: translation.x + view.center.x,
+                                   y: view.center.y)
             sender.setTranslation(CGPoint.zero, in: view.superview)
         }
     }
