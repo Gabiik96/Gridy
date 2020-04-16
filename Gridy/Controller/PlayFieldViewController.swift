@@ -14,7 +14,7 @@ import SAConfettiView
 class PlayFieldViewController: UIViewController, UINavigationControllerDelegate, UIGestureRecognizerDelegate{
     
     // MARK: - Global variables
-    var pickedSquares = [UIImage]()
+    var pickedTiles = [UIImage]()
     var hintImage: UIImage!
     private var imageViewOrigin: CGPoint!
     private var timer: Timer?
@@ -25,13 +25,13 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     @IBOutlet weak var speakerBtn: UIButton!
     @IBOutlet weak var newGameBtn: RoundButton!
     @IBOutlet weak var shareBtn: RoundButton!
-    @IBOutlet weak var bigSquaresStackView: UIStackView!
+    @IBOutlet weak var bigTilesStackView: UIStackView!
     @IBOutlet weak var movesLbl: UILabel!
     @IBOutlet weak var hintImageView: UIImageView!
     @IBOutlet weak var hintBtnView: UIButton!
     @IBOutlet weak var hintAlphaBackgroundView: UIView!
-    @IBOutlet var squaresCollection: [CustomImageView]!
-    @IBOutlet var bigSquaresCollection: [CustomImageView]!
+    @IBOutlet var smallTilesCollection: [CustomImageView]!
+    @IBOutlet var bigTilesCollection: [CustomImageView]!
     
     private var sound = SoundManager()
     private var puzzle = Puzzle()
@@ -39,9 +39,9 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {
         // Puzzle initiliazer
-        puzzle = Puzzle(originalLocations: pickedSquares, pickedSquares: pickedSquares, squaresCollection: squaresCollection, bigSquaresCollection: bigSquaresCollection, speakerBtn: speakerBtn, newGameBtn: newGameBtn, shareBtn: shareBtn, bigSquaresStackView: bigSquaresStackView, movesLbl: movesLbl)
+        puzzle = Puzzle(originalLocations: pickedTiles, pickedTiles: pickedTiles, smallTilesCollection: smallTilesCollection, bigTilesCollection: bigTilesCollection, speakerBtn: speakerBtn, newGameBtn: newGameBtn, shareBtn: shareBtn, movesLbl: movesLbl)
         
-        puzzle.addSquareImageToSquareView(collection: squaresCollection)
+        puzzle.addSquareImageToSquareView(collection: smallTilesCollection)
         movesLbl.text = "0"
         hintImageView.image = hintImage
         puzzle.checkSquares()
@@ -53,10 +53,10 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
                 speakerBtnSetup(identifier: "speaker.2.fill")
             }
         }
-        for view in squaresCollection {
+        for view in smallTilesCollection {
             addPanGesture(view: view)
         }
-        for view in bigSquaresCollection {
+        for view in bigTilesCollection {
             addSwipe(view: view)
         }
     }
@@ -72,7 +72,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     @IBAction func newGameBtnPressed(_ sender: Any) {
-        puzzle.pickedSquares.removeAll()
+        puzzle.pickedTiles.removeAll()
         sound.stopPlayingSounds(timer: timer)
         if let nav = self.navigationController { nav.popViewController(animated: true) }
     }
@@ -106,7 +106,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         case .changed:
             moveViewWithPan(view: pannedImageView, sender: sender)
         case.ended:
-            for view in bigSquaresCollection {
+            for view in bigTilesCollection {
                 let convertedPannedView = pannedImageView.convert(pannedImageView.bounds, to: self.view)
                 let convertedView = view.convert(view.bounds, to: self.view)
                 if convertedPannedView.intersects(convertedView) && pannedImageView.image != view.image {
@@ -153,16 +153,16 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
             let convertedPannedView = pannedImageView.convert(pannedImageView.bounds, to: self.view)
             let convertedY = convertedPannedView.minY
             while pannedImageView.image != nil && convertedY < (self.view.bounds.height / 3) {
-                for view in squaresCollection {
+                for view in smallTilesCollection {
                     if view.image == nil {
                         swapImage(imageView: pannedImageView, imageView2: view)
                         addMoveToScore()
+                        sound.playSound(sound.squareOutSound, speakerBtn)
                     }
                 }
             }
             puzzle.checkSquares()
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
-            sound.playSound(sound.squareOutSound, speakerBtn)
         default: break
         }
         pannedImageView.setNeedsUpdateConstraints()
@@ -231,8 +231,8 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     func composeCompletedPuzzleImage() -> UIImage{
-        UIGraphicsBeginImageContextWithOptions(bigSquaresStackView.bounds.size, false, 0)
-        bigSquaresStackView.drawHierarchy(in: bigSquaresStackView.bounds, afterScreenUpdates: true)
+        UIGraphicsBeginImageContextWithOptions(bigTilesStackView.bounds.size, false, 0)
+        bigTilesStackView.drawHierarchy(in: bigTilesStackView.bounds, afterScreenUpdates: true)
         let screenshot = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         

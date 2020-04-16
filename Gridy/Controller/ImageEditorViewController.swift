@@ -35,7 +35,7 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "getToPlayFieldView" {
             let nextView: PlayFieldViewController = segue.destination as! PlayFieldViewController
-            nextView.pickedSquares = self.imageSquares
+            nextView.pickedTiles = self.imageSquares
             nextView.hintImage = self.imageCropped
         }
     }
@@ -63,11 +63,7 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
 //MARK: - IBActions
     
     @IBAction func XBtnPressed(_ sender: Any) {
-       if let nav = self.navigationController {
-                nav.popViewController(animated: true)
-            } else {
-                self.dismiss(animated: true, completion: nil)
-            }
+       if let nav = self.navigationController { nav.popViewController(animated: true) } 
     }
     
     @IBAction func startBtnPressed(_ sender: Any) {

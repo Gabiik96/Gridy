@@ -11,14 +11,13 @@ import UIKit
 struct Puzzle {
     
     var originalLocations: [UIImage]!
-    var pickedSquares: [UIImage]!
-    var squaresCollection: [CustomImageView]!
-    var bigSquaresCollection: [CustomImageView]!
-    var squaresArray = [UIImage]()
+    var pickedTiles: [UIImage]!
+    var smallTilesCollection: [CustomImageView]!
+    var bigTilesCollection: [CustomImageView]!
+    var tilesCheckingArray = [UIImage]()
     var speakerBtn: UIButton!
     var newGameBtn: RoundButton!
     var shareBtn: RoundButton!
-    var bigSquaresStackView: UIStackView!
     var movesLbl: UILabel!
     
     // create an array of slices from an image using the desired amount of columns and rows, then store that array inside another array
@@ -62,48 +61,48 @@ struct Puzzle {
     }
     
     mutating func addSquareImageToSquareView(collection: [UIImageView]) {
-        pickedSquares.shuffle()
+        pickedTiles.shuffle()
         for view in collection {
-            let randomInt = Int.random(in: 0...(pickedSquares.count - 1))
-            view.image = pickedSquares[randomInt]
-            pickedSquares.remove(at: randomInt)
+            let randomInt = Int.random(in: 0...(pickedTiles.count - 1))
+            view.image = pickedTiles[randomInt]
+            pickedTiles.remove(at: randomInt)
         }
     }
     
     @discardableResult
     mutating func checkSquares() -> Bool {
-        for view in squaresCollection {
+        for view in smallTilesCollection {
             if view.image != nil {
                 view.borderWidth = 0
             } else {
                 view.borderWidth = 0.5
             }
         }
-        for view in bigSquaresCollection {
+        for view in bigTilesCollection {
             if view.image != nil {
-                squaresArray.append(view.image!)
+                tilesCheckingArray.append(view.image!)
                 view.borderWidth = 0
             } else {
                 view.borderWidth = 0.5
             }
         }
-        if squaresArray.count == 16 && shareBtn.alpha == 0 {
+        if tilesCheckingArray.count == 16 && shareBtn.alpha == 0 {
             if checkLocationsOfPuzzles() == true {
                 return true
             } else { return false }
-        } else if squaresArray.count < 16 && shareBtn.alpha == 1 {
-            squaresArray.removeAll()
+        } else if tilesCheckingArray.count < 16 && shareBtn.alpha == 1 {
+            tilesCheckingArray.removeAll()
             shareBtn.toggleVisibility(firstTransition: .curveEaseIn, secondTransition: .curveEaseOut)
             return false
         } else {
-            squaresArray.removeAll()
+            tilesCheckingArray.removeAll()
             return false
         }
     }
     
     mutating func checkLocationsOfPuzzles() -> Bool {
         var count = 0
-        for square in bigSquaresCollection {
+        for square in bigTilesCollection {
             let position = square.tag - 1
             var originalImage : UIImage? {
                 if position <= originalLocations.count {
@@ -116,7 +115,7 @@ struct Puzzle {
         }
         if count == 16 {
             shareBtn.toggleVisibility(firstTransition: .curveEaseIn, secondTransition: .curveEaseOut)
-            squaresArray.removeAll()
+            tilesCheckingArray.removeAll()
             return true
         } else {
             return false
