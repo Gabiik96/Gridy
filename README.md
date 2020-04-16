@@ -28,3 +28,13 @@ Once puzzle are completed correctly, user will have option to share his score (m
 </p>
 
 ### Landscape
+
+<p align="center">
+<img src="ReadmeFiles/GridyiPhoneLandscape.png" height="270">
+</p>
+<p align="center">
+<img src="ReadmeFiles/GridyiPhoneLandscape2.png" height="270">
+</p>
+<p align="center">
+<img src="ReadmeFiles/GridyiPhoneLandscape3.png" height="270">
+</p>
