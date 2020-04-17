@@ -56,7 +56,7 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
         pinchGestureRecognizer.delegate = self
     }
     
-    override func viewDidLoad() {
+    override func viewDidLayoutSubviews() {
         createRect()
     }
     
@@ -110,7 +110,6 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
             || otherGestureRecognizer is UITapGestureRecognizer{
             return false
         }
-                
         return true
     }
     

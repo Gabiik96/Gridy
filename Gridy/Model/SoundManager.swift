@@ -18,10 +18,11 @@ class SoundManager {
     var sTimer: Timer?
     
     func playSound(_ sound: URL,_ speakerBtn: UIButton) {
+        audioPlayer.prepareToPlay()
         if speakerBtn.imageView?.image == UIImage(systemName: "speaker.2.fill") {
             do {
+                   print("sound")
                 audioPlayer = try AVAudioPlayer(contentsOf: sound)
-                audioPlayer.prepareToPlay()
                 audioPlayer.play()
             } catch {
                 print(error)
@@ -30,7 +31,7 @@ class SoundManager {
     }
     
     func soundWithTimer(interval: TimeInterval, sound: URL, speakerBtn: UIButton) {
-        self.playSound(sound, speakerBtn)
+        playSound(sound, speakerBtn)
         guard sTimer == nil else { return }
         sTimer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { timer in
             self.playSound(sound, speakerBtn)

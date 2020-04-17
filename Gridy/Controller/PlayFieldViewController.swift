@@ -19,6 +19,9 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     private var imageViewOrigin: CGPoint!
     private var timer: Timer?
     
+    // MARK: - Class references
+    private var sound = SoundManager()
+    private var puzzle = Puzzle()
     
     // MARK: - IBOutlets
     
@@ -33,18 +36,21 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     @IBOutlet var smallTilesCollection: [CustomImageView]!
     @IBOutlet var bigTilesCollection: [CustomImageView]!
     
-    private var sound = SoundManager()
-    private var puzzle = Puzzle()
-    
     // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {
         // Puzzle initiliazer
-        puzzle = Puzzle(originalLocations: pickedTiles, pickedTiles: pickedTiles, smallTilesCollection: smallTilesCollection, bigTilesCollection: bigTilesCollection, speakerBtn: speakerBtn, newGameBtn: newGameBtn, shareBtn: shareBtn, movesLbl: movesLbl)
-        
+        puzzle = Puzzle(originalLocations: pickedTiles,
+                        pickedTiles: pickedTiles,
+                        smallTilesCollection: smallTilesCollection,
+                        bigTilesCollection: bigTilesCollection,
+                        speakerBtn: speakerBtn,
+                        newGameBtn: newGameBtn,
+                        shareBtn: shareBtn,
+                        movesLbl: movesLbl)
         puzzle.addSquareImageToSquareView(collection: smallTilesCollection)
         movesLbl.text = "0"
         hintImageView.image = hintImage
-        puzzle.checkSquares()
+        puzzle.checkTiles()
         speakerBtnSetup(identifier: "speaker.slash.fill")
         if let buttonState = UserDefaults.standard.object(forKey: "speaker") as? Bool {
             if buttonState == true {
@@ -89,13 +95,13 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     
     //MARK: - Functions
     
-    //MARK Small squares movement functionality
+    //MARK Small tiles movement functionality
     func addPanGesture(view: UIImageView) {
-        let panRecognizer = UIPanGestureRecognizer(target:self, action:#selector(moveSquareImage))
+        let panRecognizer = UIPanGestureRecognizer(target:self, action:#selector(moveSmallTile))
         view.gestureRecognizers = [panRecognizer]
     }
     
-    @objc func moveSquareImage(_ sender: UIPanGestureRecognizer) {
+    @objc func moveSmallTile(_ sender: UIPanGestureRecognizer) {
         let pannedImageView = sender.view! as! UIImageView
         guard pannedImageView.image != nil else { return }
         
@@ -106,19 +112,20 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         case .changed:
             moveViewWithPan(view: pannedImageView, sender: sender)
         case.ended:
-            for view in bigTilesCollection {
+            for view in bigTilesCollection.reversed() {
                 let convertedPannedView = pannedImageView.convert(pannedImageView.bounds, to: self.view)
                 let convertedView = view.convert(view.bounds, to: self.view)
                 if convertedPannedView.intersects(convertedView) && pannedImageView.image != view.image {
                     swapImage(imageView: pannedImageView, imageView2: view)
                     addMoveToScore()
+                    sound.playSound(sound.squareInSound, speakerBtn)
+                    break
                 }
             }
-            if puzzle.checkSquares() == true {
+            if puzzle.checkTiles() == true {
                 puzzleCompleted()
             }
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
-            sound.playSound(sound.squareInSound, speakerBtn)
         default: break
         }
         pannedImageView.setNeedsUpdateConstraints()
@@ -131,13 +138,13 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         sender.setTranslation(CGPoint.zero, in: view)
     }
     
-    //MARK Big squares movements functionality
+    //MARK Big tiles movements functionality
     func addSwipe(view: UIImageView) {
-        let panRecognizer = UIPanGestureRecognizer(target:self, action:#selector(swipeBigSquareImage))
+        let panRecognizer = UIPanGestureRecognizer(target:self, action:#selector(swipeBigTile))
         view.gestureRecognizers = [panRecognizer]
     }
     
-    @objc func swipeBigSquareImage(_ sender: UIPanGestureRecognizer) {
+    @objc func swipeBigTile(_ sender: UIPanGestureRecognizer) {
         let pannedImageView = sender.view! as! UIImageView
         guard pannedImageView.image != nil else { return }
         
@@ -154,6 +161,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
                 swipeImageLeft(view: pannedImageView, sender: sender)
             }
         case.ended:
+            
             let convertedPannedView = pannedImageView.convert(pannedImageView.bounds, to: self.view)
             let convertedY = convertedPannedView.minY
             let orientation = UIDevice.current.orientation.isPortrait
@@ -168,13 +176,14 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
                     }
                 }
             }
-            puzzle.checkSquares()
+            puzzle.checkTiles()
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
         default: break
         }
         pannedImageView.setNeedsUpdateConstraints()
     }
     
+    /// allows to move view only on its Y  ^
     func swipeImageUP(view: UIImageView, sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view.superview)
         if translation.y < 0 {
@@ -184,6 +193,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         }
     }
     
+    /// allows to move view only on its X  <
     func swipeImageLeft(view: UIImageView, sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view.superview)
         if translation.x < 0 {
@@ -203,6 +213,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         }
     }
     
+    /// Swapping parameters view images
     func swapImage(imageView: UIImageView, imageView2: UIImageView) {
         let image1 = imageView.image
         let image2 = imageView2.image
@@ -212,12 +223,14 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         })
     }
     
+    /// Adding +1 to current score
     func addMoveToScore() {
         var currentScore = Int(movesLbl.text!)!
         currentScore += 1
         movesLbl.text = String(currentScore)
     }
     
+    /// Function to make celebration screen once puzzle is completed
     func puzzleCompleted() {
         let confettiView = SAConfettiView(frame: self.view.bounds)
         confettiView.type = .Star
@@ -225,6 +238,9 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         confettiView.startConfetti()
         view.bringSubviewToFront(newGameBtn)
         view.bringSubviewToFront(shareBtn)
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) {_ in
+            self.sound.playSound(self.sound.clapSound, self.speakerBtn)
+        }
         sound.soundWithTimer(interval: 6, sound: sound.clapSound, speakerBtn: speakerBtn)
         timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) {_ in
             self.shareBtn.shake()
@@ -232,6 +248,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         }
     }
     
+    /// Function to share current score and puzzle image made
     func displaySharingOptions() {
         // define content to share
         let note = "Took me \(String(movesLbl.text!)) to complete this! Can you beat me ?"
@@ -246,6 +263,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         present(activityViewController, animated: true, completion: nil)
     }
     
+    /// Function to make an image from current puzzle
     func composeCompletedPuzzleImage() -> UIImage{
         UIGraphicsBeginImageContextWithOptions(bigTilesStackView.bounds.size, false, 0)
         bigTilesStackView.drawHierarchy(in: bigTilesStackView.bounds, afterScreenUpdates: true)
@@ -255,6 +273,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         return screenshot
     }
     
+    /// Sets speaker button image and identifier
     func speakerBtnSetup(identifier: String) {
         speakerBtn.setImage(UIImage(systemName: identifier), for: UIControl.State.normal)
         speakerBtn.restorationIdentifier = identifier
@@ -264,6 +283,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
 //MARK: - Extensions
 
 extension UIView {
+    /// Changes alpha of view to eather 0 or 1 with animation
     func toggleVisibility(firstTransition : UIView.AnimationOptions, secondTransition: UIView.AnimationOptions) {
         let isVisible = self.alpha == 1
         UIView.transition(with: self, duration: 0.5, options: (isVisible ? firstTransition : secondTransition), animations: {
@@ -273,6 +293,7 @@ extension UIView {
 }
 
 extension UIButton {
+    /// Changes current image of speaker button
     func toggleSpeakerImage() {
         if self.restorationIdentifier == "speaker.2.fill" {
             saveUserDefaults(identifier: "speaker.slash.fill", bool: true)
@@ -281,6 +302,7 @@ extension UIButton {
         }
     }
     
+    /// Saving sound settings to userDefaults
     func saveUserDefaults(identifier: String, bool: Bool){
         self.setImage(UIImage(systemName: identifier), for: UIControl.State.normal)
         self.restorationIdentifier = identifier

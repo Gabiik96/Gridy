@@ -70,7 +70,7 @@ struct Puzzle {
     }
     
     @discardableResult
-    mutating func checkSquares() -> Bool {
+    mutating func checkTiles() -> Bool {
         for view in smallTilesCollection {
             if view.image != nil {
                 view.borderWidth = 0
