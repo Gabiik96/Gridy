@@ -68,7 +68,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="oBI-Kr-kj8" customClass="RoundButton" customModule="Gridy" customModuleProvider="target" propertyAccessControl="none">
-                                                <rect key="frame" x="150" y="0.0" width="120" height="90"/>
+                                                <rect key="frame" x="149.99999999999994" y="0.0" width="120" height="90"/>
                                                 <color key="backgroundColor" name="Color3"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <state key="normal" title="Photo Library" image="Gridy-library">
