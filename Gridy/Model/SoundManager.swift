@@ -10,21 +10,38 @@ import Foundation
 import AVFoundation
 import UIKit
 
-struct SoundManager {
+class SoundManager {
     let squareInSound = URL(fileURLWithPath: Bundle.main.path(forResource: "In", ofType: "m4a")!)
     let squareOutSound = URL(fileURLWithPath: Bundle.main.path(forResource: "Out", ofType: "m4a")!)
     let clapSound = URL(fileURLWithPath: Bundle.main.path(forResource: "Clap", ofType: "mp3")!)
     var audioPlayer = AVAudioPlayer()
+    var sTimer: Timer?
     
-    mutating func playSound(sound: URL,_ speakerBtn: UIButton ) {
+    func playSound(_ sound: URL,_ speakerBtn: UIButton) {
+        audioPlayer.prepareToPlay()
         if speakerBtn.imageView?.image == UIImage(systemName: "speaker.2.fill") {
             do {
+                   print("sound")
                 audioPlayer = try AVAudioPlayer(contentsOf: sound)
-                audioPlayer.prepareToPlay()
                 audioPlayer.play()
             } catch {
                 print(error)
             }
         }
+    }
+    
+    func soundWithTimer(interval: TimeInterval, sound: URL, speakerBtn: UIButton) {
+        playSound(sound, speakerBtn)
+        guard sTimer == nil else { return }
+        sTimer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { timer in
+            self.playSound(sound, speakerBtn)
+        }
+        sTimer!.fire()
+    }
+    
+    func stopPlayingSounds(timer: Timer?) {
+        audioPlayer.stop()
+        guard sTimer != nil  else { return }
+        self.sTimer?.invalidate()
     }
 }

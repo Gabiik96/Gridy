@@ -15,12 +15,12 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
 
 //MARK:- Global variables
     
-    var crop = Puzzle()
+    private var crop = Puzzle()
 
     var imagePicked: UIImage!
-    var imageCropped: UIImage!
-    var initialImageViewOffSet = CGPoint()
-    var imageSquares: [UIImage] = []
+    private var imageCropped: UIImage!
+    private var initialImageViewOffSet = CGPoint()
+    private var imageSquares: [UIImage] = []
     
 //MARK:- IBOutlets
 
@@ -35,9 +35,8 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "getToPlayFieldView" {
             let nextView: PlayFieldViewController = segue.destination as! PlayFieldViewController
-            nextView.puzzle.pickedSquares = self.imageSquares
-            nextView.puzzle.originalLocations = self.imageSquares
-            nextView.puzzle.hintImage = self.imageCropped
+            nextView.pickedTiles = self.imageSquares
+            nextView.hintImage = self.imageCropped
         }
     }
     
@@ -55,21 +54,16 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
         let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(scalePickedImage(_:)))
         pickedImage.addGestureRecognizer(pinchGestureRecognizer)
         pinchGestureRecognizer.delegate = self
- 
     }
     
-    override func viewDidLoad() {
+    override func viewDidLayoutSubviews() {
         createRect()
     }
     
 //MARK: - IBActions
     
     @IBAction func XBtnPressed(_ sender: Any) {
-       if let nav = self.navigationController {
-                nav.popViewController(animated: true)
-            } else {
-                self.dismiss(animated: true, completion: nil)
-            }
+       if let nav = self.navigationController { nav.popViewController(animated: true) } 
     }
     
     @IBAction func startBtnPressed(_ sender: Any) {
@@ -116,7 +110,6 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
             || otherGestureRecognizer is UITapGestureRecognizer{
             return false
         }
-                
         return true
     }
     
