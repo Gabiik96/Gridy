@@ -10,7 +10,7 @@ import UIKit
 
 struct Puzzle {
     
-    var originalLocations: [UIImage]!
+    var originalImages: [UIImage]!
     var pickedTiles: [UIImage]!
     var smallTilesCollection: [CustomImageView]!
     var bigTilesCollection: [CustomImageView]!
@@ -101,24 +101,20 @@ struct Puzzle {
     }
     
     mutating func checkLocationsOfPuzzles() -> Bool {
-        var count = 0
-        for square in bigTilesCollection {
+        
+        let puzzleIsCompleted = bigTilesCollection.allSatisfy { (square) -> Bool in
             let position = square.tag - 1
             var originalImage : UIImage? {
-                if position <= originalLocations.count {
-                    return originalLocations[position]
+                if position <= originalImages.count {
+                    return originalImages[position]
                 } else { return nil }
             }
-            if square.image == originalImage {
-                count += 1
-            }
+            return square.image == originalImage
         }
-        if count == 16 {
+        if puzzleIsCompleted {
             shareBtn.toggleVisibility(firstTransition: .curveEaseIn, secondTransition: .curveEaseOut)
             tilesCheckingArray.removeAll()
-            return true
-        } else {
-            return false
         }
+        return puzzleIsCompleted
     }
 }

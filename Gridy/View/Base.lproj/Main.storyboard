@@ -646,7 +646,9 @@ zoom, rotate, reposition</string>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="ypn-r6-3TS"/>
-                                <exclude reference="KqD-0X-4mU"/>
+                                <exclude reference="EHs-Md-D8A"/>
+                                <exclude reference="b14-V9-wno"/>
+                                <exclude reference="FKm-tJ-zXE"/>
                                 <exclude reference="Id5-53-M3P"/>
                                 <exclude reference="bbE-AZ-DdT"/>
                                 <exclude reference="dci-rf-EzK"/>
@@ -660,11 +662,9 @@ zoom, rotate, reposition</string>
                                 <exclude reference="KjB-nl-iCL"/>
                                 <exclude reference="PPs-fp-s2O"/>
                                 <exclude reference="b8B-QL-F8H"/>
-                                <exclude reference="EHs-Md-D8A"/>
+                                <exclude reference="KqD-0X-4mU"/>
                                 <exclude reference="Xjv-Zb-eeZ"/>
-                                <exclude reference="b14-V9-wno"/>
                                 <exclude reference="p0b-Yi-VUp"/>
-                                <exclude reference="FKm-tJ-zXE"/>
                                 <exclude reference="NR0-dP-wLZ"/>
                                 <exclude reference="QXP-BN-0Zz"/>
                                 <exclude reference="fiM-aR-nQN"/>
@@ -682,7 +682,9 @@ zoom, rotate, reposition</string>
                                 <exclude reference="VLz-SP-nXz"/>
                                 <exclude reference="wWp-K4-BRI"/>
                                 <include reference="ypn-r6-3TS"/>
-                                <exclude reference="KqD-0X-4mU"/>
+                                <include reference="EHs-Md-D8A"/>
+                                <include reference="b14-V9-wno"/>
+                                <include reference="FKm-tJ-zXE"/>
                                 <include reference="Id5-53-M3P"/>
                                 <include reference="bbE-AZ-DdT"/>
                                 <include reference="dci-rf-EzK"/>
@@ -696,7 +698,6 @@ zoom, rotate, reposition</string>
                                 <include reference="Kt2-nJ-GCS"/>
                                 <include reference="LLe-BO-nk2"/>
                                 <exclude reference="LfP-6C-bhG"/>
-                                <exclude reference="Wjm-j7-gDw"/>
                                 <exclude reference="dKE-wE-R1B"/>
                                 <include reference="h6y-SU-NRb"/>
                                 <exclude reference="oID-HH-bR0"/>
@@ -708,11 +709,9 @@ zoom, rotate, reposition</string>
                                 <include reference="b8B-QL-F8H"/>
                                 <exclude reference="ocj-Nh-1fQ"/>
                                 <exclude reference="zAI-KC-dbD"/>
-                                <include reference="EHs-Md-D8A"/>
+                                <exclude reference="KqD-0X-4mU"/>
                                 <include reference="Xjv-Zb-eeZ"/>
-                                <include reference="b14-V9-wno"/>
                                 <include reference="p0b-Yi-VUp"/>
-                                <include reference="FKm-tJ-zXE"/>
                                 <exclude reference="2Su-Gp-ShP"/>
                                 <exclude reference="4do-e8-yRb"/>
                                 <exclude reference="6Mz-Gr-s5g"/>
@@ -733,6 +732,7 @@ zoom, rotate, reposition</string>
                                 <include reference="0B3-t6-6mH"/>
                                 <exclude reference="HGU-JR-j6S"/>
                                 <exclude reference="LpG-Bk-5TC"/>
+                                <exclude reference="Wjm-j7-gDw"/>
                                 <exclude reference="ehu-X6-1uu"/>
                                 <include reference="koN-ZD-DBG"/>
                             </mask>
@@ -769,7 +769,7 @@ zoom, rotate, reposition</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yQ-II-2Ap" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
-                                <rect key="frame" x="20" y="10" width="88" height="35"/>
+                                <rect key="frame" x="20" y="10" width="47" height="35"/>
                                 <color key="backgroundColor" name="Color1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="TRc-Xy-neq"/>
@@ -798,7 +798,7 @@ zoom, rotate, reposition</string>
                                     <action selector="newGameBtnPressed:" destination="VZ7-En-4JS" eventType="touchUpInside" id="GYE-8K-p55"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-name-small-green" translatesAutoresizingMaskIntoConstraints="NO" id="NZZ-iE-ym5">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Gridy-name-small-green" translatesAutoresizingMaskIntoConstraints="NO" id="NZZ-iE-ym5">
                                 <rect key="frame" x="128" y="10" width="70" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="lIr-gi-qNZ"/>
@@ -824,7 +824,7 @@ zoom, rotate, reposition</string>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="moves:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sb8-Lh-hch">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="moves:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sb8-Lh-hch">
                                 <rect key="frame" x="208" y="26" width="52" height="19"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -840,7 +840,7 @@ zoom, rotate, reposition</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C44-nT-1c3" customClass="RoundButton" customModule="Gridy" customModuleProvider="target">
-                                <rect key="frame" x="116" y="229" width="88" height="35"/>
+                                <rect key="frame" x="136.5" y="229" width="47" height="35"/>
                                 <color key="backgroundColor" name="Color1"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Share">
@@ -1493,20 +1493,15 @@ zoom, rotate, reposition</string>
                                 <exclude reference="OlR-uH-XMN"/>
                                 <exclude reference="XNL-tM-fvs"/>
                                 <exclude reference="gtI-2d-YF5"/>
-                                <exclude reference="0gp-sT-lBo"/>
-                                <exclude reference="r8F-XG-6hK"/>
                                 <exclude reference="4kJ-ni-QCg"/>
                                 <exclude reference="BNx-Mb-LBg"/>
                                 <exclude reference="biM-D8-8lG"/>
+                                <exclude reference="0gp-sT-lBo"/>
+                                <exclude reference="r8F-XG-6hK"/>
                                 <exclude reference="8Qe-zN-KvJ"/>
                                 <exclude reference="Ijv-z0-4ug"/>
                                 <exclude reference="b93-Me-YR8"/>
                                 <exclude reference="kDV-3H-NNQ"/>
-                                <exclude reference="8rf-gm-ERW"/>
-                                <exclude reference="G5R-Wb-AEl"/>
-                                <exclude reference="GtH-2Y-0Fl"/>
-                                <exclude reference="SmY-A4-uOX"/>
-                                <exclude reference="c8s-jS-DgQ"/>
                                 <exclude reference="aV2-DQ-3D3"/>
                                 <exclude reference="dKm-JM-MSs"/>
                                 <exclude reference="hGN-Q0-IKb"/>
@@ -1514,6 +1509,11 @@ zoom, rotate, reposition</string>
                                 <exclude reference="lOg-H4-8RD"/>
                                 <exclude reference="mY5-IO-Hd1"/>
                                 <exclude reference="vjf-Dz-wFA"/>
+                                <exclude reference="8rf-gm-ERW"/>
+                                <exclude reference="G5R-Wb-AEl"/>
+                                <exclude reference="GtH-2Y-0Fl"/>
+                                <exclude reference="SmY-A4-uOX"/>
+                                <exclude reference="c8s-jS-DgQ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -1557,15 +1557,15 @@ zoom, rotate, reposition</string>
                                 <exclude reference="QsH-VR-MAR"/>
                                 <include reference="XNL-tM-fvs"/>
                                 <include reference="gtI-2d-YF5"/>
-                                <include reference="0gp-sT-lBo"/>
-                                <exclude reference="4XS-E9-f8B"/>
-                                <exclude reference="ofj-qV-xZO"/>
-                                <include reference="r8F-XG-6hK"/>
                                 <include reference="4kJ-ni-QCg"/>
                                 <include reference="BNx-Mb-LBg"/>
                                 <exclude reference="Oe5-5n-5gf"/>
                                 <include reference="biM-D8-8lG"/>
                                 <exclude reference="wp9-aC-0Qf"/>
+                                <include reference="0gp-sT-lBo"/>
+                                <exclude reference="4XS-E9-f8B"/>
+                                <exclude reference="ofj-qV-xZO"/>
+                                <include reference="r8F-XG-6hK"/>
                                 <exclude reference="2lT-FT-iUN"/>
                                 <include reference="8Qe-zN-KvJ"/>
                                 <exclude reference="Fi1-AZ-ETr"/>
@@ -1574,6 +1574,12 @@ zoom, rotate, reposition</string>
                                 <include reference="b93-Me-YR8"/>
                                 <include reference="kDV-3H-NNQ"/>
                                 <exclude reference="wXU-h5-mSu"/>
+                                <exclude reference="aV2-DQ-3D3"/>
+                                <include reference="dKm-JM-MSs"/>
+                                <include reference="hxK-9r-nWe"/>
+                                <include reference="lOg-H4-8RD"/>
+                                <exclude reference="oQT-f6-mfx"/>
+                                <exclude reference="uww-c1-gCH"/>
                                 <include reference="8rf-gm-ERW"/>
                                 <include reference="G5R-Wb-AEl"/>
                                 <exclude reference="GtH-2Y-0Fl"/>
@@ -1582,12 +1588,6 @@ zoom, rotate, reposition</string>
                                 <exclude reference="OY2-pt-qkq"/>
                                 <exclude reference="SmY-A4-uOX"/>
                                 <exclude reference="c8s-jS-DgQ"/>
-                                <exclude reference="aV2-DQ-3D3"/>
-                                <include reference="dKm-JM-MSs"/>
-                                <include reference="hxK-9r-nWe"/>
-                                <include reference="lOg-H4-8RD"/>
-                                <exclude reference="oQT-f6-mfx"/>
-                                <exclude reference="uww-c1-gCH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">

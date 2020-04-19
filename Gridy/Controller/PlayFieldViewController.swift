@@ -39,7 +39,7 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {
         // Puzzle initiliazer
-        puzzle = Puzzle(originalLocations: pickedTiles,
+        puzzle = Puzzle(originalImages: pickedTiles,
                         pickedTiles: pickedTiles,
                         smallTilesCollection: smallTilesCollection,
                         bigTilesCollection: bigTilesCollection,
