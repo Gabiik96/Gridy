@@ -1,10 +1,15 @@
 #  OpenClassrooms - iOS developer path - Project 5
 ## Gridy puzzle maker game
 <b>Tech:</b> <br>
+XCode 11.3.1 <br>
+iOS 13.2 <br>
+Swift 5.2 <br>
 UserDefaults <br>
 Multiple touch recognization <br>
 Sound effects <br>
-iPhone, iPad support for landscape & portait mode
+SAConfetiiView framework <br>
+iPhone, iPad support for landscape & portait mode <br>
+UITests 
 
 <b>Overview</b> <br>
 Simple puzzle game, which allows user to create puzzle of 16 pieces -> user can take image from camera or his current photo library. It also has got few default images under button "Gridy Pick" for you to play puzzle. <br>

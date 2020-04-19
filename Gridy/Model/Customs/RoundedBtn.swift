@@ -29,6 +29,7 @@ class RoundButton: UIButton {
         }
     }
     
+    // Shaking animation ->
     func shake(for duration: TimeInterval = 0.5, withTranslation translation: CGFloat = 10) {
           let propertyAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.3) {
               self.transform = CGAffineTransform(translationX: translation, y: 0)

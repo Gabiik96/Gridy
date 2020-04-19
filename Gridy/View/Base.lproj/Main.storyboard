@@ -68,7 +68,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="oBI-Kr-kj8" customClass="RoundButton" customModule="Gridy" customModuleProvider="target" propertyAccessControl="none">
-                                                <rect key="frame" x="149.99999999999994" y="0.0" width="120" height="90"/>
+                                                <rect key="frame" x="150" y="0.0" width="120" height="90"/>
                                                 <color key="backgroundColor" name="Color3"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <state key="normal" title="Photo Library" image="Gridy-library">
@@ -258,6 +258,9 @@
                                 <subviews>
                                     <imageView clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XiM-pM-zvL">
                                         <rect key="frame" x="-32" y="-165.5" width="320" height="568"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="PickedImage">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="-500"/>
@@ -646,25 +649,25 @@ zoom, rotate, reposition</string>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="ypn-r6-3TS"/>
-                                <exclude reference="EHs-Md-D8A"/>
-                                <exclude reference="b14-V9-wno"/>
                                 <exclude reference="FKm-tJ-zXE"/>
                                 <exclude reference="Id5-53-M3P"/>
                                 <exclude reference="bbE-AZ-DdT"/>
-                                <exclude reference="dci-rf-EzK"/>
                                 <exclude reference="1lB-9F-fud"/>
-                                <exclude reference="2l4-Qc-Gof"/>
                                 <exclude reference="Kt2-nJ-GCS"/>
-                                <exclude reference="LLe-BO-nk2"/>
                                 <exclude reference="LfP-6C-bhG"/>
-                                <exclude reference="h6y-SU-NRb"/>
                                 <exclude reference="Cs3-r8-ity"/>
                                 <exclude reference="KjB-nl-iCL"/>
                                 <exclude reference="PPs-fp-s2O"/>
-                                <exclude reference="b8B-QL-F8H"/>
+                                <exclude reference="EHs-Md-D8A"/>
                                 <exclude reference="KqD-0X-4mU"/>
                                 <exclude reference="Xjv-Zb-eeZ"/>
+                                <exclude reference="b14-V9-wno"/>
                                 <exclude reference="p0b-Yi-VUp"/>
+                                <exclude reference="dci-rf-EzK"/>
+                                <exclude reference="2l4-Qc-Gof"/>
+                                <exclude reference="LLe-BO-nk2"/>
+                                <exclude reference="h6y-SU-NRb"/>
+                                <exclude reference="b8B-QL-F8H"/>
                                 <exclude reference="NR0-dP-wLZ"/>
                                 <exclude reference="QXP-BN-0Zz"/>
                                 <exclude reference="fiM-aR-nQN"/>
@@ -682,36 +685,36 @@ zoom, rotate, reposition</string>
                                 <exclude reference="VLz-SP-nXz"/>
                                 <exclude reference="wWp-K4-BRI"/>
                                 <include reference="ypn-r6-3TS"/>
-                                <include reference="EHs-Md-D8A"/>
-                                <include reference="b14-V9-wno"/>
                                 <include reference="FKm-tJ-zXE"/>
                                 <include reference="Id5-53-M3P"/>
                                 <include reference="bbE-AZ-DdT"/>
-                                <include reference="dci-rf-EzK"/>
                                 <exclude reference="mEU-L0-1yK"/>
-                                <exclude reference="o7i-rb-kid"/>
-                                <exclude reference="rD5-wt-eqI"/>
                                 <exclude reference="wEn-df-wHl"/>
                                 <include reference="1lB-9F-fud"/>
-                                <include reference="2l4-Qc-Gof"/>
                                 <exclude reference="9S0-2Y-3DQ"/>
                                 <include reference="Kt2-nJ-GCS"/>
-                                <include reference="LLe-BO-nk2"/>
                                 <exclude reference="LfP-6C-bhG"/>
                                 <exclude reference="dKE-wE-R1B"/>
-                                <include reference="h6y-SU-NRb"/>
                                 <exclude reference="oID-HH-bR0"/>
                                 <exclude reference="ogm-eQ-UEM"/>
                                 <include reference="Cs3-r8-ity"/>
                                 <exclude reference="KjB-nl-iCL"/>
                                 <exclude reference="LgR-n1-eXW"/>
                                 <include reference="PPs-fp-s2O"/>
-                                <include reference="b8B-QL-F8H"/>
                                 <exclude reference="ocj-Nh-1fQ"/>
-                                <exclude reference="zAI-KC-dbD"/>
+                                <include reference="EHs-Md-D8A"/>
                                 <exclude reference="KqD-0X-4mU"/>
                                 <include reference="Xjv-Zb-eeZ"/>
+                                <include reference="b14-V9-wno"/>
                                 <include reference="p0b-Yi-VUp"/>
+                                <include reference="dci-rf-EzK"/>
+                                <exclude reference="o7i-rb-kid"/>
+                                <exclude reference="rD5-wt-eqI"/>
+                                <include reference="2l4-Qc-Gof"/>
+                                <include reference="LLe-BO-nk2"/>
+                                <include reference="h6y-SU-NRb"/>
+                                <include reference="b8B-QL-F8H"/>
+                                <exclude reference="zAI-KC-dbD"/>
                                 <exclude reference="2Su-Gp-ShP"/>
                                 <exclude reference="4do-e8-yRb"/>
                                 <exclude reference="6Mz-Gr-s5g"/>
@@ -1361,6 +1364,9 @@ zoom, rotate, reposition</string>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ikm-HO-m2P">
                                 <rect key="frame" x="20" y="144" width="280" height="280"/>
+                                <accessibility key="accessibilityConfiguration" identifier="HintImage">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ikm-HO-m2P" secondAttribute="height" multiplier="1:1" id="C9C-Rc-3G5"/>
                                 </constraints>

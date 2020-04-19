@@ -52,6 +52,8 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         hintImageView.image = hintImage
         puzzle.checkTiles()
         speakerBtnSetup(identifier: "speaker.slash.fill")
+        
+        // Set speakerBtn as used last time, throught UserDefaults
         if let buttonState = UserDefaults.standard.object(forKey: "speaker") as? Bool {
             if buttonState == true {
                 speakerBtnSetup(identifier: "speaker.slash.fill")
@@ -59,9 +61,13 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
                 speakerBtnSetup(identifier: "speaker.2.fill")
             }
         }
+        
+        // Add panning gesture for each view in smallTilesCollection
         for view in smallTilesCollection {
             addPanGesture(view: view)
         }
+        
+        // Add swipe gesture for each view in bigTilesCollection
         for view in bigTilesCollection {
             addSwipe(view: view)
         }
@@ -106,11 +112,14 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         guard pannedImageView.image != nil else { return }
         
         switch sender.state {
+            
         case .began:
             view.bringSubviewToFront(pannedImageView)
             imageViewOrigin = pannedImageView.frame.origin
+            
         case .changed:
             moveViewWithPan(view: pannedImageView, sender: sender)
+            
         case.ended:
             for view in bigTilesCollection.reversed() {
                 let convertedPannedView = pannedImageView.convert(pannedImageView.bounds, to: self.view)
@@ -128,7 +137,6 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
         default: break
         }
-        pannedImageView.setNeedsUpdateConstraints()
     }
     
     func moveViewWithPan(view: UIImageView, sender: UIPanGestureRecognizer) {
@@ -149,19 +157,21 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
         guard pannedImageView.image != nil else { return }
         
         switch sender.state {
+            
         case .began:
             imageViewOrigin = pannedImageView.frame.origin
             if pannedImageView.image == nil {
                 break
             }
+            
         case .changed:
             if UIDevice.current.orientation.isPortrait {
                 swipeImageUP(view: pannedImageView, sender: sender)
             } else {
                 swipeImageLeft(view: pannedImageView, sender: sender)
             }
-        case.ended:
             
+        case.ended:
             let convertedPannedView = pannedImageView.convert(pannedImageView.bounds, to: self.view)
             let convertedY = convertedPannedView.minY
             let orientation = UIDevice.current.orientation.isPortrait
@@ -180,7 +190,6 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
             returnViewToOrigin(view: pannedImageView, location: imageViewOrigin)
         default: break
         }
-        pannedImageView.setNeedsUpdateConstraints()
     }
     
     /// allows to move view only on its Y  ^
@@ -204,12 +213,13 @@ class PlayFieldViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     //MARK Mutual movement functionality && others
+    
+    /// Return parameret view to location parameter with animation
     func returnViewToOrigin(view: UIImageView, location: CGPoint) {
         if view.image == nil {
             view.frame.origin = location
         } else {
-            UIView.animate(withDuration: 0.5, animations: {
-                view.frame.origin = location})
+            UIView.animate(withDuration: 0.5, animations: { view.frame.origin = location })
         }
     }
     

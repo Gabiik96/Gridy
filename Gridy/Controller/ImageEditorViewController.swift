@@ -113,6 +113,7 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
         return true
     }
     
+    /// creating transparent rectangle in alpha view, using cropAreaView size and bounds
     func createRect() {
 
         // Create the initial layer from the stackView bounds.
@@ -131,6 +132,8 @@ class ImageEditorViewController: UIViewController, UINavigationControllerDelegat
         alphaView.layer.mask = maskLayer
     }
     
+    
+    /// Screenshoting are of parameter UIView and assigning it to imageCropped variable
     func createPuzzleSquareImage(square: UIView) {
     
         UIGraphicsBeginImageContextWithOptions(cropAreaView.bounds.size, true, 0.0)
